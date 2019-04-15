@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<!-- <typeAlias type="global.sesoc.web4.vo.Member" alias="Member" /> -->
+		<typeAlias type="global.sesoc.project.vo.LoginVO" alias="Member" />
+		<typeAlias type="global.sesoc.project.mallVO.CategoryVO" alias="Category" />
+		<typeAlias type="global.sesoc.project.mallVO.GoodsVO" alias="Goods" />
+		<typeAlias type="global.sesoc.project.mallVO.CartVO" alias="Cart" />
+		<typeAlias type="global.sesoc.project.mallVO.ReplyVO" alias="Reply" />
+		
+		
+	</typeAliases>
+	<mappers>
+	<mapper resource="loginMapper.xml" />
+	<mapper resource="usedMapper.xml" />
+	</mappers>
+</configuration>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 회원정보 처리 SQL -->
+<mapper namespace="global.sesoc.project.dao.LoginMapper">
+
+	<!-- 회원 정보 저장 -->
+	<insert id = "join" parameterType = "Member">
+		insert into
+		tbl_member
+		(
+		userId,
+		userPass,
+		userName,
+		userPhon,
+		userAddr1,
+		userAddr2,
+		userAddr3
+		)
+		values(
+		#{userId},
+		#{userPass},
+		#{userName},
+		#{userPhon},
+		#{userAddr1},
+		#{userAddr2},
+		#{userAddr3}
+		)
+	</insert>
+	
+	<!-- ID로 회원 정보 검색 -->
+	<select id = "login" parameterType = "Member" resultType = "Member">
+	select * from tbl_member where userId = #{userId} and userPass = #{userPass}
+	</select>
+
+
+</mapper>
