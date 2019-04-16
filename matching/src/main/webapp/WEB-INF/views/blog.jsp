@@ -16,7 +16,7 @@
     <title>AIO TRIP</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="resources/img/core-img/favicon.ico">
+    <link rel="icon" href="resources/img/core-img/favicon.ico" type="text/css">
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="resources/style.css" type="text/css">
