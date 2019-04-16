@@ -4,7 +4,6 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<!-- <typeAlias type="global.sesoc.web4.vo.Member" alias="Member" /> -->
 		<typeAlias type="global.sesoc.project.user.VO.LoginVO" alias="Member" />
 		<typeAlias type="global.sesoc.project.mall.VO.CategoryVO" alias="Category" />
 		<typeAlias type="global.sesoc.project.mall.VO.GoodsVO" alias="Goods" />
