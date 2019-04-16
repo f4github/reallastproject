@@ -5,17 +5,38 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-
+<script src="resources/jquery/jquery-3.3.1.min.js"></script>
 <style>
+body  {
+  background-image: url("resources/login/images/bgimg1.jpg");
 
-
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box}
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+.centered-wrapper {
+    position: relative;
+    text-align: center;
+}
+.centered-wrapper:before {
+    content: "";
+    position: relative;
+    display: inline-block;
+    width: 0; height: 100%;
+    vertical-align: middle;
+}
+.centered-content {
+    display: inline-block;
+    vertical-align: middle;
+}
 
 /* Full-width input fields */
 input[type=text], input[type=password] {
   width: 100%;
-  padding: 15px;
+  padding: 15px 0px;
   margin: 5px 0 22px 0;
   display: inline-block;
   border: none;
@@ -62,7 +83,7 @@ button:hover {
 
 /* Add padding to container elements */
 .container {
-  padding: 16px;
+  padding: 50px;
 }
 
 /* Clear floats */
@@ -72,16 +93,12 @@ button:hover {
   display: table;
 }
 
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-  .cancelbtn, .signupbtn {
-     width: 100%;
-  }
-}
+
 </style>
 
 </head>
-<body>
+<body class="centered-wrapper">
+<div class="centered-content"  style="background-color:white;">
 
 <!-- create table tbl_member(
 userId varchar2(50) primary key,
@@ -100,37 +117,50 @@ verify number default 0
     <p>Please fill in this form to create an account.</p>
     <hr>
 
-    <label for="userId"><b>ID</b></label>
-    <input type="text" placeholder="Enter Id" name="userId" required id = "userId">
+ 
 
-    <label for="userPass"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="userPass" required id = "userPass">
+   
+<label for="userId"><b>ID</b></label><br>
+<input type="text" placeholder="ID를 입력해주세요." name="userId" required id = "userId"><br>
 
-   <label for="userName"><b>Name</b></label>
-    <input type="text" placeholder="Enter Name" name="userName" required id = "userName">
-    
-    <label for="userPhon"><b>Phone</b></label>
-    <input type="text" placeholder="Enter Phone" name="userPhon" required id = "userPhon">
-    
-    <label for="userAddr1"><b>Addr1</b></label>
-    <input type="text" placeholder="Enter Addr1" name="userAddr1" required id = "userAddr1">
+<label for="userPass"><b>Password</b></label><br>
+<input type="password" placeholder="비밀번호를 입력해주세요." name="userPass" required id = "userPass"><br>
 
-    <label for="userAddr2"><b>Addr2</b></label>
-    <input type="text" placeholder="Enter Addr2" name="userAddr2" required id = "userAddr2">
+<label for="userName"><b>Name</b></label><br>
+<input type="text" placeholder="이름을 입력해주세요." name="userName" required id = "userName"><br>
 
-    <label for="userAddr3"><b>Addr3</b></label>
-    <input type="text" placeholder="Enter Addr3" name="userAddr3" required id = "userAddr3">
-    
+<label for="userPhon"><b>Phone</b></label><br>
+<input type="text" placeholder="전화번호를 입력해주세요." name="userPhon" required id = "userPhon"><br>
+
+<label for="userAddr1"><b>우편번호</b></label><br>
+<input type="text" placeholder="우편번호를 입력해주세요." name="userAddr1" required id = "userAddr1"><br>
+
+<label for="userAddr2"><b>도로명주소</b></label><br>
+<input type="text" placeholder="도로명 주소를 입력해주세요." name="userAddr2" required id = "userAddr2"><br>
+
+<label for="userAddr3"><b>나머지주소</b></label><br>
+<input type="text" placeholder="나머지주소를 입력해주세요." name="userAddr3" required id = "userAddr3"><br>
+   
+   
+   
    
 
     <div class="clearfix">
-      <button type="button" class="cancelbtn">Cancel</button>
+      <button type="button" class="cancelbtn" id = "cancel_btn">Cancel</button>
       <button type="submit" class="signupbtn">Sign Up</button>
     </div>
-  </div>
+<script>
+             $("#cancel_btn").click(function(){
+              history.back();
+          
+             });   
+</script>
+	</div>
+      
+ 
 </form>
 
-
+</div>
 
 </body>
 </html>
