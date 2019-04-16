@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 
 <style>
+
+
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box}
 
@@ -80,6 +82,7 @@ button:hover {
 
 </head>
 <body>
+
 <!-- create table tbl_member(
 userId varchar2(50) primary key,
 userPass varchar2(100) not null,
@@ -126,6 +129,7 @@ verify number default 0
     </div>
   </div>
 </form>
+
 
 
 </body>

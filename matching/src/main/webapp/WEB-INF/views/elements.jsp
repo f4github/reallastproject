@@ -13,7 +13,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>The Palatin - Hotel &amp; Resort Template</title>
+    <title>AIO TRIP</title>
 
     <!-- Favicon -->
     <link rel="icon" href="resources/img/core-img/favicon.ico" type="text/css">
@@ -67,10 +67,21 @@
                                     <li><a href="contact">My Pages</a></li>
                                 </ul>
 
+								<c:if test="${loginInfo==null }">
                                 <!-- Button -->
                                 <div class="menu-btn">
-                                    <a href="#" class="btn palatin-btn">Make a Reservation</a>
+                                    <a href="login" class="btn palatin-btn">L O G I N </a>
                                 </div>
+								</c:if>
+								
+								<c:if test="${loginInfo!=null }">
+                                <!-- Button -->
+                                
+                                <div class="menu-btn">
+                                	${loginInfo.getUserName() }
+                                    <a href="logout" class="btn palatin-btn">logout </a>
+                                </div>
+								</c:if>
 
                             </div>
                             <!-- Nav End -->
