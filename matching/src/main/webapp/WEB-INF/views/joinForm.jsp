@@ -7,7 +7,10 @@
 <title>Insert title here</title>
 <script src="resources/jquery/jquery-3.3.1.min.js"></script>
 <style>
+body  {
+  background-image: url("resources/login/images/bgimg1.jpg");
 
+}
 html, body {
     width: 100%;
     height: 100%;
@@ -95,7 +98,7 @@ button:hover {
 
 </head>
 <body class="centered-wrapper">
-<div class="centered-content">
+<div class="centered-content"  style="background-color:white;">
 
 <!-- create table tbl_member(
 userId varchar2(50) primary key,
@@ -115,7 +118,7 @@ verify number default 0
     <hr>
 
  
-   
+
    
 <label for="userId"><b>ID</b></label><br>
 <input type="text" placeholder="ID를 입력해주세요." name="userId" required id = "userId"><br>
@@ -146,13 +149,13 @@ verify number default 0
       <button type="button" class="cancelbtn" id = "cancel_btn">Cancel</button>
       <button type="submit" class="signupbtn">Sign Up</button>
     </div>
-             <script>
+<script>
              $("#cancel_btn").click(function(){
               history.back();
           
              });   
-      </script>
-</div>
+</script>
+	</div>
       
  
 </form>
