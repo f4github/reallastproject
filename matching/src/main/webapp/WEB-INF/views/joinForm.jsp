@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-
+<script src="resources/jquery/jquery-3.3.1.min.js"></script>
 <style>
 
 html, body {
@@ -143,10 +143,18 @@ verify number default 0
    
 
     <div class="clearfix">
-      <button type="button" class="cancelbtn">Cancel</button>
+      <button type="button" class="cancelbtn" id = "cancel_btn">Cancel</button>
       <button type="submit" class="signupbtn">Sign Up</button>
     </div>
-  </div>
+             <script>
+             $("#cancel_btn").click(function(){
+              history.back();
+          
+             });   
+      </script>
+</div>
+      
+ 
 </form>
 
 </div>
