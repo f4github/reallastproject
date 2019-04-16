@@ -172,7 +172,7 @@ font-family: 'Jeju Gothic', sans-serif;
                 <nav role="navigation">
                   <ul class="pagination custom-pagination pagination-lg">
                     <li class="page-item active">
-                      <a class="page-link" href="./?keyword=${keyword}&pageNo=1">1</a>
+                      <a class="page-link" href="tihome/?keyword=${keyword}&pageNo=1">1</a>
                     </li>
                     <li class="page-item active ">
                       <a class="page-link " href="./?keyword=${keyword}&pageNo=2">2</a>
