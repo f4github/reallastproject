@@ -20,6 +20,8 @@
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="resources/style.css" type="text/css">
+    
+    <script src="resources/jquery/jquery-3.3.1.min.js"></script>
 
 </head>
 
@@ -60,7 +62,7 @@
                             <div class="classynav">
                                 <ul>
                                     <li class="active"><a href="./">Home</a></li>
-                                    <li><a href="tihome">여행지 소개</a></li>
+                                    <li><a href="about-us">여행지 소개</a></li>
                                     <li><a href="blog">Trip aKiNaTor</a></li>
                                     <li><a href="trash">같이가요오</a></li>
                                     <li><a href="mall">중고장터</a></li>
@@ -91,29 +93,108 @@
     <!-- ##### Breadcumb Area End ##### -->
 
   
-	<div id = "root">
-		<header id = "header">
-			<div id = "header_box">
-				<%@include file = "jaehyeon/include/header.jsp" %>
-			</div>
-		</header>
+<div id = "root">
+	<header id = "header">
+		<div id = "header_box">
+			<%@include file = "jaehyeon/include/header.jsp" %>
+		</div>
+	</header>
 	
-		<nav id = "nav">
-			<div id = "nav_box">
+		<div id = "container_box">
+			
+			<nav id = "nav">
+				<div id = "nav_box">
 				<%@include file = "jaehyeon/include/nav.jsp" %>
-			</div>
-		</nav>
+				</div>
+			</nav>
+	
+	<div class="Mainview"><!-- 테이블 있는 중앙 컨테이너 -->
 		
-		<section id = "container">
-			<div id = "container_box">
-				본문영역
-			</div>
-		</section>
+		<div class="aside_side">
+			
+			<aside id="aside">
+			<%@ include file="jaehyeon/include/aside.jsp" %>
+			</aside>
+		</div>
 		
-				<aside id="aside">
-					<%@ include file="jaehyeon/include/aside.jsp" %>
-				</aside>
 		
+		<div class="content">
+		<c:if test="${usedList2.size() == 0}">
+		출력할 게시글이 없습니다.
+		</c:if>
+			<table>
+<!-- 			
+				<thead>
+					<tr>
+						<th>번호</th>
+						<td>상품</td>
+						<th>이름</th>
+						<th>카테고리</th>
+						<th>가격</th>
+						<th>수량</th>
+						<th>등록날짜</th>
+					</tr>
+				</thead> 
+
+				<tbody>
+					<c:forEach items="${usedList }" var = "usedList">
+					<tr>
+						<td>${usedList.gdsNum }</td>
+						<td><img src="image/${usedList.gdsSavedfile }" width=50 height=50></td>
+						<td><a href="usedView?gdsNum=${usedList.gdsNum}">${usedList.gdsName }</a></td>
+						<td>${usedList.cateCode }</td>
+						<td>
+							<fmt:formatNumber value="${usedList.gdsPrice }" pattern="###,###,###"/>
+						</td>
+						<td>${usedList.gdsStock }</td>
+						<td>${usedList.gdsDate }</td>
+					</tr>
+					</c:forEach>
+				</tbody>
+ -->
+ 			<c:if test="${usedList2.size() != 0}">
+ 			<c:forEach begin="0" end="${usedList2.size()-1 }" var="i" step="4">
+	 			<tr>
+	 			<c:forEach begin="${i}" end="${i+3}" var="j" >
+	 			<c:if test="${j < usedList2.size()}">
+	 			<td>
+	 				<a href="usedView?gdsNum=${usedList2[j].gdsNum}">
+	 				<img src="image/${usedList2[j].gdsSavedfile }" width=200 height=200>
+	 				</a>
+	 			</td>
+	 			</c:if>
+	 			</c:forEach>
+	 			</tr>
+	 			<tr>
+	 			<c:forEach begin="${i}" end="${i+3}" var="j">
+	 			<c:if test="${j < usedList2.size()}">
+	 			<td>
+	 				${usedList2[j].gdsName }
+	 			</td>
+	 			</c:if>
+	 			</c:forEach>
+	 			</tr>
+ 			</c:forEach>
+				</table>
+				</c:if>
+				<br>
+				<br>
+				<br>
+		</div><!--  테이블 div끝 -->
+		
+		
+		
+		</div>
+		
+		
+		
+	</div><!-- 메인뷰 끝 -->
+</div>
+
+
+
+
+
 		
 	
 	  

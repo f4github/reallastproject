@@ -75,9 +75,11 @@ function output(ar){
 		
 		str+= '<td class = "tdName"> ID :' + item.userId + '</td>';
 		str+= '<td class = "tdTdxt"> &nbsp &nbsp내용 :' + item.repCon + '</td>';
+		/* str+='<c:if test = "${loginId == item.userId }"'; */
 		str+='<td>';
 		str+= '<input type ="button" value = "삭제" class = "buttonDel" datanum = ' + item.repNum + '>';
 		str+='</td>';
+		/* str+= '</c:if>'; */
 		str+='<td>'
 		str += '<input type="button" value="수정" class="buttonEdt" datanum = ' + item.repNum + ' dataName = ' + item.repCon + '>';
 		str += '</td>';
@@ -231,44 +233,7 @@ function edt(){
 	<section id = "container">
 		<div id = "container_box">
 			<h2>상품정보</h2>
-			<%-- ${usedView.gdsName }
-			<div class = "inputArea">
-			<label for = "gdsImg">이미지</label>
-			<p>원본이미지</p>
-			<td><img src="image/${usedView.gdsSavedfile }" width = 350 height = 350></td>
 			
-			
-						<table border = "1">
-				<tr>
-					<td>
-						<img src="image/${usedView.gdsSavedfile }" width = 340 height = 300>
-					</td>
-					<td>
-						<table border="1" style="height : 300px; width : 400px;>
-							<tr align="center">
-								<td>상품명</td>
-								<td>${usedView.gdsName }</td>
-							</tr>
-							<tr>
-								<td>가격</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>ㅋㅋ</td>
-								<td>ㅋㅋ</td>
-							</tr>
-							<tr>
-								<td colspan = "2">
-								상품설명
-								</td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-			</table>
-			
-			</div>
-			 --%>
 			 
 			 
 			<form role="form" method="post">
