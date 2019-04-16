@@ -61,7 +61,7 @@
                                 <ul>
                                       
                                     <li class="active"><a href="./">Home</a></li>
-                                    <li><a href="about-us">여행지 소개</a></li>
+                                    <li><a href="tihome">여행지 소개</a></li>
                                     <li><a href="blog">Trip aKiNaTor</a></li>
                                     <li><a href="trash">같이가요오</a></li>
                                     <li><a href="mall">중고장터</a></li>
