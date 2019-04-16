@@ -177,6 +177,9 @@
  			</c:forEach>
 				</table>
 				</c:if>
+				<br>
+				<br>
+				<br>
 		</div><!--  테이블 div끝 -->
 		
 		

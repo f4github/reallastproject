@@ -1,97 +1,45 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<script src="resources/jquery/jquery-3.3.1.min.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "resources/goods/css/goods.css">
+<script>
+function check_submit()
+{
+ var category1 = $('#category1').val();
+ var category2 = $('#category2').val();
+ var gdsName = ${'#gdsName'}.val();
+ 
+ if(category1 ==""){
+ alert("분류를 선택하여 주세요.");
+ category1.focus(); 
+ return false;
+ }
+ 
+ if(category2 ==""){
+	 alert("분류를 선택하여 주세요.");
+	 category2.focus(); 
+	 return false; 
+ }
+ 
+ if(gdsName==""){
+	 alert("제목을 입력해 주세요.");
+	 gdsName.focus();
+	 return false;
+ }
+ return true;
+}
+</script>
 
-    <!-- Title -->
-    <title>AIO TRIP</title>
 
-    <!-- Favicon -->
-    <link rel="icon" href="resources/img/core-img/favicon.ico">
 
-    <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="resources/style.css" type="text/css">
-	<link rel = "stylesheet" href = "resources/goods/css/goods.css">
-	
-	<script src="resources/jquery/jquery-3.3.1.min.js"></script>
 </head>
-
 <body>
-    <!-- Preloader -->
-    <div class="preloader d-flex align-items-center justify-content-center">
-        <div class="cssload-container">
-            <div class="cssload-loading"><i></i><i></i><i></i><i></i></div>
-        </div>
-    </div>
 
-    <!-- ##### Header Area Start ##### -->
-    <header class="header-area">
-        <!-- Navbar Area -->
-        <div class="palatin-main-menu">
-            <div class="classy-nav-container breakpoint-off">
-                <div class="container">
-                    <!-- Menu -->
-                    <nav class="classy-navbar justify-content-between" id="palatinNav">
-
-                        <!-- Nav brand -->
-                        <a href="./" class="nav-brand"><img src="resources/img/core-img/logo.png" alt=""></a>
-
-                        <!-- Navbar Toggler -->
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
-
-                        <!-- Menu -->
-                        <div class="classy-menu">
-
-                            <!-- close btn -->
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
-
-                            <!-- Nav Start -->
-                            <div class="classynav">
-                                <ul>
-                                    <li class="active"><a href="./">Home</a></li>
-                                    <li><a href="about-us">여행지 소개</a></li>
-                                    <li><a href="blog">Trip aKiNaTor</a></li>
-                                    <li><a href="trash">같이가요오</a></li>
-                                    <li><a href="mall">중고장터</a></li>
-                                    <li><a href="contact">My Pages</a></li>
-                                </ul>
-
-                                <!-- Button -->
-                                <div class="menu-btn">
-                                    <a href="#" class="btn palatin-btn">Make a Reservation</a>
-                                </div>
-
-                            </div>
-                            <!-- Nav End -->
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- ##### Header Area End ##### -->
-
-    <!-- ##### Breadcumb Area Start ##### -->
-    <section class="breadcumb-area bg-img d-flex align-items-center justify-content-center" style="background-image: url(resources/img/bg-img/bg-5.jpg);">
-        <div class="bradcumbContent">
-            <h2>중고나라</h2>
-        </div>
-    </section>
-    <!-- ##### Breadcumb Area End ##### -->
-
-  
 <div id = "root">
 	<header id = "header">
 		<div id = "header_box">
@@ -288,20 +236,5 @@ $(document).on("change", "select.category1", function(){
 	
 });
 </script>
-
-    <!-- ##### Footer Area End ##### -->
-
-    <!-- ##### All Javascript Script ##### -->
-    <!-- jQuery-2.2.4 js -->
-    <script src="resources/js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="resources/js/bootstrap/popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="resources/js/bootstrap/bootstrap.min.js"></script>
-    <!-- All Plugins js -->
-    <script src="resources/js/plugins/plugins.js"></script>
-    <!-- Active js -->
-    <script src="resources/js/active.js"></script>
 </body>
-
 </html>

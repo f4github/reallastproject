@@ -3,23 +3,26 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-
- <!-- Favicon -->
+<!-- Favicon -->
     <link rel="icon" href="resources/img/core-img/favicon.ico">
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="resources/style.css" type="text/css">
-	<link rel = "stylesheet" href = "resources/goods/css/goods.css">
+    
+    <link rel = "stylesheet" href = "resources/goods/css/goods.css">
 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
 <script src="resources/jquery/jquery-3.3.1.min.js"></script>
 </head>
 <body>
-
-
-<!-- Preloader -->
+ <!-- Preloader -->
     <div class="preloader d-flex align-items-center justify-content-center">
         <div class="cssload-container">
             <div class="cssload-loading"><i></i><i></i><i></i><i></i></div>
@@ -76,17 +79,9 @@
         </div>
     </header>
     <!-- ##### Header Area End ##### -->
-
-    <!-- ##### Breadcumb Area Start ##### -->
-    <section class="breadcumb-area bg-img d-flex align-items-center justify-content-center" style="background-image: url(resources/img/bg-img/bg-5.jpg);">
-        <div class="bradcumbContent">
-            <h2>중고나라</h2>
-        </div>
-    </section>
-    <!-- ##### Breadcumb Area End ##### -->
-
-  
-<div id = "root">
+    
+    
+    <div id = "root">
 	<header id = "header">
 		<div id = "header_box">
 			<%@include file = "../include/header.jsp" %>
@@ -282,7 +277,7 @@ $(document).on("change", "select.category1", function(){
 	
 });
 </script>
-
+    
     <!-- ##### Footer Area End ##### -->
 
     <!-- ##### All Javascript Script ##### -->
@@ -296,9 +291,5 @@ $(document).on("change", "select.category1", function(){
     <script src="resources/js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="resources/js/active.js"></script>
-
-
-
-
 </body>
 </html>
