@@ -58,7 +58,7 @@ font-family: 'Jeju Gothic', sans-serif;
                   <div class="row full-height align-items-center">
                     <div class="col-md-6">
                       <ul class="list-unstyled menu">
-                        <li class="active"><a href="./">Home</a></li>
+                        <li class="active"><a href="tihome">Home</a></li>
                         <li><a href="Travel_intro1?contentTypeId=32">Accommodations</a></li>
                         <li><a href="Travel_intro1?contentTypeId=15">Festivities</a></li>
                         <li><a href="#">Travel Course</a></li>
@@ -117,17 +117,17 @@ font-family: 'Jeju Gothic', sans-serif;
           
 			<h2 class="heading">
 			
-<a class="hangul" href="Travel_intro2?areacode=${areacode}&contentTypeId=${contentTypeId}&arrange=A">제목순</a>
+<a class="hangul" href="tihome?keyword=${keyword}&arrange=A">제목순</a>
 &emsp;
-<a class="hangul" href="Travel_intro2?areacode=${areacode}&contentTypeId=${contentTypeId}&arrange=B">조회순</a>
+<a class="hangul" href="tihome?keyword=${keyword}&arrange=B">조회순</a>
 &emsp;
-<a class="hangul" href="Travel_intro2?areacode=${areacode}&contentTypeId=${contentTypeId}&arrange=C">수정일순</a>
+<a class="hangul" href="tihome?keyword=${keyword}&arrange=C">수정일순</a>
 &emsp;
-<a class="hangul" href="Travel_intro2?areacode=${areacode}&contentTypeId=${contentTypeId}&arrange=D">생성일순</a>
+<a class="hangul" href="tihome?keyword=${keyword}&arrange=D">생성일순</a>
 &emsp;
-<a class="hangul" href="Travel_intro2?areacode=${areacode}&contentTypeId=${contentTypeId}&arrange=">댓글순</a>
+<a class="hangul" href="tihome?keyword=${keyword}&arrange=">댓글순</a>
 &emsp;
-<a class="hangul" href="Travel_intro2?areacode=${areacode}&contentTypeId=${contentTypeId}&arrange=">좋아요순</a>
+<a class="hangul" href="tihome?keyword=${keyword}&arrange=">좋아요순</a>
 			
 			</h2>
              
@@ -172,13 +172,13 @@ font-family: 'Jeju Gothic', sans-serif;
                 <nav role="navigation">
                   <ul class="pagination custom-pagination pagination-lg">
                     <li class="page-item active">
-                      <a class="page-link" href="tihome/?keyword=${keyword}&pageNo=1">1</a>
+                      <a class="page-link" href="stihome?keyword=${keyword}&pageNo=1">1</a>
                     </li>
                     <li class="page-item active ">
-                      <a class="page-link " href="./?keyword=${keyword}&pageNo=2">2</a>
+                      <a class="page-link " href="tihome?keyword=${keyword}&pageNo=2">2</a>
                     </li>
                     <li class="page-item active ">
-                      <a class="page-link" href="./?keyword=${keyword}&pageNo=3">3</a>
+                      <a class="page-link " href="tihome?keyword=${keyword}&pageNo=3">3</a>
                     </li>
                   </ul>
                 </nav>

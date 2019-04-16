@@ -61,7 +61,7 @@ font-family: 'Jeju Gothic', sans-serif;
                   <div class="row full-height align-items-center">
                     <div class="col-md-6">
                       <ul class="list-unstyled menu">
-                        <li class="active"><a href="./">Home</a></li>
+                        <li class="active"><a href="tihome">Home</a></li>
                         <li><a href="Travel_intro1?contentTypeId=32">Accommodations</a></li>
                         <li><a href="Travel_intro1?contentTypeId=15">Festivities</a></li>
                         <li><a href="#">Travel Course</a></li>
@@ -135,7 +135,6 @@ font-family: 'Jeju Gothic', sans-serif;
           
             <div class="home-slider major-caousel owl-carousel mb-5" data-aos="fade-up" data-aos-delay="200">
 
-            <c:if test="${check == ok}">
             
 				<c:forEach var="value" items="${list2}">
 					<div class="slider-item">
@@ -144,7 +143,7 @@ font-family: 'Jeju Gothic', sans-serif;
 				</c:forEach>
 				
 			
-            </c:if>
+
    <%--          
             <c:if test="${check != ok}">
 					<div class="slider-item">

@@ -61,7 +61,7 @@
                   <div class="row full-height align-items-center">
                     <div class="col-md-6">
                       <ul class="list-unstyled menu">
-                        <li class="active"><a href="./">Home</a></li>
+                        <li class="active"><a href="tihome">Home</a></li>
                         <li><a href="Travel_intro1?contentTypeId=32">Accommodations</a></li>
                         <li><a href="Travel_intro1?contentTypeId=15">Festivities</a></li>
                         <li><a href="#">Travel Course</a></li>
