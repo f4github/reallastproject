@@ -6,13 +6,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="resources/include/css/include.css" />
+
+
+<style type="text/css">
+
+</style>
+
 </head>
 <body>
 
 <h3>카테고리</h3>
 
 <ul>
-	<li><a href = "">남성옷</a><!-- usedCategory?c=100&l=1 -->
+	<li>남성옷<!-- usedCategory?c=100&l=1 -->
 	
 	<ul class = "low">
 		<li><a href = "usedCategory?c=101&l=2">아우터</a></li>
@@ -23,7 +29,7 @@
 	</ul>
 	</li>
 	
-	<li><a href = "usedCategory?c=200&l=1">여성옷</a>
+	<li>여성옷
 	
 		<ul class = "low">
 		<li><a href = "usedCategory?c=201&l=2">아우터</a></li>
@@ -34,7 +40,7 @@
 	</ul>
 	</li>
 	
-	<li><a href = "usedCategory?c=300&l=1">신발</a>
+	<li>신발
 	
 	<ul class = "low">
 	<li><a href="usedCategory?c=301&l=2">운동화</a></li>

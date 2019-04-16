@@ -9,6 +9,13 @@
 <link rel = "stylesheet" href = "resources/goods/css/goods.css">
 
 <script src="resources/jquery/jquery-3.3.1.min.js"></script>
+<style>
+.select_img img{
+width:500px;
+margin:20px 0;
+}
+</style>
+
 </head>
 <body>
 
@@ -30,7 +37,7 @@
 			<h2>글 수정</h2>
 			
 			<form action="usedModify" method = "post" enctype="multipart/form-data">
-			
+			<input type = "hidden" id = "gdsNum" name = "gdsNum" value = ${modifyInfo.gdsNum }>
 			<label>1차 분류</label>
 			<select class = "category1">
 				<option value="">전체</option>
@@ -103,7 +110,11 @@
 			<div class = "inputArea">
 				<label for = "gdsImg">이미지</label>
 				<input type="file" id = "gdsImg" name = "upload">
-				<div class = "select_img"><img src=""></div>
+				<div class = "select_img">
+				<img src="image/${modifyInfo.gdsSavedfile }">
+				<input type = "hidden" name = "gdsSavedfile" value = "${modifyInfo.gdsSavedfile }">
+				
+				</div>
 				
 				
 				<script>

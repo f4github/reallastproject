@@ -72,20 +72,18 @@ function output(ar){
 	
 	$.each(ar, function(key, item){
 		str+= '<tr>';
-		
 		str+= '<td class = "tdName"> ID :' + item.userId + '</td>';
 		str+= '<td class = "tdTdxt"> &nbsp &nbsp내용 :' + item.repCon + '</td>';
-		/* str+='<c:if test = "${loginId == item.userId }"'; */
 		str+='<td>';
 		str+= '<input type ="button" value = "삭제" class = "buttonDel" datanum = ' + item.repNum + '>';
+		str+= '<input type ="hidden" id = "repId" value = ' + item.userId + '>';
 		str+='</td>';
-		/* str+= '</c:if>'; */
 		str+='<td>'
 		str += '<input type="button" value="수정" class="buttonEdt" datanum = ' + item.repNum + ' dataName = ' + item.repCon + '>';
 		str += '</td>';
 		str += '</tr>';
 		str += '<tr><td colspan=4><div id="editDiv' + item.gdsNum + '"/></td></tr>';
-
+		
 	});
 	str +='</table>';
 	
@@ -98,20 +96,36 @@ function output(ar){
 function commentDel(){
 	//삭제 버튼 누르면 오는 곳
 	//현재 이벤트를 발생시킨 것을 this라고 가르킬 수 있음. 사용자정의속성을 마음대로 붙이는 것. 여기서는 datanum.
+	var userId = $('#repId').val();
 	var repNum = $(this).attr('datanum');
+	
+	var deleteConfirm = confirm('정말로 삭제하시겠습니까?');
+	
+	if(deleteConfirm){
 	$.ajax({
 		url: 'deleteReply',
 		type: 'post',
-		data: {repNum : repNum},
-		success: function(){
+		data: {repNum : repNum, userId : userId},
+		success: function(result){
+			
+			if(result == 1){
 			alert('삭제성공');
 			replyList();
+			}
+			else{
+				/* alert(result); */
+				alert('작성자만 삭제할 수 있습니다.')
+			}
+			
+			
 		},
 		error: function(){
 			alert('실패');
 		}
-	})
-}
+	})	//ajax
+	
+	}
+}//function
 
 //리플 수정 시작
 function commentEdt(){
@@ -145,6 +159,15 @@ function edt(){
 	})
 }
 
+
+function deleteCheck(){
+	var deleteConfirm = confirm('정말로 삭제하시겠습니까?');
+	
+	if(deleteConfirm){
+		return true;
+	}
+	return false;
+}
 </script>
 
 </head>
@@ -304,7 +327,7 @@ function edt(){
 				</form>
 				</td>
 				<td>
-				<form action = "usedDelete" method = "post">
+				<form action = "usedDelete" method = "post" onsubmit = "return deleteCheck()">
 				<input type = "hidden" value = "${usedView.gdsNum }" name = "gdsNum">
 				<input type = "submit" value = "삭제">
 				</form>

@@ -19,12 +19,37 @@ public class GoodsVO {
 	private String gdsName, cateCode, gdsDes, gdsImg, gdsThumbImg, gdsOriginalfile, gdsSavedfile, userId;
 	private Date gdsDate;
 	
+	private String cateCodeRef, cateName;
+	
 	public GoodsVO() {
 		super();
 	}
 	
 	
 	
+
+	public GoodsVO(int gdsNum, int gdsPrice, int gdsStock, String gdsName, String cateCode, String gdsDes,
+			String gdsImg, String gdsThumbImg, String gdsOriginalfile, String gdsSavedfile, String userId, Date gdsDate,
+			String cateCodeRef, String cateName) {
+		super();
+		this.gdsNum = gdsNum;
+		this.gdsPrice = gdsPrice;
+		this.gdsStock = gdsStock;
+		this.gdsName = gdsName;
+		this.cateCode = cateCode;
+		this.gdsDes = gdsDes;
+		this.gdsImg = gdsImg;
+		this.gdsThumbImg = gdsThumbImg;
+		this.gdsOriginalfile = gdsOriginalfile;
+		this.gdsSavedfile = gdsSavedfile;
+		this.userId = userId;
+		this.gdsDate = gdsDate;
+		this.cateCodeRef = cateCodeRef;
+		this.cateName = cateName;
+	}
+
+
+
 
 	public GoodsVO(int gdsNum, int gdsPrice, int gdsStock, String gdsName, String cateCode, String gdsDes,
 			String gdsImg, String gdsThumbImg, String gdsOriginalfile, String gdsSavedfile, String userId,
@@ -97,6 +122,34 @@ public class GoodsVO {
 	
 	
 	
+
+	public String getCateCodeRef() {
+		return cateCodeRef;
+	}
+
+
+
+
+	public void setCateCodeRef(String cateCodeRef) {
+		this.cateCodeRef = cateCodeRef;
+	}
+
+
+
+
+	public String getCateName() {
+		return cateName;
+	}
+
+
+
+
+	public void setCateName(String cateName) {
+		this.cateName = cateName;
+	}
+
+
+
 
 	public String getUserId() {
 		return userId;
