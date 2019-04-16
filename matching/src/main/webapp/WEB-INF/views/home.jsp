@@ -108,9 +108,9 @@
                             <!-- Slide Content -->
                             <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
                                 <div class="line" data-animation="fadeInUp" data-delay="300ms"></div>
-                                <h2 data-animation="fadeInUp" data-delay="500ms">가장 아름다운 절경</h2>
-                                <p data-animation="fadeInUp" data-delay="700ms">한라산</p>
-                                <a href="#" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">여긴 뭘 적을까?</a>
+                                <h2 data-animation="fadeInUp" data-delay="500ms">아름다운 나라, 한국</h2>
+                                <p data-animation="fadeInUp" data-delay="700ms">대한민국 헌법 표제 및 제1조에 따라 공식 국호는 대한민국이며, 역본 및 정부령에 따라 정식 영문으로는 Republic of Korea라 한다.</p>
+                                <a href="tihome" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">여행지 소개</a>
                             </div>
                         </div>
                     </div>
@@ -127,9 +127,9 @@
                             <!-- Slide Content -->
                             <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
                                 <div class="line" data-animation="fadeInUp" data-delay="300ms"></div>
-                                <h2 data-animation="fadeInUp" data-delay="500ms">미쳐버린 한국여행</h2>
-                                <p data-animation="fadeInUp" data-delay="700ms">오졌다리 오졌다 지렸다리 지렸다</p>
-                                <a href="#" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">여기도 뭘 적을까 ?</a>
+                                <h2 data-animation="fadeInUp" data-delay="500ms">Trip Akinator</h2>
+                                <p data-animation="fadeInUp" data-delay="700ms">AIO Trip만의 기술을 체험해서 아무도 예상하지 못한 새로운 여행지로 떠나보세요! 대한민국 곳곳의 숨은 스팟들로 떠나세요 !</p>
+                                <a href="blog" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">T A 이 용 하 기</a>
                             </div>
                         </div>
                     </div>
@@ -146,9 +146,9 @@
                             <!-- Slide Content -->
                             <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
                                 <div class="line" data-animation="fadeInUp" data-delay="300ms"></div>
-                                <h2 data-animation="fadeInUp" data-delay="500ms">와따시노 유메와 진세오 타노시므코토데스</h2>
-                                <p data-animation="fadeInUp" data-delay="700ms">맑은 공기 다른 시야 </p>
-                                <a href="#" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">슈퍼비 오졌다</a>
+                                <h2 data-animation="fadeInUp" data-delay="500ms">여행물품 요기요!</h2>
+                                <p data-animation="fadeInUp" data-delay="700ms">구입부터 판매까지 ! 다른곳에서 물품 찾지 말고 AIO Trip에서 여행갈때 필요한 중고여행물품들을 판매하고 구입해보세요 ! </p>
+                                <a href="mall" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">AIO 중고나라 이용하기</a>
                             </div>
                         </div>
                     </div>
