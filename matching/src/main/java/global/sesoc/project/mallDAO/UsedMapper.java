@@ -1,11 +1,11 @@
-package global.sesoc.project.mall.DAO;
+package global.sesoc.project.mallDAO;
 
 import java.util.ArrayList;
 
-import global.sesoc.project.mall.VO.CartVO;
-import global.sesoc.project.mall.VO.CategoryVO;
-import global.sesoc.project.mall.VO.GoodsVO;
-import global.sesoc.project.mall.VO.ReplyVO;
+import global.sesoc.project.mallVO.CartVO;
+import global.sesoc.project.mallVO.CategoryVO;
+import global.sesoc.project.mallVO.GoodsVO;
+import global.sesoc.project.mallVO.ReplyVO;
 
 public interface UsedMapper {
 

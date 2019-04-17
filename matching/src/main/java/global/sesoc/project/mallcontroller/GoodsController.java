@@ -1,4 +1,4 @@
-package global.sesoc.project.mall.controller;
+package global.sesoc.project.mallcontroller;
 
 
 import java.io.File;
@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -21,11 +22,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import global.sesoc.project.mall.DAO.UsedDAO;
-import global.sesoc.project.mall.VO.CartVO;
-import global.sesoc.project.mall.VO.CategoryVO;
-import global.sesoc.project.mall.VO.GoodsVO;
-import global.sesoc.project.mall.VO.ReplyVO;
+import global.sesoc.project.mallDAO.UsedDAO;
+import global.sesoc.project.mallVO.CartVO;
+import global.sesoc.project.mallVO.CategoryVO;
+import global.sesoc.project.mallVO.GoodsVO;
+import global.sesoc.project.mallVO.ReplyVO;
 import global.sesoc.project.util.FileService;
 import global.sesoc.project.util.UploadFileUtils;
 import net.sf.json.JSONArray;
@@ -90,7 +91,7 @@ public class GoodsController {
 		
 		dao.register(vo);
 		
-		return"jaehyeon/goods/register2";
+		return"redirect:usedList";
 	}
 	
 	@RequestMapping(value = "usedList", method = RequestMethod.GET)
@@ -242,10 +243,23 @@ public class GoodsController {
 	
 	@ResponseBody
 	@RequestMapping(value="deleteReply", method=RequestMethod.POST, produces="application/json;charset=UTF-8")
-	public void delete(int repNum){
+	public int delete(int repNum, HttpSession session, String userId, ReplyVO vo){
 		
 		logger.debug("delete : {}",repNum);
-		dao.replyDelete(repNum);
+		logger.debug("delete vo : {}", vo);
+		logger.debug("delete UserId : {}",userId);
+		
+		int result = 0;
+		
+		String id = (String)session.getAttribute("loginId");
+		logger.debug("login Id : {}",id);
+		if(userId.equals(id)){
+			logger.debug("거쳐감");
+			result = 1;
+			dao.replyDelete(repNum);
+		}
+		
+		return result;
 		
 	}
 	
@@ -286,8 +300,15 @@ public class GoodsController {
 	}
 	
 	@RequestMapping(value = "usedModify", method = RequestMethod.POST)
-	public String usedModify(GoodsVO vo){
+	public String usedModify(GoodsVO vo, MultipartFile upload, HttpServletRequest req, Model model){
 		logger.debug("usedModify : {}",vo);
+		logger.debug("modify upload : {}",upload);
+		
+		if (upload != null && !upload.isEmpty()) {
+			String savedfile = FileService.saveFile(upload, uploadPath);
+			vo.setGdsOriginalfile(upload.getOriginalFilename());
+			vo.setGdsSavedfile(savedfile);
+		}
 		
 		int n = vo.getGdsNum();
 		

@@ -1,4 +1,4 @@
-package global.sesoc.project.mall.DAO;
+package global.sesoc.project.mallDAO;
 
 import java.awt.List;
 import java.util.ArrayList;
@@ -7,10 +7,11 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import global.sesoc.project.mall.VO.CartVO;
-import global.sesoc.project.mall.VO.CategoryVO;
-import global.sesoc.project.mall.VO.GoodsVO;
-import global.sesoc.project.mall.VO.ReplyVO;
+
+import global.sesoc.project.mallVO.CartVO;
+import global.sesoc.project.mallVO.CategoryVO;
+import global.sesoc.project.mallVO.GoodsVO;
+import global.sesoc.project.mallVO.ReplyVO;
 
 @Repository
 public class UsedDAO {

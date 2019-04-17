@@ -5,10 +5,10 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="global.sesoc.project.user.VO.LoginVO" alias="Member" />
-		<typeAlias type="global.sesoc.project.mall.VO.CategoryVO" alias="Category" />
-		<typeAlias type="global.sesoc.project.mall.VO.GoodsVO" alias="Goods" />
-		<typeAlias type="global.sesoc.project.mall.VO.CartVO" alias="Cart" />
-		<typeAlias type="global.sesoc.project.mall.VO.ReplyVO" alias="Reply" />
+		<typeAlias type="global.sesoc.project.mallVO.CategoryVO" alias="Category" />
+		<typeAlias type="global.sesoc.project.mallVO.GoodsVO" alias="Goods" />
+		<typeAlias type="global.sesoc.project.mallVO.CartVO" alias="Cart" />
+		<typeAlias type="global.sesoc.project.mallVO.ReplyVO" alias="Reply" />
 		
 		
 	</typeAliases>

@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- 회원정보 처리 SQL -->
-<mapper namespace="global.sesoc.project.mall.DAO.UsedMapper">
+<mapper namespace="global.sesoc.project.mallDAO.UsedMapper">
 
 <!-- category call -->
 <select id = "category" resultType = "Category">
@@ -140,7 +140,8 @@ values (tbl_cart_seq.nextval, #{userId}, #{gdsNum}, #{cartStock})
          cateCode = #{cateCode},
          gdsPrice = #{gdsPrice},
          gdsStock = #{gdsStock},
-         gdsDes = #{gdsDes}
+         gdsDes = #{gdsDes},
+         gdsSavedfile = #{gdsSavedfile}
      	where
      	 gdsNum = ${gdsNum} 
 	</update>

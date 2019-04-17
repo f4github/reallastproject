@@ -1,4 +1,4 @@
-package global.sesoc.project.mall.VO;
+package global.sesoc.project.mallVO;
 
 public class CategoryVO {
 	
