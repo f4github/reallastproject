@@ -129,7 +129,7 @@
                                 <div class="line" data-animation="fadeInUp" data-delay="300ms"></div>
                                 <h2 data-animation="fadeInUp" data-delay="500ms">Trip Akinator</h2>
                                 <p data-animation="fadeInUp" data-delay="700ms">AIO Trip만의 기술을 체험해서 아무도 예상하지 못한 새로운 여행지로 떠나보세요! 대한민국 곳곳의 숨은 스팟들로 떠나세요 !</p>
-                                <a href="blog" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">T A 이 용 하 기</a>
+                                <a href="TA_home" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">T A 이 용 하 기</a>
                             </div>
                         </div>
                     </div>

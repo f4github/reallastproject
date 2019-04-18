@@ -63,7 +63,7 @@
                                             <li><a href="about-us.jsp">About Us</a></li>
                                             <li><a href="services.jsp">Services</a></li>
                                             <li><a href="rooms.jsp">Rooms</a></li>
-                                            <li><a href="blog.jsp">News</a></li>
+                                            <li><a href="TA_home.jsp">News</a></li>
                                             <li><a href="contact.jsp">Contact</a></li>
                                             <li><a href="elements.jsp">Elements</a></li>
                                         </ul>
@@ -75,7 +75,7 @@
                                                 <li><a href="about-us.jsp">About Us</a></li>
                                                 <li><a href="services.jsp">Services</a></li>
                                                 <li><a href="rooms.jsp">Rooms</a></li>
-                                                <li><a href="blog.jsp">News</a></li>
+                                                <li><a href="TA_home.jsp">News</a></li>
                                                 <li><a href="contact.jsp">Contact</a></li>
                                                 <li><a href="elements.jsp">Elements</a></li>
                                             </ul>
@@ -84,7 +84,7 @@
                                                 <li><a href="about-us.jsp">About Us</a></li>
                                                 <li><a href="services.jsp">Services</a></li>
                                                 <li><a href="rooms.jsp">Rooms</a></li>
-                                                <li><a href="blog.jsp">News</a></li>
+                                                <li><a href="TA_home.jsp">News</a></li>
                                                 <li><a href="contact.jsp">Contact</a></li>
                                                 <li><a href="elements.jsp">Elements</a></li>
                                             </ul>
@@ -93,7 +93,7 @@
                                                 <li><a href="about-us.jsp">About Us</a></li>
                                                 <li><a href="services.jsp">Services</a></li>
                                                 <li><a href="rooms.jsp">Rooms</a></li>
-                                                <li><a href="blog.jsp">News</a></li>
+                                                <li><a href="TA_home.jsp">News</a></li>
                                                 <li><a href="contact.jsp">Contact</a></li>
                                                 <li><a href="elements.jsp">Elements</a></li>
                                             </ul>
@@ -102,7 +102,7 @@
                                                 <li><a href="about-us.jsp">About Us</a></li>
                                                 <li><a href="services.jsp">Services</a></li>
                                                 <li><a href="rooms.jsp">Rooms</a></li>
-                                                <li><a href="blog.jsp">News</a></li>
+                                                <li><a href="TA_home.jsp">News</a></li>
                                                 <li><a href="contact.jsp">Contact</a></li>
                                                 <li><a href="elements.jsp">Elements</a></li>
                                             </ul>
