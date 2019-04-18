@@ -1,9 +1,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
-    
-    <!DOCTYPE jsp>
-<jsp lang="en">
+
+<!DOCTYPE jsp>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -13,10 +13,10 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>AIO TRIP</title>
+    <title>지리는  AIO TRIP</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="resources/img/core-img/favicon.ico">
+    <link rel="icon" href="resources/img/core-img/favicon.ico" type="text/css">
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="resources/style.css" type="text/css">
@@ -58,15 +58,15 @@
 
                             <!-- Nav Start -->
                             <div class="classynav">
-                                  <ul>
-                                    <li class="active"><a href="./">Home</a></li>
+                                <ul>
+                                    <li class="active"><a href="home">Home</a></li>
                                     <li><a href="tihome">여행지 소개</a></li>
-                                    <li><a href="blog">Trip aKiNaTor</a></li>
+                                    <li><a href="TA_home">Trip aKiNaTor</a></li>
                                     <li><a href="trash">같이가요오</a></li>
                                     <li><a href="mall">중고장터</a></li>
                                     <li><a href="contact">My Pages</a></li>
+                                    <li>${loginInfo.userName}</li>
                                 </ul>
-
 								<c:if test="${loginInfo==null }">
                                 <!-- Button -->
                                 <div class="menu-btn">
@@ -82,7 +82,8 @@
                                     <a href="logout" class="btn palatin-btn">logout </a>
                                 </div>
 								</c:if>
-
+								
+								
                             </div>
                             <!-- Nav End -->
                         </div>
@@ -93,83 +94,72 @@
     </header>
     <!-- ##### Header Area End ##### -->
 
-    <!-- ##### Breadcumb Area Start ##### -->
-    <section class="breadcumb-area bg-img d-flex align-items-center justify-content-center" style="background-image: url(resources/img/bg-img/bg-8.jpg);">
-        <div class="bradcumbContent">
-            <h2>Contact</h2>
-        </div>
-    </section>
-    <!-- ##### Breadcumb Area End ##### -->
+    <!-- ##### Hero Area Start ##### -->
+    <section class="hero-area">
+        <div class="hero-slides owl-carousel">
 
-    <!-- ##### Book Now Area Start ##### -->
-    <div class="book-now-area">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-lg-10">
-                    <div class="book-now-form">
-                        <form action="#">
-                            <!-- Form Group -->
-                            <div class="form-group">
-                                <label for="select1">Check In</label>
-                                <select class="form-control" id="select1">
-                                  <option>19 June</option>
-                                  <option>20 June</option>
-                                  <option>21 June</option>
-                                  <option>22 June</option>
-                                  <option>23 June</option>
-                                  <option>24 June</option>
-                                  <option>25 June</option>
-                                </select>
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide d-flex align-items-center justify-content-center">
+                <!-- Slide Img -->
+                <div class="slide-img bg-img" style="background-image: url(resources/img/bg-img/bg-1.jpg);"></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-9">
+                            <!-- Slide Content -->
+                            <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
+                                <div class="line" data-animation="fadeInUp" data-delay="300ms"></div>
+                                <h2 data-animation="fadeInUp" data-delay="500ms">아름다운 나라, 한국</h2>
+                                <p data-animation="fadeInUp" data-delay="700ms">대한민국 헌법 표제 및 제1조에 따라 공식 국호는 대한민국이며, 역본 및 정부령에 따라 정식 영문으로는 Republic of Korea라 한다.</p>
+                                <a href="tihome" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">여행지 소개</a>
                             </div>
-
-                            <!-- Form Group -->
-                            <div class="form-group">
-                                <label for="select2">Check Out</label>
-                                <select class="form-control" id="select2">
-                                  <option>20 June</option>
-                                  <option>21 June</option>
-                                  <option>22 June</option>
-                                  <option>23 June</option>
-                                  <option>24 June</option>
-                                  <option>25 June</option>
-                                  <option>26 June</option>
-                                  <option>27 June</option>
-                                </select>
-                            </div>
-
-                            <!-- Form Group -->
-                            <div class="form-group">
-                                <label for="select3">Adults</label>
-                                <select class="form-control" id="select3">
-                                  <option>02</option>
-                                  <option>03</option>
-                                  <option>04</option>
-                                  <option>05</option>
-                                  <option>06</option>
-                                </select>
-                            </div>
-
-                            <!-- Form Group -->
-                            <div class="form-group">
-                                <label for="select4">Childrens</label>
-                                <select class="form-control" id="select4">
-                                  <option>01</option>
-                                  <option>02</option>
-                                  <option>03</option>
-                                  <option>04</option>
-                                  <option>05</option>
-                                </select>
-                            </div>
-
-                            <!-- Button -->
-                            <button type="submit">Book Now</button>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide d-flex align-items-center justify-content-center">
+                <!-- Slide Img -->
+                <div class="slide-img bg-img" style="background-image: url(resources/img/bg-img/bg-2.jpg);"></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-9">
+                            <!-- Slide Content -->
+                            <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
+                                <div class="line" data-animation="fadeInUp" data-delay="300ms"></div>
+                                <h2 data-animation="fadeInUp" data-delay="500ms">Trip Akinator</h2>
+                                <p data-animation="fadeInUp" data-delay="700ms">AIO Trip만의 기술을 체험해서 아무도 예상하지 못한 새로운 여행지로 떠나보세요! 대한민국 곳곳의 숨은 스팟들로 떠나세요 !</p>
+                                <a href="blog" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">T A 이 용 하 기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide d-flex align-items-center justify-content-center">
+                <!-- Slide Img -->
+                <div class="slide-img bg-img" style="background-image: url(resources/img/bg-img/bg-3.jpg);"></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-9">
+                            <!-- Slide Content -->
+                            <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
+                                <div class="line" data-animation="fadeInUp" data-delay="300ms"></div>
+                                <h2 data-animation="fadeInUp" data-delay="500ms">여행물품 요기요!</h2>
+                                <p data-animation="fadeInUp" data-delay="700ms">구입부터 판매까지 ! 다른곳에서 물품 찾지 말고 AIO Trip에서 여행갈때 필요한 중고여행물품들을 판매하고 구입해보세요 ! </p>
+                                <a href="mall" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">AIO 중고나라 이용하기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </div>
-    <!-- ##### Book Now Area End ##### -->
+    </section>
+    <!-- ##### Hero Area End ##### -->
+
+    
 
     <!-- ##### Contact Area Start ##### -->
     <section class="contact-information-area">
@@ -296,16 +286,7 @@
     </section>
     <!-- ##### Contact Form Area End ##### -->
 
-    <!-- ##### Google Maps ##### -->
-    <div class="map-area mb-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22236.40558254599!2d-118.25292394686001!3d34.057682914027104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2z4Kay4Ka4IOCmj-CmnuCnjeCmnOCnh-CmsuCnh-CmuCwg4KaV4KeN4Kav4Ka-4Kay4Ka_4Kar4KeL4Kaw4KeN4Kao4Ka_4Kav4Ka84Ka-LCDgpq7gpr7gprDgp43gppXgpr_gpqgg4Kav4KeB4KaV4KeN4Kak4Kaw4Ka-4Ka34KeN4Kaf4KeN4Kaw!5e0!3m2!1sbn!2sbd!4v1532328708137" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
+ 
 
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">
@@ -365,4 +346,4 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="resources/js/active.js"></script>
 </body>
 
-</jsp>
+</html>

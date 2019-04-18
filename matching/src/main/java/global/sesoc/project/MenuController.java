@@ -1,4 +1,4 @@
-package global.sesoc.project.user.controller;
+package global.sesoc.project;
 
 import java.util.ArrayList;
 
@@ -27,10 +27,15 @@ public class MenuController {
 		{
 			return "about-us";
 		}
-		@RequestMapping(value = "/blog", method = RequestMethod.GET)
+		@RequestMapping(value = "/TA_home", method = RequestMethod.GET)
 		public String Menu2()
 		{
-			return "blog";
+			return "TA/TA_home";
+		}
+		@RequestMapping(value = "/TA1", method = RequestMethod.GET)
+		public String TA1()
+		{
+			return "TA/TA1";
 		}
 		@RequestMapping(value = "/trash", method = RequestMethod.GET)
 		public String Menu3()
