@@ -40,39 +40,40 @@ a.ex4:hover, a.ex4:active {font-family: monospace;}
 
 
 </style>    
-    
+<script src="resources/ti/js/jquery-3.2.1.min.js"></script>
 <script>
 $(document).ready(function (){
-	$('#heart').on('click', heartadd);
-	$('#fn').on('click', fn);
+	$('#sjj').on('click', tigu);
+	
 });
 
-function fn(){
-	alert('성공');
-	//	location.href = 'https://www.youtube.com/watch?v=WPni755-Krg&t=1429s';
-}
-
-
-
-function heartadd(){
-	var title = ${vo.title};
-	var contentid = ${vo.contentid}; 
-	var contenttypeid = ${vo.contenttypeid}; 	
+function tigu(){
 	
-	alert(title);
+	var title = '${vo.title}';
+	var contentid = '${vo.contentid}'; 
+	var contenttypeid = '${vo.contenttypeid}'; 	
 	
 	$.ajax({
 		url: 'trip_like',
 		type: 'get',
 		data: {title : title, contentid : contentid, contenttypeid : contenttypeid},
-		success: function () { 
-			alert('좋아요 성공');
+		success: function (result) { 
+			if(result == 't'){
+				alert('좋아요 성공');
+			}
+			else{
+				alert('이미 좋아요 누르셨어요');
+			}
+//			$("#sjj").hide();
 			},
 		error: function (e) {
 			alert(JSON.stringify(e)); 
 			}
 	});
+	
+		//location.href = 'https://www.youtube.com/watch?v=WPni755-Krg&t=1429s';
 }
+
 
 
 
@@ -169,9 +170,10 @@ function heartadd(){
 			${vo.tel}<br>										
 			${vo.homepage}
 			
-			<input type="button" value="좋아요" id="fn">
+
+			<input type="button" value="좋아요" id="sjj">
 			
-	<!-- 		<i id="trip_like" class="fas fa-heart" style="font-size:24px;"></i> -->
+<!--  	 	<i id="asdf" class="fas fa-heart" style="font-size:24px;"></i>  -->
 			<br>
 
 			
@@ -306,11 +308,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
       </div>
     </footer>
     
-    <script src="resources/ti/js/jquery-3.2.1.min.js"></script>
+    <!-- <script src="resources/ti/js/jquery-3.2.1.min.js"></script> -->
     <script src="resources/ti/js/popper.min.js"></script>
     <script src="resources/ti/js/bootstrap.min.js"></script>
     <script src="resources/ti/js/owl.carousel.min.js"></script>
-    <!-- <script src="js/jquery.waypoints.min.js"></script> -->
+    <script src="js/jquery.waypoints.min.js"></script>
     <script src="resources/ti/js/aos.js"></script>
     <script src="resources/ti/js/main.js"></script>
     

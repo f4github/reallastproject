@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!-- SQL -->
+<mapper namespace="global.sesoc.project.ti.DAO.Travel_infoMapper">
+<!-- 
+	<insert id="insert" parameterType="t">
+		insert into Travel_info
+			(travelPlace, views, mapx, mapy, sigungucode, address, zipcode, firstimage, firstimage2)
+		values
+			(#{travelPlace}, #{views}, #{mapx}, #{mapy}, #{sigungucode}, #{address}, #{zipcode}, #{firstimage}, #{firstimage2})
+	</insert>
+ -->
+ 	<!-- 좋아요 -->
+	<insert id="trip_like" parameterType="trip_like">
+		insert into trip_like
+			(likenum, id, title, contentid, contenttypeid)
+		values
+			(likenum_seq.nextval, #{id}, #{title}, #{contentid}, #{contenttypeid})
+	</insert>
+	
+	<!-- 좋아요 중복체크 -->
+	<select id="trip_like_chek" parameterType="trip_like" resultType="trip_like">
+		select * from trip_like where id like #{id} and contentid like #{contentid}
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</mapper>

@@ -9,6 +9,8 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -476,15 +478,25 @@ public class Travel_intro {
 		
 		@ResponseBody
 		@RequestMapping(value="trip_like", method=RequestMethod.GET)
-		public void trip_like(String title, String contentid, String contenttypeid){
+		public String trip_like(String title, String contentid, String contenttypeid, HttpSession session){
+			String id = (String) session.getAttribute("loginId");
 			Trip_likeVO vo = new Trip_likeVO();
+			vo.setId(id);
 			vo.setTitle(title);
 			vo.setContentid(contentid);
 			vo.setContenttypeid(contenttypeid);
 			
 			logger.debug("넘어오는 vo: {}", vo);
 			
-			
+			Trip_likeVO check = null;
+			check = dao.trip_like_chek(vo);
+			if(check != null){				
+				return "f";
+			}
+			else{
+				dao.trip_like(vo);
+				return "t";
+			}						
 		}
 		
 		

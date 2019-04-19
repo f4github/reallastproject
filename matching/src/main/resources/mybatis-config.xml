@@ -9,11 +9,14 @@
 		<typeAlias type="global.sesoc.project.mallVO.GoodsVO" alias="Goods" />
 		<typeAlias type="global.sesoc.project.mallVO.CartVO" alias="Cart" />
 		<typeAlias type="global.sesoc.project.mallVO.ReplyVO" alias="Reply" />
+			
+		<typeAlias type="global.sesoc.project.ti.VO.Trip_likeVO" alias="trip_like" />
 		
 		
 	</typeAliases>
 	<mappers>
 	<mapper resource="loginMapper.xml" />
 	<mapper resource="usedMapper.xml" />
+	<mapper resource="travel_infoMapper.xml" />
 	</mappers>
 </configuration>
