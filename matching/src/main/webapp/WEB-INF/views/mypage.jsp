@@ -21,6 +21,20 @@
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="resources/style.css" type="text/css">
 
+
+	<style>
+	.rudfhcnrk{
+		color: blue;
+		float: right;
+		width: 100%
+
+	}
+
+	.col-12 col-lg-4{
+	width: 100%;
+	}
+	</style>
+
 </head>
 
 <body>
@@ -136,9 +150,9 @@
                         <div class="mypage-content d-flex">
                         
                         <c:forEach var="value" items="${tiList}">
-                       		<p>
+                       		<p class="akwls">
                        			<a href="#">${value.title}</a>
-                       			<span style="text-align: right;">경로에 추가</span>
+                       			<span class="rudfhcnrk">경로에 추가</span>
                        		</p> 
                         </c:forEach>    
                             
