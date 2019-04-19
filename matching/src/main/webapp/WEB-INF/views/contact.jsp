@@ -64,7 +64,7 @@
                                     <li><a href="TA_home">Trip aKiNaTor</a></li>
                                     <li><a href="trash">같이가요오</a></li>
                                     <li><a href="mall">중고장터</a></li>
-                                    <li><a href="mypage">My Pages</a></li>
+                                    <li><a href="contact">My Pages</a></li>
                                     <li>${loginInfo.userName}</li>
                                 </ul>
 								<c:if test="${loginInfo==null }">
@@ -161,109 +161,130 @@
 
     
 
-    <!-- ##### About Us Area Start ##### -->
-    <section class="about-us-area">
+    <!-- ##### Contact Area Start ##### -->
+    <section class="contact-information-area">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row">
 
-                <div class="col-12 col-lg-6">
-                    <div class="about-text text-center mb-100">
-                        <div class="section-heading text-center">
-                            <div class="line-"></div>
-                            <h2>Abouut AIO Trip</h2>
+                <!-- Single Contact Information -->
+                <div class="col-12 col-lg-4">
+                    <div class="single-contact-information mb-100">
+                        <div class="section-text">
+                            <h3>Ibiza</h3>
+                            <p>Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum.</p>
                         </div>
-                        <p>우리 사이트 소개 ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
-                        <div class="about-key-text">
-                            <h6><span class="fa fa-check"></span> Donec malesuada lorem maximus mauris sceleri</h6>
-                            <h6><span class="fa fa-check"></span> Malesuada lorem maximus mauris sceleri</h6>
+                        <!-- Single Contact Information -->
+                        <div class="contact-content d-flex">
+                            <p>Address</p>
+                            <p>1481 Creekside Lane <br>Avila Beach, CA 931</p>
                         </div>
-                        <a href="#" class="btn palatin-btn mt-50">Read More</a>
+                        <!-- Single Contact Information -->
+                        <div class="contact-content d-flex">
+                            <p>Phone</p>
+                            <p>+36 345 7953 4994</p>
+                        </div>
+                        <!-- Single Contact Information -->
+                        <div class="contact-content d-flex">
+                            <p>E-mail</p>
+                            <p>yourmail@gmail.com</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="col-12 col-lg-6">
-                    <div class="about-thumbnail homepage mb-100">
-                        <!-- First Img -->
-                        <div class="first-img wow fadeInUp" data-wow-delay="100ms">
-                            <img src="resources/img/bg-img/5.jpg" alt="">
+                <!-- Single Contact Information -->
+                <div class="col-12 col-lg-4">
+                    <div class="single-contact-information mb-100">
+                        <div class="section-text">
+                            <h3>Los Angeles</h3>
+                            <p>Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Integer tempus ligula sem.</p>
                         </div>
-                        <!-- Second Img -->
-                        <div class="second-img wow fadeInUp" data-wow-delay="300ms">
-                            <img src="resources/img/bg-img/6.jpg" alt="">
+                        <!-- Single Contact Information -->
+                        <div class="contact-content d-flex">
+                            <p>Address</p>
+                            <p>245 Principe Lane <br>Avila Beach, Spain</p>
                         </div>
-                        <!-- Third Img-->
-                        <div class="third-img wow fadeInUp" data-wow-delay="500ms">
-                            <img src="resources/img/bg-img/7.jpg" alt="">
+                        <!-- Single Contact Information -->
+                        <div class="contact-content d-flex">
+                            <p>Phone</p>
+                            <p>+36 345 7953 4994</p>
+                        </div>
+                        <!-- Single Contact Information -->
+                        <div class="contact-content d-flex">
+                            <p>E-mail</p>
+                            <p>yourmail@gmail.com</p>
                         </div>
                     </div>
                 </div>
+
+                <!-- Single Contact Information -->
+                <div class="col-12 col-lg-4">
+                    <div class="single-contact-information mb-100">
+                        <div class="section-text">
+                            <h3>Dubai</h3>
+                            <p>Fusce blandit consequat elit non egestas. Donec tortor odio, consectetur eu justo ut.</p>
+                        </div>
+                        <!-- Single Contact Information -->
+                        <div class="contact-content d-flex">
+                            <p>Address</p>
+                            <p>889 Creekside Lane <br>Avila Beach, Dubai</p>
+                        </div>
+                        <!-- Single Contact Information -->
+                        <div class="contact-content d-flex">
+                            <p>Phone</p>
+                            <p>+77 345 7953 2406</p>
+                        </div>
+                        <!-- Single Contact Information -->
+                        <div class="contact-content d-flex">
+                            <p>E-mail</p>
+                            <p>yourmail@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
-    <!-- ##### About Us Area End ##### -->
+    <!-- ##### Contact Area End ##### -->
 
-    <!-- ##### Pool Area Start ##### -->
-    <section class="pool-area section-padding-100 bg-img bg-fixed" style="background-image: url(resources/img/bg-img/4.png);">
+    <!-- ##### Contact Form Area Start ##### -->
+    <section class="contact-form-area mb-100">
         <div class="container">
-            <div class="row justify-content-end">
-                <div class="col-12 col-lg-7">
-                    <div class="pool-content text-center wow fadeInUp" data-wow-delay="300ms">
-                        <div class="section-heading text-center white">
-                            <div class="line-"></div>
-                            <h2>TA intro</h2>
-                            <p>TA 소개 ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum.</p>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-12 col-sm-4">
-                                <div class="pool-feature">
-                                    <i class="icon-cocktail-1"></i>
-                                    <p>Pool Beachbar</p>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-4">
-                                <div class="pool-feature">
-                                    <i class="icon-swimming-pool"></i>
-                                    <p>Infinity Pool</p>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-4">
-                                <div class="pool-feature">
-                                    <i class="icon-beach"></i>
-                                    <p>Sunbeds</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Button -->
-                        <a href="#" class="btn palatin-btn mt-50">Read More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ##### Pool Area End ##### -->
-
-    <!-- ##### Rooms Area Start ##### -->
-    <section class="rooms-area section-padding-100-0">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-lg-6">
-                    <div class="section-heading text-center">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading">
                         <div class="line-"></div>
-                        <h2>Enjoy your plans</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien.</p>
+                        <h2>Get in touch</h2>
                     </div>
                 </div>
             </div>
 
-            <div class="row justify-content-center">
-
-               
-
+            <div class="row">
+                <div class="col-12">
+                    <!-- Contact Form -->
+                    <form action="#" method="post">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" name="text" placeholder="Your Name">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="email" class="form-control" name="email" placeholder="E-mail">
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" name="subject" placeholder="Subject">
+                            </div>
+                            <div class="col-12">
+                                <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn palatin-btn mt-50">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
-    <!-- ##### Rooms Area End ##### -->
+    <!-- ##### Contact Form Area End ##### -->
 
  
 
