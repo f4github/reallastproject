@@ -1,5 +1,7 @@
 package global.sesoc.project.ti.DAO;
 
+import java.util.ArrayList;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -31,6 +33,13 @@ public class Travel_infoDAO {
 		Trip_likeVO check = mapper.trip_like_chek(vo);
 		
 		return check;
+	}
+	//좋아요 목록
+	public ArrayList<Trip_likeVO> getList(String id) {
+		Travel_infoMapper mapper = sqlSession.getMapper(Travel_infoMapper.class);
+		ArrayList<Trip_likeVO> list = mapper.getList(id);
+		
+		return list;
 	}
 
 }

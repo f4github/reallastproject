@@ -2,6 +2,8 @@ package global.sesoc.project;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import global.sesoc.project.mallDAO.UsedDAO;
 import global.sesoc.project.mallVO.GoodsVO;
+import global.sesoc.project.ti.DAO.Travel_infoDAO;
+import global.sesoc.project.ti.VO.Trip_likeVO;
 
 @Controller
 public class MenuController {
@@ -21,6 +25,8 @@ public class MenuController {
 	
 		@Autowired
 		UsedDAO dao;
+		@Autowired
+		Travel_infoDAO tidao;
 
 		@RequestMapping(value = "/about-us", method = RequestMethod.GET)
 		public String Menu1()
@@ -56,8 +62,20 @@ public class MenuController {
 			return "services";
 		}
 		@RequestMapping(value = "/mypage", method = RequestMethod.GET)
-		public String Menu5()
+		public String Menu5(HttpSession session, Model model)
 		{
+			String id = (String) session.getAttribute("loginId");
+			
+			//ti 찜 목록
+			ArrayList<Trip_likeVO> list = tidao.getList(id);
+			model.addAttribute("tiList", list);
+			
+			
+			
+			
+			
+			
+			
 			return "mypage";
 		}
 		

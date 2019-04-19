@@ -26,8 +26,10 @@
 		select * from trip_like where id like #{id} and contentid like #{contentid}
 	</select>
 	
-	
-	
+	<!-- 좋아요 리스트 -->
+	<select id="getList" parameterType="String" resultType="trip_like">
+		select * from trip_like where id like #{id}
+	</select>
 	
 	
 	

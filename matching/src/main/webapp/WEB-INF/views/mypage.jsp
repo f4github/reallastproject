@@ -129,21 +129,27 @@
                             <h3>MY 여행지  찜 목록</h3>
                             <p>Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum.</p>
                         </div>
+                        
+                        
+                        
                         <!-- Single mypage Information -->
                         <div class="mypage-content d-flex">
-                            <p>Address</p>
-                            <p>1481 Creekside Lane <br>Avila Beach, CA 931</p>
+                        
+                        <c:forEach var="value" items="${tiList}">
+                       		<p>
+                       			<a href="#">${value.title}</a>
+                       			<span style="text-align: right;">경로에 추가</span>
+                       		</p> 
+                        </c:forEach>    
+                            
+                            
+                            
+                            
                         </div>
-                        <!-- Single mypage Information -->
-                        <div class="mypage-content d-flex">
-                            <p>Phone</p>
-                            <p>+36 345 7953 4994</p>
-                        </div>
-                        <!-- Single mypage Information -->
-                        <div class="mypage-content d-flex">
-                            <p>E-mail</p>
-                            <p>yourmail@gmail.com</p>
-                        </div>
+
+
+
+
                     </div>
                 </div>
 
