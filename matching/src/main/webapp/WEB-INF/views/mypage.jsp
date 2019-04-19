@@ -148,14 +148,18 @@
                         
                         <!-- Single mypage Information -->
                         <div class="mypage-content d-flex">
+                        <c:if test="${tiList==null }">
+                        <div>리스트가 없습니다.</div>
+                        </c:if>
                         
+                        <c:if test="${tiList!=null }">
                         <c:forEach var="value" items="${tiList}">
                        		<p class="akwls">
                        			<a href="#">${value.title}</a>
                        			<span class="rudfhcnrk">경로에 추가</span>
                        		</p> 
                         </c:forEach>    
-                            
+                         </c:if>   
                             
                             
                             
