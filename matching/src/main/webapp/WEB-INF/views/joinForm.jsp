@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>AIO Trip Sign Up</title>
 <script src="resources/jquery/jquery-3.3.1.min.js"></script>
 
 <style>
@@ -96,23 +96,76 @@ button:hover {
 
 
 </style>
+<script>
+function formCheck()
+{
+	var id = document.getElementById("userId");
+	var pw = document.getElementById("userPass");
+	var name = document.getElementById("userName");
+	var phone = document.getElementById("userPhon");
+	var addr1 = document.getElementById("userAddr1");
+	var addr2 = document.getElementById("userAddr2");
+	var addr3 = document.getElementById("userAddr3");
+	
+	if (id.value.length < 3)
+	{
+		alert('ID를 세글자 이상 입력해주세요.');
+		id.focus();
+		id.select();
+		return false;
+	}
+	else if (pw.value.length < 3)
+	{
+		alert('패스워드를 세글자 이상 입력해주세요.');
+		pw.focus();
+		pw.select();
+		return false;
+	}
+	
+	else if (name.value.length == 0)
+	{
+		alert('이름을 입력해주세요.');
+		name.focus();
+		name.select();
+		return false;
+	}
+	else if (phone.value.length < 10)
+	{
+		alert('핸드폰번호를 입력해주세요. ex)01012345678');
+		phone.focus();
+		phone.select();
+		return false;
+	}
+	else if (addr1.value.length < 1)
+	{
+		alert('우편번호를 입력해주세요.');
+		addr1.focus();
+		addr1.select();
+		return false;
+	}
+	else if (addr2.value.length < 1)
+	{
+		alert('도로명주소를 입력해주세요.');
+		addr2.focus();
+		addr2.select();
+		return false;
+	}
+	else if (addr3.value.length < 1)
+	{
+		alert('나머지주소를 입력해주세요.');
+		addr3.focus();
+		addr3.select();
+		return false;
+	}
+	return true;
+}
 
+</script>
 </head>
 <body class="centered-wrapper">
 <div class="centered-content"  style="background-color:white;">
 
-<!-- create table tbl_member(
-userId varchar2(50) primary key,
-userPass varchar2(100) not null,
-userName varchar2(30) not null,
-userPhon varchar2(20) not null,
-userAddr1 varchar2(20) not null,
-userAddr2 varchar2(50) not null,
-userAddr3 varchar2(50) not null,
-regidate date default sysdate,
-verify number default 0
-); -->
-<form action="join" style="border:1px solid #ccc" method = "post">
+<form action="join" style="border:1px solid #ccc" method = "post" onsubmit = "return formCheck();">
   <div class="container">
     <h1>Sign Up</h1>
     <hr>
@@ -130,10 +183,10 @@ verify number default 0
 <input type="text" placeholder="전화번호를 입력해주세요." name="userPhon" required id = "userPhon"><br>
 
 <label for="userAddr"><b>우편번호</b></label><br>
-<input type="text" id="sample6_postcode" name="userAddr1" placeholder="우편번호">
+<input type="text" id="userAddr1" name="userAddr1" placeholder="우편번호">
 <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-<input type="text" id="sample6_address" name="userAddr2" placeholder="주소"><br>
-<input type="text" id="sample6_detailAddress" name="userAddr3" placeholder="나머지주소">
+<input type="text" id="userAddr2" name="userAddr2" placeholder="주소"><br>
+<input type="text" id="userAddr3" name="userAddr3" placeholder="나머지주소">
 
     <div class="clearfix">
       <button type="button" class="cancelbtn" id = "cancel_btn">Cancel</button>
