@@ -64,7 +64,7 @@
                                     <li><a href="TA_home">Trip aKiNaTor</a></li>
                                     <li><a href="trash">같이가요오</a></li>
                                     <li><a href="mall">중고장터</a></li>
-                                    <li><a href="contact">My Pages</a></li>
+                                    <li><a href="mypage">My Pages</a></li>
                                     <li>${loginInfo.userName}</li>
                                 </ul>
 								<c:if test="${loginInfo==null }">
@@ -117,80 +117,80 @@
 
     
 <br><br><br><br><br>
-    <!-- ##### Contact Area Start ##### -->
-    <section class="contact-information-area">
+    <!-- ##### mypage Area Start ##### -->
+    <section class="mypage-information-area">
         <div class="container">
             <div class="row">
 
-                <!-- Single Contact Information -->
+                <!-- Single mypage Information -->
                 <div class="col-12 col-lg-4">
-                    <div class="single-contact-information mb-100">
+                    <div class="single-mypage-information mb-100">
                         <div class="section-text">
                             <h3>MY 여행지  찜 목록</h3>
                             <p>Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum.</p>
                         </div>
-                        <!-- Single Contact Information -->
-                        <div class="contact-content d-flex">
+                        <!-- Single mypage Information -->
+                        <div class="mypage-content d-flex">
                             <p>Address</p>
                             <p>1481 Creekside Lane <br>Avila Beach, CA 931</p>
                         </div>
-                        <!-- Single Contact Information -->
-                        <div class="contact-content d-flex">
+                        <!-- Single mypage Information -->
+                        <div class="mypage-content d-flex">
                             <p>Phone</p>
                             <p>+36 345 7953 4994</p>
                         </div>
-                        <!-- Single Contact Information -->
-                        <div class="contact-content d-flex">
+                        <!-- Single mypage Information -->
+                        <div class="mypage-content d-flex">
                             <p>E-mail</p>
                             <p>yourmail@gmail.com</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Single Contact Information -->
+                <!-- Single mypage Information -->
                 <div class="col-12 col-lg-4">
-                    <div class="single-contact-information mb-100">
+                    <div class="single-mypage-information mb-100">
                         <div class="section-text">
                             <h3>MY 여행경로</h3>
                             <p>Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Integer tempus ligula sem.</p>
                         </div>
-                        <!-- Single Contact Information -->
-                        <div class="contact-content d-flex">
+                        <!-- Single mypage Information -->
+                        <div class="mypage-content d-flex">
                             <p>Address</p>
                             <p>245 Principe Lane <br>Avila Beach, Spain</p>
                         </div>
-                        <!-- Single Contact Information -->
-                        <div class="contact-content d-flex">
+                        <!-- Single mypage Information -->
+                        <div class="mypage-content d-flex">
                             <p>Phone</p>
                             <p>+36 345 7953 4994</p>
                         </div>
-                        <!-- Single Contact Information -->
-                        <div class="contact-content d-flex">
+                        <!-- Single mypage Information -->
+                        <div class="mypage-content d-flex">
                             <p>E-mail</p>
                             <p>yourmail@gmail.com</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Single Contact Information -->
+                <!-- Single mypage Information -->
                 <div class="col-12 col-lg-4">
-                    <div class="single-contact-information mb-100">
+                    <div class="single-mypage-information mb-100">
                         <div class="section-text">
                             <h3>MY 중고나라 게시글</h3>
                             <p>Fusce blandit consequat elit non egestas. Donec tortor odio, consectetur eu justo ut.</p>
                         </div>
-                        <!-- Single Contact Information -->
-                        <div class="contact-content d-flex">
+                        <!-- Single mypage Information -->
+                        <div class="mypage-content d-flex">
                             <p>Address</p>
                             <p>889 Creekside Lane <br>Avila Beach, Dubai</p>
                         </div>
-                        <!-- Single Contact Information -->
-                        <div class="contact-content d-flex">
+                        <!-- Single mypage Information -->
+                        <div class="mypage-content d-flex">
                             <p>Phone</p>
                             <p>+77 345 7953 2406</p>
                         </div>
-                        <!-- Single Contact Information -->
-                        <div class="contact-content d-flex">
+                        <!-- Single mypage Information -->
+                        <div class="mypage-content d-flex">
                             <p>E-mail</p>
                             <p>yourmail@gmail.com</p>
                         </div>
@@ -200,10 +200,10 @@
             </div>
         </div>
     </section>
-    <!-- ##### Contact Area End ##### -->
+    <!-- ##### mypage Area End ##### -->
 
-    <!-- ##### Contact Form Area Start ##### -->
-    <section class="contact-form-area mb-100">
+    <!-- ##### mypage Form Area Start ##### -->
+    <section class="mypage-form-area mb-100">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -216,7 +216,7 @@
 
             <div class="row">
                 <div class="col-12">
-                    <!-- Contact Form -->
+                    <!-- mypage Form -->
                     <form action="#" method="post">
                         <div class="row">
                             <div class="col-lg-4">
@@ -240,7 +240,7 @@
             </div>
         </div>
     </section>
-    <!-- ##### Contact Form Area End ##### -->
+    <!-- ##### mypage Form Area End ##### -->
 
 
     <!-- ##### Footer Area Start ##### -->

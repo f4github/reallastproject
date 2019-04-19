@@ -56,15 +56,15 @@
                             <div class="classynav">
                                 <ul>
                                     <li><a href="index.jsp">Home</a></li>
-                                    <li><a href="about-us.jsp">About Us</a></li>
+                                    <li><a href="tihome.jsp">About Us</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="index.jsp">Home</a></li>
-                                            <li><a href="about-us.jsp">About Us</a></li>
+                                            <li><a href="tihome.jsp">About Us</a></li>
                                             <li><a href="services.jsp">Services</a></li>
                                             <li><a href="rooms.jsp">Rooms</a></li>
                                             <li><a href="TA_home.jsp">News</a></li>
-                                            <li><a href="contact.jsp">Contact</a></li>
+                                            <li><a href="mypage.jsp">mypage</a></li>
                                             <li><a href="elements.jsp">Elements</a></li>
                                         </ul>
                                     </li>
@@ -72,44 +72,44 @@
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
                                                 <li><a href="index.jsp">Home</a></li>
-                                                <li><a href="about-us.jsp">About Us</a></li>
+                                                <li><a href="tihome.jsp">About Us</a></li>
                                                 <li><a href="services.jsp">Services</a></li>
                                                 <li><a href="rooms.jsp">Rooms</a></li>
                                                 <li><a href="TA_home.jsp">News</a></li>
-                                                <li><a href="contact.jsp">Contact</a></li>
+                                                <li><a href="mypage.jsp">mypage</a></li>
                                                 <li><a href="elements.jsp">Elements</a></li>
                                             </ul>
                                             <ul class="single-mega cn-col-4">
                                                 <li><a href="index.jsp">Home</a></li>
-                                                <li><a href="about-us.jsp">About Us</a></li>
+                                                <li><a href="tihome.jsp">About Us</a></li>
                                                 <li><a href="services.jsp">Services</a></li>
                                                 <li><a href="rooms.jsp">Rooms</a></li>
                                                 <li><a href="TA_home.jsp">News</a></li>
-                                                <li><a href="contact.jsp">Contact</a></li>
+                                                <li><a href="mypage.jsp">mypage</a></li>
                                                 <li><a href="elements.jsp">Elements</a></li>
                                             </ul>
                                             <ul class="single-mega cn-col-4">
                                                 <li><a href="index.jsp">Home</a></li>
-                                                <li><a href="about-us.jsp">About Us</a></li>
+                                                <li><a href="tihome.jsp">About Us</a></li>
                                                 <li><a href="services.jsp">Services</a></li>
                                                 <li><a href="rooms.jsp">Rooms</a></li>
                                                 <li><a href="TA_home.jsp">News</a></li>
-                                                <li><a href="contact.jsp">Contact</a></li>
+                                                <li><a href="mypage.jsp">mypage</a></li>
                                                 <li><a href="elements.jsp">Elements</a></li>
                                             </ul>
                                             <ul class="single-mega cn-col-4">
                                                 <li><a href="index.jsp">Home</a></li>
-                                                <li><a href="about-us.jsp">About Us</a></li>
+                                                <li><a href="tihome.jsp">About Us</a></li>
                                                 <li><a href="services.jsp">Services</a></li>
                                                 <li><a href="rooms.jsp">Rooms</a></li>
                                                 <li><a href="TA_home.jsp">News</a></li>
-                                                <li><a href="contact.jsp">Contact</a></li>
+                                                <li><a href="mypage.jsp">mypage</a></li>
                                                 <li><a href="elements.jsp">Elements</a></li>
                                             </ul>
                                         </div>
                                     </li>
                                     <li class="active"><a href="services.jsp">Services</a></li>
-                                    <li><a href="contact.jsp">Contact</a></li>
+                                    <li><a href="mypage.jsp">mypage</a></li>
                                 </ul>
 
                                 <!-- Button -->
