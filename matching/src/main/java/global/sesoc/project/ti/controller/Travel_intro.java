@@ -17,6 +17,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -30,6 +31,7 @@ import global.sesoc.project.ti.VO.CommonVO;
 import global.sesoc.project.ti.VO.Travel_infoVO;
 import global.sesoc.project.ti.VO.Travel_info_preVO;
 import global.sesoc.project.ti.VO.Travel_intro_imgVO;
+import global.sesoc.project.ti.VO.Trip_likeVO;
 
 
 
@@ -471,6 +473,25 @@ public class Travel_intro {
 						
 			return list;
 	    }
+		
+		@ResponseBody
+		@RequestMapping(value="trip_like", method=RequestMethod.GET)
+		public void trip_like(String title, String contentid, String contenttypeid){
+			Trip_likeVO vo = new Trip_likeVO();
+			vo.setTitle(title);
+			vo.setContentid(contentid);
+			vo.setContenttypeid(contenttypeid);
+			
+			logger.debug("넘어오는 vo: {}", vo);
+			
+			
+		}
+		
+		
+		
+		
+		
+		
 		
 }
 

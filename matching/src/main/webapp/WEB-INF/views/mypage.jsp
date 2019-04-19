@@ -105,51 +105,7 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-12 col-lg-9">
-                            <!-- Slide Content -->
-                            <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
-                                <div class="line" data-animation="fadeInUp" data-delay="300ms"></div>
-                                <h2 data-animation="fadeInUp" data-delay="500ms">아름다운 나라, 한국</h2>
-                                <p data-animation="fadeInUp" data-delay="700ms">대한민국 헌법 표제 및 제1조에 따라 공식 국호는 대한민국이며, 역본 및 정부령에 따라 정식 영문으로는 Republic of Korea라 한다.</p>
-                                <a href="tihome" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">여행지 소개</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide d-flex align-items-center justify-content-center">
-                <!-- Slide Img -->
-                <div class="slide-img bg-img" style="background-image: url(resources/img/bg-img/bg-2.jpg);"></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-lg-9">
-                            <!-- Slide Content -->
-                            <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
-                                <div class="line" data-animation="fadeInUp" data-delay="300ms"></div>
-                                <h2 data-animation="fadeInUp" data-delay="500ms">Trip Akinator</h2>
-                                <p data-animation="fadeInUp" data-delay="700ms">AIO Trip만의 기술을 체험해서 아무도 예상하지 못한 새로운 여행지로 떠나보세요! 대한민국 곳곳의 숨은 스팟들로 떠나세요 !</p>
-                                <a href="blog" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">T A 이 용 하 기</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide d-flex align-items-center justify-content-center">
-                <!-- Slide Img -->
-                <div class="slide-img bg-img" style="background-image: url(resources/img/bg-img/bg-3.jpg);"></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-lg-9">
-                            <!-- Slide Content -->
-                            <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
-                                <div class="line" data-animation="fadeInUp" data-delay="300ms"></div>
-                                <h2 data-animation="fadeInUp" data-delay="500ms">여행물품 요기요!</h2>
-                                <p data-animation="fadeInUp" data-delay="700ms">구입부터 판매까지 ! 다른곳에서 물품 찾지 말고 AIO Trip에서 여행갈때 필요한 중고여행물품들을 판매하고 구입해보세요 ! </p>
-                                <a href="mall" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">AIO 중고나라 이용하기</a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -160,7 +116,7 @@
     <!-- ##### Hero Area End ##### -->
 
     
-
+<br><br><br><br><br>
     <!-- ##### Contact Area Start ##### -->
     <section class="contact-information-area">
         <div class="container">
@@ -170,7 +126,7 @@
                 <div class="col-12 col-lg-4">
                     <div class="single-contact-information mb-100">
                         <div class="section-text">
-                            <h3>Ibiza</h3>
+                            <h3>MY 여행지  찜 목록</h3>
                             <p>Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum.</p>
                         </div>
                         <!-- Single Contact Information -->
@@ -195,7 +151,7 @@
                 <div class="col-12 col-lg-4">
                     <div class="single-contact-information mb-100">
                         <div class="section-text">
-                            <h3>Los Angeles</h3>
+                            <h3>MY 여행경로</h3>
                             <p>Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Integer tempus ligula sem.</p>
                         </div>
                         <!-- Single Contact Information -->
@@ -220,7 +176,7 @@
                 <div class="col-12 col-lg-4">
                     <div class="single-contact-information mb-100">
                         <div class="section-text">
-                            <h3>Dubai</h3>
+                            <h3>MY 중고나라 게시글</h3>
                             <p>Fusce blandit consequat elit non egestas. Donec tortor odio, consectetur eu justo ut.</p>
                         </div>
                         <!-- Single Contact Information -->
@@ -286,7 +242,6 @@
     </section>
     <!-- ##### Contact Form Area End ##### -->
 
- 
 
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">
@@ -332,6 +287,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div>
     </footer>
     <!-- ##### Footer Area End ##### -->
+    
+    
 
     <!-- ##### All Javascript Script ##### -->
     <!-- jQuery-2.2.4 js -->

@@ -20,22 +20,64 @@
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="resources/ti/css/style.css" type="text/css">
-    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <style>
  /* Set the size of the div element that contains the map */
 #map {
   height: 400px;  /* The height is 400 pixels */
   width: 100%;  /* The width is the width of the web page */
  }
-</style>
+ 
 
-<style>
+
 @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
 
 h2 .hangul{
 font-family: 'Jeju Gothic', sans-serif;
 }
+
+a.ex4:hover, a.ex4:active {font-family: monospace;}
+
+
 </style>    
+    
+<script>
+$(document).ready(function (){
+	$('#heart').on('click', heartadd);
+	$('#fn').on('click', fn);
+});
+
+function fn(){
+	alert('성공');
+	//	location.href = 'https://www.youtube.com/watch?v=WPni755-Krg&t=1429s';
+}
+
+
+
+function heartadd(){
+	var title = ${vo.title};
+	var contentid = ${vo.contentid}; 
+	var contenttypeid = ${vo.contenttypeid}; 	
+	
+	alert(title);
+	
+	$.ajax({
+		url: 'trip_like',
+		type: 'get',
+		data: {title : title, contentid : contentid, contenttypeid : contenttypeid},
+		success: function () { 
+			alert('좋아요 성공');
+			},
+		error: function (e) {
+			alert(JSON.stringify(e)); 
+			}
+	});
+}
+
+
+
+</script>   
+    
     
 
   </head>
@@ -120,13 +162,21 @@ font-family: 'Jeju Gothic', sans-serif;
         <div class="row justify-content-center text-center mb-5">
           <div class="col-md-8">
             <h2 class="heading" data-aos="fade-up"><span class="hangul">${vo.title}</span></h2>
+            
             <p class="lead" data-aos="fade-up" data-aos-delay="100">
             
             ${vo.addr1}<br>
-			${vo.tel}<br>
-			${vo.homepage}<br>
+			${vo.tel}<br>										
+			${vo.homepage}
+			
+			<input type="button" value="좋아요" id="fn">
+			
+	<!-- 		<i id="trip_like" class="fas fa-heart" style="font-size:24px;"></i> -->
+			<br>
 
-            </p>
+			
+			
+            
           </div>
         </div>
         <div class="row">

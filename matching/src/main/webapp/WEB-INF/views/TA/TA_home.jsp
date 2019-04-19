@@ -30,6 +30,19 @@
 
 </style>
 
+<script>
+/* 
+$(document).ready(function (){
+	$('#start').on('click', a);
+});
+
+function a(){
+	location.href = "https://www.naver.com/";
+}
+ */
+
+</script>
+
 </head>
 
 <body>
@@ -196,7 +209,7 @@
                             </div>
 
                             <!-- Button -->
-                            <button type="submit">Book Now</button>
+                            <button type="button" id="start">TA start</button>
                         </form>
                     </div>
                 </div>
@@ -204,6 +217,9 @@
         </div>
     </div>
     <!-- ##### Book Now Area End ##### -->
+    
+    
+
 
     <!-- ##### About Us Area Start ##### -->
     <section class="about-us-area">
@@ -246,6 +262,8 @@
     <script src="resources/js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="resources/js/active.js"></script>
+    
+
 </body>
 
 </html>

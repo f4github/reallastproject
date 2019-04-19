@@ -152,7 +152,9 @@ font-family: 'Jeju Gothic', sans-serif;
                   
                   <div class="media-body">
                     <span class="meta-post">February 26, 2018</span>
-                    <h2 class="mt-0 mb-3"><a class="hangul" href="#">${value.title}</a></h2>
+                    <h2 class="mt-0 mb-3"><a class="hangul" href="#">${value.title}</a>
+                    </h2>
+                    
                   </div>
                 </div>
               </div>

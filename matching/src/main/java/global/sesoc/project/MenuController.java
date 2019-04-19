@@ -27,15 +27,23 @@ public class MenuController {
 		{
 			return "about-us";
 		}
+		//
 		@RequestMapping(value = "/TA_home", method = RequestMethod.GET)
 		public String Menu2()
 		{
 			return "TA/TA_home";
 		}
+		//TA 질문
 		@RequestMapping(value = "/TA1", method = RequestMethod.GET)
 		public String TA1()
 		{
 			return "TA/TA1";
+		}
+		//TA 여행지 선택
+		@RequestMapping(value = "/TA2", method = RequestMethod.GET)
+		public String TA2()
+		{
+			return "TA/TA2";
 		}
 		@RequestMapping(value = "/trash", method = RequestMethod.GET)
 		public String Menu3()
@@ -47,10 +55,10 @@ public class MenuController {
 		{
 			return "services";
 		}
-		@RequestMapping(value = "/contact", method = RequestMethod.GET)
+		@RequestMapping(value = "/mypage", method = RequestMethod.GET)
 		public String Menu5()
 		{
-			return "contact";
+			return "mypage";
 		}
 		
 		@RequestMapping(value = "/mall", method = RequestMethod.GET)
