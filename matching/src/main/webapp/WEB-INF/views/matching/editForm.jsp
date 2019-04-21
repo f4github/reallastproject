@@ -13,13 +13,79 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>AIO TRIP</title>
+    <title>지리는  AIO TRIP</title>
 
     <!-- Favicon -->
     <link rel="icon" href="resources/img/core-img/favicon.ico" type="text/css">
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="resources/style.css" type="text/css">
+
+
+	<style>
+	.rudfhcnrk{
+		color: blue;
+		float: right;
+		width: 100%
+
+	}
+
+	.col-12 col-lg-4{
+	width: 100%;
+	}
+	</style>
+
+
+
+
+<script>
+function formCheck(){
+	var t = document.getElementById('title');
+	var c = document.getElementById('content');
+	
+	if(t.value.length == 0){
+		alert("제목을 한 글자 이상 입력하세요.");
+		return false;
+	}
+	if(c.value.length == 0){
+		alert("내용을 한 글자 이상 입력하세요.");
+		return false;
+	}
+	return true;
+}
+</script>
+
+<style>
+table.type09 {
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+
+}
+table.type09 thead th {
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    color: #369;
+    border-bottom: 3px solid #036;
+}
+table.type09 tbody th {
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background: #f3f6f7;
+}
+table.type09 td {
+    width: 350px;
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+}
+
+</style>
+
 
 </head>
 
@@ -115,24 +181,61 @@
     </section>
     <!-- ##### Hero Area End ##### -->
 
-     <!-- Footer Widget Area -->
-   <section class="hero-area">
-        <div class="hero-slides owl-carousel">
+    
+<br><br><br><br><br>
+
+
+    <!-- ##### mypage Form Area Start ##### -->
+    <section class="mypage-form-area mb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading">
+                        <div class="line-"></div>
+                        <h2>With Travel Friend</h2>
+                    </div>
+                </div>
+            </div>
 
             
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="footer-widget-area mt-50">
-                        <h6 class="widget-title mb-5">Subscribe to our newsletter</h6>
-                        <form action="#" method="post" class="subscribe-form">
-                            <input type="text" name="update" id="cusupdate" value = "수정하기">
-                            <button type="submit">Subscribe</button>
-                        </form>
-                    </div>
-               </div>
-          </div>
-<br><br><br><br><br>
-		</section>
-   
+            
+
+<div align="center">
+	<form action="edit" method="post" onsubmit="return formCheck()"
+		enctype="multipart/form-data">
+		<table class="type09">
+					<thead>
+						<tr>
+						    <th scope="cols" width="5">제목</th>					
+				 		    <td><input type="text" id="title" name="title" value="${edit.title}" style="border: none"></td>
+				 		</tr>
+					</thead>
+					<tbody>
+						<tr>
+					   		<th scope="row" colspan="3" width="20px" height="300px"><textarea rows="25" cols="140" value="${edit.content}" id="content" name="content"></textarea></th>
+				  		</tr>
+				  		<tr>
+				  			<c:if test="${edit.originalfile != null}">
+								<td colspan="3">기존 파일 : ${edit.originalfile} / 파일 첨부 : <input type="file" name="upload" size="30"></td>
+							</c:if>
+							<c:if test="${edit.originalfile == null}">
+				  				<td colspan="3">파일 첨부 : <input type="file" name="upload" size="30"></td>
+				  			</c:if>
+				  		</tr>
+				  		<td><input type="submit" value="수정하기" ></td>
+				  		<td><a href="readForm?boardnum=${edit.boardnum}">돌아가기</a></td>
+				 	</tbody>
+		</table>
+	</form>
+</div>
+            
+            
+            
+        </div>
+    </section>
+    <!-- ##### mypage Form Area End ##### -->
+
+
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">
         <div class="container">

@@ -12,11 +12,16 @@
 			
 		<typeAlias type="global.sesoc.project.ti.VO.Trip_likeVO" alias="trip_like" />
 		
+		<typeAlias type="global.sesoc.project.matching.VO.MC_BoardVO" alias="mcb" />
+		<typeAlias type="global.sesoc.project.matching.VO.MC_ReplyVO" alias="mcr" />
+		
+		
 		
 	</typeAliases>
 	<mappers>
 	<mapper resource="loginMapper.xml" />
 	<mapper resource="usedMapper.xml" />
 	<mapper resource="travel_infoMapper.xml" />
+	<mapper resource="mc_boardMapper.xml" />
 	</mappers>
 </configuration>

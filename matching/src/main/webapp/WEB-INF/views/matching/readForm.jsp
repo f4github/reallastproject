@@ -13,13 +13,99 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>AIO TRIP</title>
+    <title>지리는  AIO TRIP</title>
 
     <!-- Favicon -->
     <link rel="icon" href="resources/img/core-img/favicon.ico" type="text/css">
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="resources/style.css" type="text/css">
+
+
+	<style>
+	.rudfhcnrk{
+		color: blue;
+		float: right;
+		width: 100%
+
+	}
+
+	.col-12 col-lg-4{
+	width: 100%;
+	}
+	
+	
+	
+	
+	
+	
+.button_bt {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+
+.button_bt:hover {
+  background-color: #f1f1f1;
+}
+	</style>
+
+
+
+
+<script>
+function editFormSubmit(){
+	var e = document.getElementById('edit');
+	if(confirm('수정하시겠습니까?')){
+		e.submit();
+	}	
+}
+function formSubmit(){
+	var f = document.getElementById('form');
+	if(confirm('삭제하시겠습니까?')){
+		f.submit();
+	}	
+}
+</script>
+<style>
+table.type09 {
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+}
+table.type09 thead th {
+
+	width : 10%;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    color: #369;
+    border-bottom: 3px solid #036;
+}
+table.type09 tbody th {
+
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background: #f3f6f7;
+}
+table.type09 td {
+
+    width: 350px;
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+}
+</style>
 
 </head>
 
@@ -115,24 +201,129 @@
     </section>
     <!-- ##### Hero Area End ##### -->
 
-     <!-- Footer Widget Area -->
-   <section class="hero-area">
-        <div class="hero-slides owl-carousel">
+    
+<br><br><br><br><br>
+
+
+    <!-- ##### mypage Form Area Start ##### -->
+    <section class="mypage-form-area mb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading">
+                        <div class="line-"></div>
+                        <h2>With Travel Friend</h2>
+                    </div>
+                </div>
+            </div>
 
             
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="footer-widget-area mt-50">
-                        <h6 class="widget-title mb-5">Subscribe to our newsletter</h6>
-                        <form action="#" method="post" class="subscribe-form">
-                            <input type="text" name="update" id="cusupdate" value = "수정하기">
-                            <button type="submit">Subscribe</button>
-                        </form>
-                    </div>
-               </div>
-          </div>
-<br><br><br><br><br>
-		</section>
-   
+            
+
+<div align="center">
+	<table class="type09">
+				<thead>					<tr>
+					    <th scope="cols" >제목</th>
+			 		    <td>${read.title}</td>
+			 		</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td colspan="2">아이디: ${read.id}  <span style="float: right">작성일: ${read.inputdate}</span></td>
+					</tr>
+					<tr>
+				   		<th scope="row" colspan="3" width="20px" height="300px">${read.content}</th>
+			  		</tr>
+			  		<tr>
+  			  		 <td >첨부파일</td> 
+			  		 <td>
+			  		 <!-- 첨부된 파일이 있는 경우, 해당 파일을 다운로드 할 수 있는 링크 제공 -->
+					<c:if test="${read.originalfile != null}">
+						<a href="download?boardnum=${read.boardnum}">
+							${read.originalfile}
+						</a>
+					</c:if>
+			  		 </td>
+			  		</tr>
+ 			  		
+			 	</tbody>
+	</table>
+	<br>
+	
+<c:if test="${read.id == sessionScope.loginId}">
+<!-- 수정폼 -->	
+	<form action="edit" method="get" id="edit">
+		<!-- 버튼과 input type의 img는 submit 역할을 하기 때문에, 자바스크립트를 거치지 않고 바로 컨트롤러로 보내버린다. -->
+		<a href="javascript:editFormSubmit()" class="button_bt" style="background-color: #F0F8FF">글수정</a> &nbsp;&nbsp;&nbsp;&nbsp;
+	</form>
+	
+<!-- /수정폼 -->
+<!-- 삭제폼 -->	
+	<form action="delete" method="get" id="form">
+		<!-- 버튼과 input type의 img는 submit 역할을 하기 때문에, 자바스크립트를 거치지 않고 바로 컨트롤러로 보내버린다. -->
+		<a href="javascript:formSubmit()"  class="button_bt" style="background-color: #F0F8FF">글삭제</a> &nbsp;&nbsp;&nbsp;&nbsp;
+	</form><br>
+<!-- /삭제폼 -->
+</c:if>	
+	
+	
+	
+	<br><br>
+<c:if test="${sessionScope.loginId != null}">
+
+
+<!-- 리플 출력 -->
+<div align="center">
+	<c:if test="${reply.size() == 0}">
+		
+	</c:if>
+	<form action="readForm" method="get">
+		<c:if test="${reply.size() > 0}">
+		<table class="type09">
+			<thead>
+				<tr>
+					<th scope="cols" width="5%">글번호</th>
+					<th scope="cols">작성자</th>
+				    <th scope="cols" width="50%">리플내용</th>
+		 		    <th scope="cols" colspan="3">작성일</th>
+		 		</tr>
+			</thead>
+			
+			<c:forEach var="i" begin="0" end="${reply.size() - 1}">	
+				<tbody>
+					<tr>
+			   		 <th scope="row">${i+1}</th>
+			   		 	<td>${reply.get(i).id}</td>
+			   		 	<td>${reply.get(i).text}</td>
+			   		 	<td>${reply.get(i).inputdate}</td>
+					 	<td><a href="replyDelete?replynum=${reply.get(i).replynum}&id=${reply.get(i).id}&boardnum=${num}" onclick="formIdCheck()"><b>삭제</b></a></td>
+					</tr>
+			 	</tbody>
+			 </c:forEach>
+		</table>
+		</c:if>
+	</form>
+</div>
+<!-- /리플 출력 -->
+<br><br>
+
+<!-- 리플폼 -->
+	<form id="replyForm" action="replyWrite" method="post">
+		<input type="hidden" name="boardnum" value="${read.boardnum}">
+	<b>댓글 쓰기</b>  <input type="text" name="text" id="retext" style="width:500px;">
+		<input type="submit" value="확인"  class="button_bt">
+	</form>
+<!-- /리플폼 --> 
+</c:if>
+
+	  <a href="../project/matching"><span class="button_bt">게시판으로 돌아가기</span></a>
+</div>            
+            
+        </div>
+    </section>
+    <!-- ##### mypage Form Area End ##### -->
+
+
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">
         <div class="container">

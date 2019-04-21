@@ -114,24 +114,23 @@ font-family: 'Jeju Gothic', sans-serif;
       <div class="container">
         <div class="row">
           <div class="col-md-12">   
-          
-			<h2 class="heading">
-			
-<a class="hangul" href="tihome?keyword=${keyword}&arrange=A">제목순</a>
-&emsp;
-<a class="hangul" href="tihome?keyword=${keyword}&arrange=B">조회순</a>
-&emsp;
-<a class="hangul" href="tihome?keyword=${keyword}&arrange=C">수정일순</a>
-&emsp;
-<a class="hangul" href="tihome?keyword=${keyword}&arrange=D">생성일순</a>
-&emsp;
-<a class="hangul" href="tihome?keyword=${keyword}&arrange=">댓글순</a>
-&emsp;
-<a class="hangul" href="tihome?keyword=${keyword}&arrange=">좋아요순</a>
-			
-			</h2>
+          		
+		
              
                 <form action="./" class="sidebar-search">
+                
+                <a class="hangul" href="tihome?keyword=${keyword}&arrange=A">제목순</a>
+				&emsp;
+				<a class="hangul" href="tihome?keyword=${keyword}&arrange=B">조회순</a>
+				&emsp;
+				<a class="hangul" href="tihome?keyword=${keyword}&arrange=C">수정일순</a>
+				&emsp;
+				<a class="hangul" href="tihome?keyword=${keyword}&arrange=D">생성일순</a>
+				&emsp;
+				<a class="hangul" href="tihome?keyword=${keyword}&arrange=">댓글순</a>
+				&emsp;
+				<a class="hangul" href="tihome?keyword=${keyword}&arrange=">좋아요순</a>
+				
                   <div class="form-group">
                     <span class="fa fa-search icon-search"></span> <!-- 검색 아이콘 -->
                     <input type="text" class="form-control search-input" name="keyword" placeholder="Search...">
@@ -144,7 +143,7 @@ font-family: 'Jeju Gothic', sans-serif;
         </div>
         <div class="row">
         <c:forEach var="value" items="${list}">
-          <div class="col-lg-3 col-md-6 visit mb-3" data-aos="fade-right" data-aos-delay="${x= x+100}">
+          <div class="col-lg-3 col-md-6 visit mb-3" data-aos="fade-right" data-aos-delay="${x= x+10}">
           <c:if test="${value.firstimage != null && value.firstimage != ''}">
             <a href="Travel_intro3?contentid=${value.contentid}&contenttypeid=${value.contenttypeid}"><img src="${value.firstimage}" alt="Image placeholder" class="img-fluid"> </a>
           </c:if>

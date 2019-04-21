@@ -51,11 +51,7 @@ public class MenuController {
 		{
 			return "TA/TA2";
 		}
-		@RequestMapping(value = "/trash", method = RequestMethod.GET)
-		public String Menu3()
-		{
-			return "trash";
-		}
+
 		@RequestMapping(value = "/services", method = RequestMethod.GET)
 		public String Menu4()
 		{

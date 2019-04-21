@@ -13,13 +13,79 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>AIO TRIP</title>
+    <title>지리는  AIO TRIP</title>
 
     <!-- Favicon -->
     <link rel="icon" href="resources/img/core-img/favicon.ico" type="text/css">
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="resources/style.css" type="text/css">
+
+
+	<style>
+	.rudfhcnrk{
+		color: blue;
+		float: right;
+		width: 100%
+
+	}
+
+	.col-12 col-lg-4{
+	width: 100%;
+	}
+	
+	
+	
+	
+		
+
+.button_bt {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+
+.button_bt:hover {
+  background-color: #f1f1f1;
+}
+
+.content_color:hover{
+  background-color: #f1f1f1;
+}
+
+
+
+
+	</style>
+	
+
+
+
+
+<script>
+	function check(){
+		var title = document.getElementById("title");
+		var con = document.getElementById("content");
+		
+		if(title.value == '' || title.value == null){
+			alert('제목을 1글자 이상 입력하세요.');
+			return false;
+		}
+		if(con.value == '' || con.value == null){
+			alert('내용을 1글자 이상 입력하세요.');
+			return false;
+		}
+		return true;
+	}
+</script>
+
 
 </head>
 
@@ -115,24 +181,48 @@
     </section>
     <!-- ##### Hero Area End ##### -->
 
-     <!-- Footer Widget Area -->
-   <section class="hero-area">
-        <div class="hero-slides owl-carousel">
+    
+<br><br><br><br><br>
+
+
+    <!-- ##### mypage Form Area Start ##### -->
+    <section class="mypage-form-area mb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading">
+                        <div class="line-"></div>
+                        <h2>With Travel Friend</h2>
+                    </div>
+                </div>
+            </div>
 
             
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="footer-widget-area mt-50">
-                        <h6 class="widget-title mb-5">Subscribe to our newsletter</h6>
-                        <form action="#" method="post" class="subscribe-form">
-                            <input type="text" name="update" id="cusupdate" value = "수정하기">
-                            <button type="submit">Subscribe</button>
-                        </form>
-                    </div>
-               </div>
-          </div>
-<br><br><br><br><br>
-		</section>
-   
+            
+
+	<div align="center">
+	<!-- 바이너리 데이터 포함되는 폼. 파일이 안올라가면 enctype 추가했는지 확인하자. 2월 1일 작성. -->
+		<form action="write2" method="post" onsubmit="return check()"
+			enctype="multipart/form-data">
+				<span class="button_bt">글 제목 </span>
+				<input type="text" size="70" name="title" id="title">
+				<br>
+				<span class="button_bt">내용</span>				
+				 <br>
+				<textarea rows="30" cols="100" name="content" id="content" class="content_color"></textarea><br>
+<!-- 				파일첨부 : <input type="file" name="upload" size="30">	 -->
+			<input type="submit" value="작성완료" class="button_bt">
+		</form>
+	</div>
+	
+	  
+            
+            
+        </div>
+    </section>
+    <!-- ##### mypage Form Area End ##### -->
+
+
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">
         <div class="container">
