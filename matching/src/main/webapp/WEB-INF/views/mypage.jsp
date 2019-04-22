@@ -35,6 +35,9 @@
 	}
 	</style>
 
+
+
+
 </head>
 
 <body>
@@ -140,23 +143,22 @@
                 <div class="col-12 col-lg-4">
                     <div class="single-mypage-information mb-100">
                         <div class="section-text">
-                            <h3>MY 여행지  찜 목록</h3>
-                            <p>Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum.</p>
-                        </div>
-                        
+                            <h3>MY 여행지  찜 목록</h3>                           
+                        </div>                      
                         
                         
                         <!-- Single mypage Information -->
                         <div class="mypage-content d-flex">
-                        <c:if test="${tiList==null }">
+                        <c:if test="${tiList==null}">
                         <div>리스트가 없습니다.</div>
                         </c:if>
                         
-                        <c:if test="${tiList!=null }">
+                        <c:if test="${tiList!=null}">
                         <c:forEach var="value" items="${tiList}">
                        		<p class="akwls">
                        			<a href="#">${value.title}</a>
                        			<span class="rudfhcnrk">경로에 추가</span>
+                       			<button onclick="del(${value.likenum})">삭제</button>>
                        		</p> 
                         </c:forEach>    
                          </c:if>   

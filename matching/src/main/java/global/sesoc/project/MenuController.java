@@ -70,7 +70,7 @@ public class MenuController {
 			
 			 
 			 
-			 
+			 //중고나라 목록
 			 ArrayList<CartVO> cartList = dao.cartList(id);
 			 
 			 model.addAttribute("cartList", cartList);

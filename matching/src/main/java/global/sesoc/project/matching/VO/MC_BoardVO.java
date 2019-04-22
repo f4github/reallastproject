@@ -9,22 +9,37 @@ public class MC_BoardVO {
 	private int hits;
 	private String originalfile;	//실제 파일이 저장될 때 파일의 이름이 저장
 	private String savedfile;		//서버에서 관리 쉽게 바꾼 파일 이름이 저장
+	private int male;
+	private int female;
+	private String area;
+	private String hashtag;
 	
 	public MC_BoardVO(){
 		
 	}
-	
-	public MC_BoardVO(
-			int boardnum, String id, String title, String content
-			, String inputdate, int hits, String originalfile, String savedfile){
-		this.boardnum=boardnum;
-		this.id=id;
-		this.title=title;
-		this.content=content;
-		this.inputdate=inputdate;
-		this.hits=hits;
-		this.originalfile=originalfile;
-		this.savedfile=savedfile;		
+
+	public MC_BoardVO(int boardnum, String id, String title, String content, String inputdate, int hits,
+			String originalfile, String savedfile, int male, int female, String area, String hashtag) {
+		super();
+		this.boardnum = boardnum;
+		this.id = id;
+		this.title = title;
+		this.content = content;
+		this.inputdate = inputdate;
+		this.hits = hits;
+		this.originalfile = originalfile;
+		this.savedfile = savedfile;
+		this.male = male;
+		this.female = female;
+		this.area = area;
+		this.hashtag = hashtag;
+	}
+
+	@Override
+	public String toString() {
+		return "MC_BoardVO [boardnum=" + boardnum + ", id=" + id + ", title=" + title + ", content=" + content
+				+ ", inputdate=" + inputdate + ", hits=" + hits + ", originalfile=" + originalfile + ", savedfile="
+				+ savedfile + ", male=" + male + ", female=" + female + ", area=" + area + ", hashtag=" + hashtag + "]";
 	}
 
 	public int getBoardnum() {
@@ -91,12 +106,38 @@ public class MC_BoardVO {
 		this.savedfile = savedfile;
 	}
 
-	@Override
-	public String toString() {
-		return "BoardVO [boardnum=" + boardnum + ", id=" + id + ", title=" + title + ", content=" + content
-				+ ", inputdate=" + inputdate + ", hits=" + hits + ", originalfile=" + originalfile + ", savedfile="
-				+ savedfile + "]";
+	public int getMale() {
+		return male;
+	}
+
+	public void setMale(int male) {
+		this.male = male;
+	}
+
+	public int getFemale() {
+		return female;
+	}
+
+	public void setFemale(int female) {
+		this.female = female;
+	}
+
+	public String getArea() {
+		return area;
+	}
+
+	public void setArea(String area) {
+		this.area = area;
+	}
+
+	public String getHashtag() {
+		return hashtag;
+	}
+
+	public void setHashtag(String hashtag) {
+		this.hashtag = hashtag;
 	}
 	
+
 	
 }
