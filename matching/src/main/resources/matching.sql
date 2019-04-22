@@ -1,5 +1,8 @@
-drop table board;
-
+-----------------매칭
+drop table mcboard;
+drop table mcreply;
+drop sequence mcreply_seq;
+drop sequence mcboard_seq;
 
 -- 게시판 본문 글
 create table mcboard (
@@ -28,8 +31,13 @@ create table mcreply (
 	text			varchar2(200) not null,		--리플내용
 	inputdate		date 	default sysdate,	--작성날짜
 	constraint reply_fk foreign key(boardnum) 
-		references board(boardnum) on delete cascade
+		references mcboard(boardnum) on delete cascade
 );
+
+-- 리플에 사용할 시퀀스
+create sequence mcreply_seq start with 1 increment by 1;
+
+
 
 -- 리플에 사용할 시퀀스
 create sequence mcreply_seq start with 1 increment by 1;
@@ -39,26 +47,3 @@ insert into mcboard (boardnum, id, title, content) values (mcboard_seq.nextval, 
 	
 -- 리플 저장 예
 insert into mcreply (replynum, boardnum, id, text) values (mcreply_seq.nextval, 1, 'bbb', '리플의 내용...');
-	
--- 검색 예
-select * from customer order by custid;
-select * from board order by boardnum desc;
-select * from reply order by replynum desc;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
