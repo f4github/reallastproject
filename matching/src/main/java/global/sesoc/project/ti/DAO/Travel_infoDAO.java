@@ -41,5 +41,10 @@ public class Travel_infoDAO {
 		
 		return list;
 	}
+	public void likeDel(int likenum) {
+		Travel_infoMapper mapper = sqlSession.getMapper(Travel_infoMapper.class);
+		mapper.likeDel(likenum);
+		
+	}
 
 }

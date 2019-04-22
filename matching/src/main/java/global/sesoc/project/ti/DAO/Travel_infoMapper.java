@@ -14,5 +14,7 @@ public interface Travel_infoMapper {
 	public Trip_likeVO trip_like_chek(Trip_likeVO vo);
 	//좋아요 리스트
 	public ArrayList<Trip_likeVO> getList(String id);
+	//좋아요 취소
+	public void likeDel(int likenum);
 
 }

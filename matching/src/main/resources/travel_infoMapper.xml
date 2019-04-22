@@ -31,10 +31,12 @@
 		select * from trip_like where id like #{id}
 	</select>
 	
+	<!-- 좋아요 취소 -->
+	<delete id="likeDel" parameterType="int">
+		delete from trip_like where likenum = #{likenum}
+	</delete>
 	
-	
-	
-	
+
 	
 	
 	

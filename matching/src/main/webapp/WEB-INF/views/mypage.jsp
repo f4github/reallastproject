@@ -76,7 +76,7 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li class="active"><a href="./">Home</a></li>
+                                    <li class="active"><a href="home">Home</a></li>
                                     <li><a href="tihome">여행지 소개</a></li>
                                     <li><a href="TA_home">Trip aKiNaTor</a></li>
                                     <li><a href="matching">여행친구찾기</a></li>
@@ -158,7 +158,7 @@
                        		<p class="akwls">
                        			<a href="#">${value.title}</a>
                        			<span class="rudfhcnrk">경로에 추가</span>
-                       			<button onclick="del(${value.likenum})">삭제</button>>
+                       			<button onclick="del(${value.likenum})">삭제</button>
                        		</p> 
                         </c:forEach>    
                          </c:if>   
@@ -167,7 +167,15 @@
                             
                         </div>
 
-
+<script>
+function del(likenum){
+	if (!confirm("삭제하시겠습니까?")) {
+        return;
+    }
+	
+	location.href = '/project/trip_like_del?likenum='+likenum;
+}
+</script>
 
 
                     </div>

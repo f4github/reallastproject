@@ -499,14 +499,16 @@ public class Travel_intro {
 			}						
 		}
 		
-/*		
-		@ResponseBody
+	
+		
 		@RequestMapping(value="trip_like_del", method=RequestMethod.GET)
 		public String trip_like_del(int likenum){
+			logger.debug("{}", likenum);
+			dao.likeDel(likenum);
 			
-			
+			return "redirect:mypage";
 		}
-*/		
+		
 		
 		
 		
