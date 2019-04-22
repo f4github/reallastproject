@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import global.sesoc.project.mallDAO.UsedDAO;
+import global.sesoc.project.mallVO.CartVO;
 import global.sesoc.project.mallVO.GoodsVO;
 import global.sesoc.project.ti.DAO.Travel_infoDAO;
 import global.sesoc.project.ti.VO.Trip_likeVO;
@@ -67,7 +68,12 @@ public class MenuController {
 			model.addAttribute("tiList", list);
 			
 			
-			
+			 
+			 
+			 
+			 ArrayList<CartVO> cartList = dao.cartList(id);
+			 
+			 model.addAttribute("cartList", cartList);
 			
 			
 			

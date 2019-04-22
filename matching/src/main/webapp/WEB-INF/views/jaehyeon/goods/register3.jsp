@@ -8,30 +8,24 @@
 <title>Insert title here</title>
 <link rel = "stylesheet" href = "resources/goods/css/goods.css">
 <script>
-function check_submit()
-{
- var category1 = $('#category1').val();
- var category2 = $('#category2').val();
- var gdsName = ${'#gdsName'}.val();
- 
- if(category1 ==""){
- alert("분류를 선택하여 주세요.");
- category1.focus(); 
- return false;
- }
- 
- if(category2 ==""){
-	 alert("분류를 선택하여 주세요.");
-	 category2.focus(); 
-	 return false; 
- }
- 
- if(gdsName==""){
-	 alert("제목을 입력해 주세요.");
-	 gdsName.focus();
-	 return false;
- }
- return true;
+function check_submit(){
+	var title = $('#gdsName').val();
+	
+	if(title==''){
+		alert('상품명을 입력해 주세욧!');
+		return false;
+	}
+	var cateCode2 = $('#cateCode2').val();
+	
+	if(cateCode2==''&& cateCode2==100 && cateCode2==200 && cateCode2==300){
+		alert('분류를 선택해 주세욧!');
+		return false;
+	} 
+	/* if(cateCode2=='100'){
+		alert('분류를 선택해 주세욧');
+		return false;
+	} */
+	return true;
 }
 </script>
 
@@ -66,7 +60,7 @@ function check_submit()
 			
 			<label>2차 분류</label>
 			<select class = "category2" name = "cateCode" id = "category2">
-				<option value = "">전체</option>
+				<option value = "" id = "cateCode2">전체</option>
 			</select>
 			
 			<div class = "inputArea">

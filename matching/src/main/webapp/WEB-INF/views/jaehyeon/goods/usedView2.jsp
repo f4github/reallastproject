@@ -272,7 +272,10 @@ function deleteCheck(){
 			 	<p class = "gdsNum" id = "gdsNum"><span>번호</span>${usedView.gdsNum }</p>
 			 </div> --%>
 			 
+			 
 			 <div class="goodsInfo">
+			 <p class = "gdsSeller"><span>판매자</span>${usedView.userId }</p>
+			 
 			  <p class="gdsName"><span>상품명</span>${usedView.gdsName}</p>
 			  
 			 <%--  <p class="cateName"><span>카테고리</span>${usedView.cateName}</p> --%>
