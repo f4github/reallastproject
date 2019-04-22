@@ -209,11 +209,11 @@ function deleteCheck(){
                             <div class="classynav">
                                 <ul>
                                     <li class="active"><a href="./">Home</a></li>
-                                    <li><a href="about-us">여행지 소개</a></li>
-                                    <li><a href="blog">Trip aKiNaTor</a></li>
-                                    <li><a href="trash">같이가요오</a></li>
+                                    <li><a href="tihome">여행지 소개</a></li>
+                                    <li><a href="TA_home">Trip aKiNaTor</a></li>
+                                    <li><a href="matching">여행친구찾기</a></li>
                                     <li><a href="mall">중고장터</a></li>
-                                    <li><a href="contact">My Pages</a></li>
+                                    <li><a href="mypage">My Pages</a></li>
                                 </ul>
 
                                 <!-- Button -->
