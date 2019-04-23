@@ -8,8 +8,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import global.sesoc.project.user.DAO.LoginDAO;
 import global.sesoc.project.user.VO.LoginVO;
@@ -81,6 +83,35 @@ public class LoginController {
 		
 		return"redirect:/login";
 	}
+/*	@RequestMapping(value="/idcheck", method = RequestMethod.GET)
+	public String Idcheck(
+			HttpSession ses
+			, Model model){
+		logger.debug("id확인");
+		model.addAttribute("check", ses.getAttribute("check"));
+		if(ses.getAttribute("id") != null && !ses.getAttribute("id").equals("nothing")){
+			model.addAttribute("id2", ses.getAttribute("id"));
+		}
+		ses.setAttribute("id", "nothing");
+		ses.setAttribute("check", "nothing");
+		return "customer/idcheck";
+	}
+
+	@RequestMapping(value="/idcheck", method = RequestMethod.POST)
+	public String Idcheck2(HttpSession session, String custid2){
+		logger.debug("id확인2REAL");
+		LoginVO result = new LoginVO();
+		result = dao.checkId(custid2);
+		
+		if(result == null){
+			session.setAttribute("check", "success");
+			session.setAttribute("id", custid2);
+		}
+		else{
+			session.setAttribute("check", "fail");
+		}
+		return "redirect:/idcheck";
+	}*/
 }
 
 

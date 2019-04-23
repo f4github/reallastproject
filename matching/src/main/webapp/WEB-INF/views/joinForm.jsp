@@ -96,6 +96,7 @@ button:hover {
 
 
 </style>
+
 <script>
 function formCheck()
 {
@@ -103,9 +104,9 @@ function formCheck()
 	var pw = document.getElementById("userPass");
 	var name = document.getElementById("userName");
 	var phone = document.getElementById("userPhon");
-	var addr1 = document.getElementById("userAddr1");
-	var addr2 = document.getElementById("userAddr2");
-	var addr3 = document.getElementById("userAddr3");
+	var addr1 = document.getElementById("sample6_postcode");
+	var addr2 = document.getElementById("sample6_address");
+	var addr3 = document.getElementById("sample6_detailAddress");
 	
 	if (id.value.length < 3)
 	{
@@ -136,21 +137,21 @@ function formCheck()
 		phone.select();
 		return false;
 	}
-	else if (addr1.value.length < 1)
+	else if (addr1.value.length < 1 || addr1.value == null)
 	{
 		alert('우편번호를 입력해주세요.');
 		addr1.focus();
 		addr1.select();
 		return false;
 	}
-	else if (addr2.value.length < 1)
+	else if (addr2.value.length < 1 || addr2.value == null)
 	{
-		alert('도로명주소를 입력해주세요.');
+		alert('주소를 입력해주세요.');
 		addr2.focus();
 		addr2.select();
 		return false;
 	}
-	else if (addr3.value.length < 1)
+	else if (addr3.value.length < 1 || addr3.value == null)
 	{
 		alert('나머지주소를 입력해주세요.');
 		addr3.focus();
@@ -160,6 +161,9 @@ function formCheck()
 	return true;
 }
 
+function idck(){
+	location = "idcheck()";
+}
 </script>
 </head>
 <body class="centered-wrapper">
@@ -173,6 +177,8 @@ function formCheck()
 <label for="userId"><b>ID</b></label><br>
 <input type="text" placeholder="ID를 입력해주세요." name="userId" required id = "userId"><br>
 
+<input type="button" value = "ID중복체크" id = "idck"><br>
+
 <label for="userPass"><b>Password</b></label><br>
 <input type="password" placeholder="비밀번호를 입력해주세요." name="userPass" required id = "userPass"><br>
 
@@ -182,11 +188,18 @@ function formCheck()
 <label for="userPhon"><b>Phone</b></label><br>
 <input type="text" placeholder="전화번호를 입력해주세요." name="userPhon" required id = "userPhon"><br>
 
-<label for="userAddr"><b>우편번호</b></label><br>
+<!-- <label for="userAddr"><b>우편번호</b></label><br>
 <input type="text" id="userAddr1" name="userAddr1" placeholder="우편번호">
 <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
 <input type="text" id="userAddr2" name="userAddr2" placeholder="주소"><br>
-<input type="text" id="userAddr3" name="userAddr3" placeholder="나머지주소">
+<input type="text" id="userAddr3" name="userAddr3" placeholder="나머지주소"> -->
+
+<label for="userAddr"><b>우편번호</b></label><br>
+<input type="text" id="sample6_postcode" name="userAddr1" placeholder="우편번호" readonly >
+<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+<input type="text" id="sample6_address" name="userAddr2" placeholder="주소" readonly ><br>
+<input type="text" id="sample6_detailAddress" name="userAddr3" placeholder="나머지주소">
+<input type="hidden" id="sample6_extraAddress" placeholder="참고항목">
 
     <div class="clearfix">
       <button type="button" class="cancelbtn" id = "cancel_btn">Cancel</button>
@@ -195,7 +208,6 @@ function formCheck()
 <script>
              $("#cancel_btn").click(function(){
               history.back();
-          
              });   
 </script>
 	</div>
@@ -240,9 +252,12 @@ function formCheck()
                     if(extraAddr !== ''){
                         extraAddr = ' (' + extraAddr + ')';
                     }
-
+                    // 조합된 참고항목을 해당 필드에 넣는다.
+                    document.getElementById("sample6_extraAddress").value = extraAddr;
                 
-                } 
+                } else {
+                    document.getElementById("sample6_extraAddress").value = '';
+                }
 
                 // 우편번호와 주소 정보를 해당 필드에 넣는다.
                 document.getElementById('sample6_postcode').value = data.zonecode;
@@ -253,6 +268,9 @@ function formCheck()
         }).open();
     }
 </script>
+
+
+
 </div>
 </body>
 </html>
