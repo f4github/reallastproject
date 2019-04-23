@@ -142,6 +142,7 @@ font-family: 'Jeju Gothic', sans-serif;
           </div>
         </div>
         <div class="row">
+        
         <c:forEach var="value" items="${list}">
           <div class="col-lg-3 col-md-6 visit mb-3" data-aos="fade-right" data-aos-delay="${x= x+10}">
           <c:if test="${value.firstimage != null && value.firstimage != ''}">
@@ -151,6 +152,7 @@ font-family: 'Jeju Gothic', sans-serif;
             <a href="Travel_intro3?contentid=${value.contentid}&contenttypeid=${value.contenttypeid}"><img src="resources/ti/img/haedal.png" alt="Image placeholder" class="img-fluid"> </a>
           </c:if>
             <h3><a class="hangul" href="Travel_intro3?contentid=${value.contentid}&contenttypeid=${value.contenttypeid}">${value.title}</a></h3>
+            
             <div class="reviews-star float-left">
               <span class="ion-android-star"></span>
               <span class="ion-android-star"></span>
@@ -158,11 +160,13 @@ font-family: 'Jeju Gothic', sans-serif;
               <span class="ion-android-star-half"></span>
               <span class="ion-android-star-outline"></span>
             </div>
+            
             <span class="reviews-count float-right">
               ${value.readcount} views
             </span>           
           </div>       
           </c:forEach>
+          
         </div>
 <br><br><br>          
           

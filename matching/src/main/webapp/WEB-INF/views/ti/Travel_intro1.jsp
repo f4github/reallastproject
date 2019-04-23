@@ -21,10 +21,10 @@
     <!-- Theme Style -->
     <link rel="stylesheet" href="resources/ti/css/style.css" type="text/css">
     
-    <style>
+<style>
     
     table, th, tr{
-	border: 3px solid white;
+	border: 3px solid black;
 	margin: auto;
 	text-align: center;
 	border-collapse: collapse;
@@ -35,7 +35,18 @@
 .pointer{
 	cursor: pointer;
 }
-    </style>
+
+.button5 {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+
+.button5:hover {
+  background-color: #555555;
+  color: white;
+}
+</style>
 
 
 </head>
@@ -117,26 +128,26 @@
 <div class="sub-heading mb-5">
 <table>
 	<tr>
-		<th class="pointer" onclick="javascript:fn_loc('1')">서울</th>
-		<th class="pointer" onclick="fn_loc('2')">인천</th>
-		<th class="pointer" onclick="fn_loc('3')">대전</th>
-		<th class="pointer" onclick="fn_loc('4')">대구</th>
-		<th class="pointer" onclick="fn_loc('5')">광주</th>
-		<th class="pointer" onclick="fn_loc('6')">부산</th>
-		<th class="pointer" onclick="fn_loc('7')">울산</th>
-		<th class="pointer" onclick="fn_loc('8')">세종</th>
-		<th class="pointer" onclick="fn_loc('31')">경기</th>
+		<th class="pointer button5" onclick="javascript:fn_loc('1')">서울</th>
+		<th class="pointer button5" onclick="fn_loc('2')">인천</th>
+		<th class="pointer button5" onclick="fn_loc('3')">대전</th>
+		<th class="pointer button5" onclick="fn_loc('4')">대구</th>
+		<th class="pointer button5" onclick="fn_loc('5')">광주</th>
+		<th class="pointer button5" onclick="fn_loc('6')">부산</th>
+		<th class="pointer button5" onclick="fn_loc('7')">울산</th>
+		<th class="pointer button5" onclick="fn_loc('8')">세종</th>
+		<th class="pointer button5" onclick="fn_loc('31')">경기</th>
 	</tr>
 	<tr>
-		<th class="pointer" onclick="fn_loc('32')">강원</th>
-		<th class="pointer" onclick="fn_loc('33')">충북</th>
-		<th class="pointer" onclick="fn_loc('34')">충남</th>
-		<th class="pointer" onclick="fn_loc('35')">경북</th>
-		<th class="pointer" onclick="fn_loc('36')">경남</th>
-		<th class="pointer" onclick="fn_loc('37')">전북</th>
-		<th class="pointer" onclick="fn_loc('38')">전남</th>
-		<th class="pointer" onclick="fn_loc('39')">제주</th>
-		<th class="pointer" onclick="fn_loc('')">전체</th>
+		<th class="pointer button5" onclick="fn_loc('32')">강원</th>
+		<th class="pointer button5" onclick="fn_loc('33')">충북</th>
+		<th class="pointer button5" onclick="fn_loc('34')">충남</th>
+		<th class="pointer button5" onclick="fn_loc('35')">경북</th>
+		<th class="pointer button5" onclick="fn_loc('36')">경남</th>
+		<th class="pointer button5" onclick="fn_loc('37')">전북</th>
+		<th class="pointer button5" onclick="fn_loc('38')">전남</th>
+		<th class="pointer button5" onclick="fn_loc('39')">제주</th>
+		<th class="pointer button5" onclick="fn_loc('')">전체</th>
 	</tr>
 </table>
 
