@@ -37,7 +37,7 @@ public class GoodsController {
 	private static final Logger logger = LoggerFactory.getLogger(GoodsController.class);
 	
 	//업로드할 파일 경로
-		final String uploadPath = "d:/boardfile";
+		final String uploadPath = "c:/boardfile";
 	
 	/*@Resource(name="uploadPath")
 	private String uploadPath;*/
