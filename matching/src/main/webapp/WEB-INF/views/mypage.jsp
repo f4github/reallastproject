@@ -211,65 +211,16 @@ function del(likenum){
                     <div class="single-mypage-information mb-100">
                         <div class="section-text">
                             <h3>MY 중고나라 게시글</h3>
-                            <c:forEach items="${cartList}" var="cartList">
-			  <li>
+                            <a href = "myArticle">내가쓴 글</a>	
+			  				<a href = "cartList">내 카트</a>
 			  
 			
 			   
-			  </div>
+			  			</div>
 			  
-			  <a href="usedView?gdsNum=${cartList.gdsNum}">
-			  <div>
-			   <div class="thumb">
-			    <img src="image/${cartList.gdsSavedfile}" width = 150 height = 150>
-			   </div>
-			   <div class="gdsInfo">
-			   
-			  
-			  
-			    <p>
-			     <span>상품명 : </span>${cartList.gdsName}<br>
-			     <span>개당 가격 : </span><fmt:formatNumber pattern="###,###,###" value="${cartList.gdsPrice}" /><br>
-			     <span>구입 수량 : </span>${cartList.cartStock}개<br>
-			     <span>최종 가격 : </span><fmt:formatNumber pattern="###,###,###" value="${cartList.gdsPrice * cartList.cartStock}" />
-			    </p>
-			   </div>
-			    </a>
-			     
-			    <div class="delete">
-			     <button type="button" class="delete_btn" data-cartNum="${cartList.cartNum}" value = "${cartList.cartNum}">삭제</button>
-			    </div>
-			    
-			    <script>
-				 $(".delete_btn").click(function(){
-				  var confirmD = confirm("정말 삭제하시겠습니까?");
-				  
-				  
-				  
-				  if(confirmD) {
-				    
-					  var cartNum = $('.delete_btn').val();
-					  
-				   $.ajax({
-				    url : "deleteCart",
-				    type : "post",
-				    data : { "cartNum" : cartNum },
-				    success : function(){
-				     location.href = "cartList";
-				    }
-				   });
-				   
-				  } 
-				  
-				 });
-				</script>
-			       
-			   </div>
-			   
-			   
-			  </li>
+
 			  <hr>
-			  </c:forEach>
+			 
                         </div>
                         <!-- Single mypage Information -->
                         <div class="mypage-content d-flex">

@@ -21,12 +21,38 @@ public class GoodsVO {
 	
 	private String cateCodeRef, cateName;
 	
+	private int replyCount;
+	
 	public GoodsVO() {
 		super();
 	}
 	
 	
 	
+
+	public GoodsVO(int gdsNum, int gdsPrice, int gdsStock, String gdsName, String cateCode, String gdsDes,
+			String gdsImg, String gdsThumbImg, String gdsOriginalfile, String gdsSavedfile, String userId, Date gdsDate,
+			String cateCodeRef, String cateName, int replyCount) {
+		super();
+		this.gdsNum = gdsNum;
+		this.gdsPrice = gdsPrice;
+		this.gdsStock = gdsStock;
+		this.gdsName = gdsName;
+		this.cateCode = cateCode;
+		this.gdsDes = gdsDes;
+		this.gdsImg = gdsImg;
+		this.gdsThumbImg = gdsThumbImg;
+		this.gdsOriginalfile = gdsOriginalfile;
+		this.gdsSavedfile = gdsSavedfile;
+		this.userId = userId;
+		this.gdsDate = gdsDate;
+		this.cateCodeRef = cateCodeRef;
+		this.cateName = cateName;
+		this.replyCount = replyCount;
+	}
+
+
+
 
 	public GoodsVO(int gdsNum, int gdsPrice, int gdsStock, String gdsName, String cateCode, String gdsDes,
 			String gdsImg, String gdsThumbImg, String gdsOriginalfile, String gdsSavedfile, String userId, Date gdsDate,
@@ -270,13 +296,32 @@ public class GoodsVO {
 
 
 
+	public int getReplyCount() {
+		return replyCount;
+	}
+
+
+
+
+	public void setReplyCount(int replyCount) {
+		this.replyCount = replyCount;
+	}
+
+
+
+
 	@Override
 	public String toString() {
 		return "GoodsVO [gdsNum=" + gdsNum + ", gdsPrice=" + gdsPrice + ", gdsStock=" + gdsStock + ", gdsName="
 				+ gdsName + ", cateCode=" + cateCode + ", gdsDes=" + gdsDes + ", gdsImg=" + gdsImg + ", gdsThumbImg="
-				+ gdsThumbImg + ", gdsOriginalfile=" + gdsOriginalfile + ", gdsSavedfile=" + gdsSavedfile + ", gdsDate="
-				+ gdsDate + "]";
+				+ gdsThumbImg + ", gdsOriginalfile=" + gdsOriginalfile + ", gdsSavedfile=" + gdsSavedfile + ", userId="
+				+ userId + ", gdsDate=" + gdsDate + ", cateCodeRef=" + cateCodeRef + ", cateName=" + cateName
+				+ ", replyCount=" + replyCount + "]";
 	}
+
+
+	
+
 
 	
 	

@@ -11,13 +11,26 @@ public class ReplyVO {
 	repDate date default sysdate*/
 	
 	private String userId, repCon;
-	private int gdsNum, repNum;
+	private int gdsNum, repNum, count;
 	private Date repDate;
 	
 	
 	public ReplyVO() {
 		super();
 	}
+
+	
+
+	public ReplyVO(String userId, String repCon, int gdsNum, int repNum, int count, Date repDate) {
+		super();
+		this.userId = userId;
+		this.repCon = repCon;
+		this.gdsNum = gdsNum;
+		this.repNum = repNum;
+		this.count = count;
+		this.repDate = repDate;
+	}
+
 
 
 	public ReplyVO(String userId, String repCon, int gdsNum, int repNum, Date repDate) {
@@ -78,13 +91,31 @@ public class ReplyVO {
 	public void setRepDate(Date repDate) {
 		this.repDate = repDate;
 	}
+	
+	
+
+
+	public int getCount() {
+		return count;
+	}
+
+
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
 
 
 	@Override
 	public String toString() {
 		return "ReplyVO [userId=" + userId + ", repCon=" + repCon + ", gdsNum=" + gdsNum + ", repNum=" + repNum
-				+ ", repDate=" + repDate + "]";
+				+ ", count=" + count + ", repDate=" + repDate + "]";
 	}
+
+
+
+	
 	
 	
 

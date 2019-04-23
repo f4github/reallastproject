@@ -39,4 +39,8 @@ public interface UsedMapper {
 
 	public void modify(GoodsVO vo);
 
+	public ArrayList<GoodsVO> myArticle(String userId);
+
+	public ArrayList<ReplyVO> myArticleReply(String userId);
+
 }

@@ -145,6 +145,15 @@ values (tbl_cart_seq.nextval, #{userId}, #{gdsNum}, #{cartStock})
      	where
      	 gdsNum = ${gdsNum} 
 	</update>
+	
+	<select id = "myArticle" parameterType = "String" resultType = "Goods">
+		select g.gdsNum, g.cateCode, g.gdsName, g.gdsSavedfile, (select count(*) from tbl_reply r where g.gdsNum = r.gdsNum)as replyCount
+		from tbl_goods g
+		where userId = #{userId}
+	
+	</select>
+	
+	
 
 
 </mapper>

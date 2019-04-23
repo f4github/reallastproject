@@ -188,5 +188,29 @@ public class UsedDAO {
 			e.printStackTrace();
 		}
 	}
+	
+	public ArrayList<GoodsVO> myArticle(String id){
+		UsedMapper mapper = sqlSession.getMapper(UsedMapper.class);
+		ArrayList<GoodsVO> vo = null;
+		try{
+			vo = mapper.myArticle(id);
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		return vo;
+	}
+	
+	public ArrayList<ReplyVO> myArticleReply(String id){
+		UsedMapper mapper = sqlSession.getMapper(UsedMapper.class);
+		ArrayList<ReplyVO> reply = null;
+		try{
+			reply = mapper.myArticleReply(id);
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		return reply;
+	}
 
 }

@@ -53,7 +53,7 @@ public class GoodsController {
 		ArrayList<CategoryVO> category = null;
 		category = dao.category();
 		model.addAttribute("category", JSONArray.fromObject(category));
-		return"jaehyeon/goods/register3";
+		return"jaehyeon/goods/register4";
 	}
 	
 	@RequestMapping(value = "usedregister", method = RequestMethod.POST)
@@ -110,7 +110,7 @@ public class GoodsController {
 	@RequestMapping(value = "usedView", method = RequestMethod.GET)
 	public String usedView(int gdsNum, Model model ){
 		logger.debug("usedView");
-		
+		logger.debug("gdsNum : {}",gdsNum);
 		GoodsVO vo = dao.usedView(gdsNum);
 		
 		
@@ -321,6 +321,20 @@ public class GoodsController {
 		logger.debug("delete num :{}", gdsNum);
 		dao.usedDelete(gdsNum);
 		return"redirect:/usedList";
+	}
+	
+	@RequestMapping(value = "myArticle", method = RequestMethod.GET)
+	public String myArticle(HttpSession session, Model model){
+		logger.debug("my Article");
+		String id = (String)session.getAttribute("loginId");
+		
+		ArrayList<GoodsVO> vo = null;
+		vo = dao.myArticle(id);
+		model.addAttribute("myArticle", vo);
+		
+		
+		
+		return "jaehyeon/goods/myArticle";
 	}
 		
 }
