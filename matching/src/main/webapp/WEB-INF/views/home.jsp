@@ -13,7 +13,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>지리는  AIO TRIP</title>
+    <title>AIO TRIP</title>
 
     <!-- Favicon -->
     <link rel="icon" href="resources/img/core-img/favicon.ico" type="text/css">
@@ -172,10 +172,10 @@
                             <div class="line-"></div>
                             <h2>Abouut AIO Trip</h2>
                         </div>
-                        <p>우리 사이트 소개 ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
+                        <p>우리 사이트 소개 </p>
                         <div class="about-key-text">
-                            <h6><span class="fa fa-check"></span> Donec malesuada lorem maximus mauris sceleri</h6>
-                            <h6><span class="fa fa-check"></span> Malesuada lorem maximus mauris sceleri</h6>
+                            <h6><span class="fa fa-check"></span> Donec </h6>
+                            <h6><span class="fa fa-check"></span> Malesuada </h6>
                         </div>
                         <a href="#" class="btn palatin-btn mt-50">Read More</a>
                     </div>
@@ -211,7 +211,7 @@
                         <div class="section-heading text-center white">
                             <div class="line-"></div>
                             <h2>TA intro</h2>
-                            <p>TA 소개 ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum.</p>
+                            <p>TA 소개</p>
                         </div>
 
                         <div class="row">
@@ -251,7 +251,7 @@
                     <div class="section-heading text-center">
                         <div class="line-"></div>
                         <h2>Enjoy your plans</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien.</p>
+                        <p></p>
                     </div>
                 </div>
             </div>
@@ -276,7 +276,7 @@
                 <div class="col-12 col-lg-5">
                     <div class="footer-widget-area mt-50">
                         <a href="#" class="d-block mb-5"><img src="resources/img/core-img/logo.png" alt=""></a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. </p>
+                        <p> </p>
                     </div>
                 </div>
 
