@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="global.sesoc.project.ta.DAO.TAMapper">
+
+<insert id="vote" parameterType="map">
+insert all
+    when hashtag like 
+    	'%'||#{answer}||'%' 
+    	then      													
+        into ta values(#{id},travelid,travelplace,firstimage, 1)
+    select * from travel_info    
+</insert>
+
+<!-- 지역특정 -->
+<select id="location" parameterType="string" resultType="ta">
+select travelplace from ta
+where loginid like #{loginid} 
+group by travelplace
+having sum(vote) = (select max(sum(vote)) from ta where loginid like #{loginid} group by travelplace)
+</select>
+
+<!-- 상세지역 -->
+<select id="location2" parameterType="string" resultType="ta">
+select travelid,firstimage from ta where loginid like #{loginid} and travelplace like (select travelplace from ta 
+having sum(vote) = (select max(sum(vote)) from ta group by travelplace)
+group by travelplace) group by travelid,firstimage
+</select>
+
+<!-- 사용자 선택한 곳 -->
+<!-- <select id="selectTravel" parameterType="string" resultType="travel">
+select travelid, address, mapx, mapy from travel_info where travelid like #{travelid}
+</select> -->
+
+
+<delete id="TAReset" parameterType="string">
+delete from ta where loginid = #{loginid}
+</delete>
+</mapper>

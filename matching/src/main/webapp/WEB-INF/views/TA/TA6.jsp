@@ -155,36 +155,36 @@ fieldset{
 }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>T.A1</title>
+<title>T.A6</title>
 </head>
 <body>
 <fieldset>
-<h1>Q 1. 지금 기분이 어떠세요?</h1>
-<form action ="ta2" method="post">
+<h1>Q 6. 가장 좋아하는 음식 종류는?</h1>
+<form action ="ta7" method="post">
 <section>
-<input id='one' type="radio" name ="answer1" value="기쁨" checked>
+<input id='one' type="radio" name ="answer6" value="한식" checked>
 <label for='one'>
 	<span></span>
-	 기쁨
- 	<ins><i>기쁨</i></ins>
+	 한식
+ 	<ins><i>한식</i></ins>
 </label>
-<input id='two' type="radio" name ="answer1" value="슬픔">
+<input id='two' type="radio" name ="answer6" value="양식">
 <label for='two'>
 	<span></span>
-	 슬픔
- 	<ins><i>슬픔</i></ins>
+	양식
+ 	<ins><i>양식</i></ins>
 </label>
-<input id='three' type="radio" name ="answer1" value="우울">
+<input id='three' type="radio" name ="answer6" value="일식">
 <label for='three'>
 	<span></span>
-	 우울
- 	<ins><i>우울</i></ins>
+	 일식
+ 	<ins><i>일식</i></ins>
 </label>
-<input id='four' type="radio" name ="answer1" value="즐거움">
+<input id='four' type="radio" name ="answer6" value="중식">
 <label for='four'>
 	<span></span>
-	 즐거움
- 	<ins><i>즐거움</i></ins>
+	 중식
+ 	<ins><i>중식</i></ins>
 </label>
 </section>
 <input type="submit" value="다음 단계" class="styled">

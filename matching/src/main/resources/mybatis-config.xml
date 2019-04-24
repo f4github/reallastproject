@@ -15,6 +15,9 @@
 		<typeAlias type="global.sesoc.project.matching.VO.MC_BoardVO" alias="mcb" />
 		<typeAlias type="global.sesoc.project.matching.VO.MC_ReplyVO" alias="mcr" />
 		
+		<typeAlias type="global.sesoc.project.ta.VO.Travel_infoVO" alias="travel" />
+		<typeAlias type="global.sesoc.project.ta.VO.TAVO" alias="ta" />
+		
 		
 		
 	</typeAliases>
@@ -23,5 +26,7 @@
 	<mapper resource="usedMapper.xml" />
 	<mapper resource="travel_infoMapper.xml" />
 	<mapper resource="mc_boardMapper.xml" />
+
+	<mapper resource="TAMapper.xml" />
 	</mappers>
 </configuration>

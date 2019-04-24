@@ -21,28 +21,6 @@
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="resources/style.css" type="text/css">
 
-<style>
-
-.single-hero-slide .hero-slides-content {
-    width: -webkit-fill-available;
-}
-
-
-</style>
-
-<script>
-/* 
-$(document).ready(function (){
-	$('#start').on('click', a);
-});
-
-function a(){
-	location.href = "https://www.naver.com/";
-}
- */
-
-</script>
-
 </head>
 
 <body>
@@ -128,129 +106,28 @@ function a(){
                     <div class="row justify-content-center">
                         <div class="col-12 col-lg-9">
                             <!-- Slide Content -->
-                            <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
+                            <div class="hero-slides-content">
                                 <div class="line" data-animation="fadeInUp" data-delay="300ms"></div>
-                                <h2 data-animation="fadeInUp" data-delay="500ms">TA guide</h2>
-                                <p data-animation="fadeInUp" data-delay="700ms">아래의 일정과 인원을 입력해주세요.</p>
-                                <form action="ta1" method="get">
-                                <input type="submit" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms"
-                                	value="TA START">
-                                </form>
+                                <h2 data-animation="fadeInUp" data-delay="500ms">아름다운 나라, 한국</h2>
+                                <p data-animation="fadeInUp" data-delay="700ms">대한민국 헌법 표제 및 제1조에 따라 공식 국호는 대한민국이며, 역본 및 정부령에 따라 정식 영문으로는 Republic of Korea라 한다.</p>
+                                <a href="TA2" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">여행지 소개</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-  
+
+
         </div>
     </section>
     <!-- ##### Hero Area End ##### -->
 
 
 
-
-
-    <!-- ##### Book Now Area Start ##### -->
-    <div class="book-now-area">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-lg-10">
-                    <div class="book-now-form">
-                        <form action="#">
-                            <!-- Form Group -->
-                            <div class="form-group">
-                                <label for="select1">Check In</label>
-                                <select class="form-control" id="select1">
-                                  <option>24 April</option>
-                                  <option>25 April</option>
-                                  <option>26 April</option>
-                                  <option>27 April</option>
-                                  <option>28 April</option>
-                                  <option>29 April</option>
-                                  <option>30 April</option>
-                                </select>
-                            </div>
-
-                            <!-- Form Group -->
-                            <div class="form-group">
-                                <label for="select2">Check Out</label>
-                                <select class="form-control" id="select2">
-                                  <option>25 April</option>
-                                  <option>26 April</option>
-                                  <option>27 April</option>
-                                  <option>28 April</option>
-                                  <option>29 April</option>
-                                  <option>30 April</option>
-                                </select>
-                            </div>
-
-                            <!-- Form Group -->
-                            <div class="form-group">
-                                <label for="select3">Male</label>
-                                <select class="form-control" id="select3">
-                                  <option>02</option>
-                                  <option>03</option>
-                                  <option>04</option>
-                                  <option>05</option>
-                                  <option>06</option>
-                                </select>
-                            </div>
-
-                            <!-- Form Group -->
-                            <div class="form-group">
-                                <label for="select4">Female</label>
-                                <select class="form-control" id="select4">
-                                  <option>01</option>
-                                  <option>02</option>
-                                  <option>03</option>
-                                  <option>04</option>
-                                  <option>05</option>
-                                </select>
-                            </div>
-
-                            <!-- Button -->
-                            <button type="button" id="start">TA start</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ##### Book Now Area End ##### -->
-    
     
 
 
-    <!-- ##### About Us Area Start ##### -->
-    <section class="about-us-area">
-        <div class="container">
-            <div class="row align-items-center">
-
-               
-            </div>
-        </div>
-    </section>
-    <!-- ##### About Us Area End ##### -->
-
- 
-
- 
-  
-    
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
 
     <!-- ##### All Javascript Script ##### -->
     <!-- jQuery-2.2.4 js -->
