@@ -35,5 +35,13 @@
 	select * from tbl_member where userId = #{userId} and userPass = #{userPass}
 	</select>
 
+	<select id="checkId" parameterType="Member" resultType="Member">
+	select 
+		* 
+	from 
+		tbl_member 
+	where 
+		upper(userId) like upper(#{userId})
+	</select>
 
 </mapper>

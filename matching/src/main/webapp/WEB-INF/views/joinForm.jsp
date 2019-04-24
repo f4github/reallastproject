@@ -161,8 +161,6 @@ function formCheck()
 	return true;
 }
 
-function idck(){
-	location = "idcheck()";
 }
 </script>
 </head>

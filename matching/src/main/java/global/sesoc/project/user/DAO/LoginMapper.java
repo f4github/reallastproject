@@ -8,5 +8,4 @@ public interface LoginMapper {
 
 	public void join(LoginVO vo);
 
-
 }

@@ -83,35 +83,6 @@ public class LoginController {
 		
 		return"redirect:/login";
 	}
-/*	@RequestMapping(value="/idcheck", method = RequestMethod.GET)
-	public String Idcheck(
-			HttpSession ses
-			, Model model){
-		logger.debug("id확인");
-		model.addAttribute("check", ses.getAttribute("check"));
-		if(ses.getAttribute("id") != null && !ses.getAttribute("id").equals("nothing")){
-			model.addAttribute("id2", ses.getAttribute("id"));
-		}
-		ses.setAttribute("id", "nothing");
-		ses.setAttribute("check", "nothing");
-		return "customer/idcheck";
-	}
-
-	@RequestMapping(value="/idcheck", method = RequestMethod.POST)
-	public String Idcheck2(HttpSession session, String custid2){
-		logger.debug("id확인2REAL");
-		LoginVO result = new LoginVO();
-		result = dao.checkId(custid2);
-		
-		if(result == null){
-			session.setAttribute("check", "success");
-			session.setAttribute("id", custid2);
-		}
-		else{
-			session.setAttribute("check", "fail");
-		}
-		return "redirect:/idcheck";
-	}*/
 }
 
 
