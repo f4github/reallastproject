@@ -29,11 +29,6 @@ public class MenuController {
 		@Autowired
 		Travel_infoDAO tidao;
 
-		@RequestMapping(value = "/ttt", method = RequestMethod.GET)
-		public String Meqnu1()
-		{
-			return "ttt";
-		}
 		@RequestMapping(value = "/about-us", method = RequestMethod.GET)
 		public String Menu1()
 		{
