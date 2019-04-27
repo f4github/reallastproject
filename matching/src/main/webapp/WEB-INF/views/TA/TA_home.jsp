@@ -161,39 +161,30 @@ function a(){
                             <!-- Form Group -->
                             <div class="form-group">
                                 <label for="select1">Check In</label>
-                                <select class="form-control" id="select1">
-                                  <option>24 April</option>
-                                  <option>25 April</option>
-                                  <option>26 April</option>
-                                  <option>27 April</option>
-                                  <option>28 April</option>
-                                  <option>29 April</option>
-                                  <option>30 April</option>
-                                </select>
+                                <input type="date" class="form-control" id="select1" value="2019-05-02" required>
                             </div>
 
                             <!-- Form Group -->
                             <div class="form-group">
                                 <label for="select2">Check Out</label>
-                                <select class="form-control" id="select2">
-                                  <option>25 April</option>
-                                  <option>26 April</option>
-                                  <option>27 April</option>
-                                  <option>28 April</option>
-                                  <option>29 April</option>
-                                  <option>30 April</option>
-                                </select>
+								<input type="date" class="form-control" id="select1" value="2019-05-02" required>
                             </div>
 
                             <!-- Form Group -->
                             <div class="form-group">
                                 <label for="select3">Male</label>
                                 <select class="form-control" id="select3">
+                                  <option>00</option>
+                                  <option>01</option>
                                   <option>02</option>
                                   <option>03</option>
                                   <option>04</option>
                                   <option>05</option>
                                   <option>06</option>
+                                  <option>07</option>
+                                  <option>08</option>
+                                  <option>09</option>
+                                  <option>10</option>
                                 </select>
                             </div>
 
@@ -201,14 +192,19 @@ function a(){
                             <div class="form-group">
                                 <label for="select4">Female</label>
                                 <select class="form-control" id="select4">
+                                  <option>00</option>
                                   <option>01</option>
                                   <option>02</option>
                                   <option>03</option>
                                   <option>04</option>
                                   <option>05</option>
+                                  <option>06</option>
+                                  <option>07</option>
+                                  <option>08</option>
+                                  <option>09</option>
+                                  <option>10</option>
                                 </select>
                             </div>
-
                             <!-- Button -->
                             <button type="button" id="start">TA start</button>
                         </form>

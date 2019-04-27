@@ -11,7 +11,7 @@
 		<typeAlias type="global.sesoc.project.mallVO.ReplyVO" alias="Reply" />
 			
 		<typeAlias type="global.sesoc.project.ti.VO.Trip_likeVO" alias="trip_like" />
-		
+		<typeAlias alias="CVO" type="global.sesoc.project.ti.VO.TI_CommentVO"/>
 		<typeAlias type="global.sesoc.project.matching.VO.MC_BoardVO" alias="mcb" />
 		<typeAlias type="global.sesoc.project.matching.VO.MC_ReplyVO" alias="mcr" />
 		
@@ -26,7 +26,7 @@
 	<mapper resource="usedMapper.xml" />
 	<mapper resource="travel_infoMapper.xml" />
 	<mapper resource="mc_boardMapper.xml" />
-
+	<mapper resource="ti_commentMapper.xml"/>
 	<mapper resource="TAMapper.xml" />
 	</mappers>
 </configuration>
