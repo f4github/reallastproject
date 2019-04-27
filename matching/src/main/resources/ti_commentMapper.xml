@@ -13,7 +13,7 @@
 	</insert>
 
 	<!-- 리플 출력하기 -->
-	<select id="list" resultType="CVO">
+	<select id="list" parameterType="String" resultType="CVO">
 		select 
 			num
 			, id
@@ -21,6 +21,8 @@
 			, contentid
 		from 
 		 	ti_comment 
+		where
+			contentid like #{contentid}
 		order by num desc
 	</select>
 	
@@ -43,8 +45,10 @@
 			num = #{num}
 	</update>
 	
-	
-	
+	<!-- vo 하나 가져오기 -->
+	<select id="getVO" parameterType="CVO" resultType="CVO">
+	select * from ti_comment where num = #{num}
+	</select>
 	
 	
 	

@@ -23,10 +23,10 @@ public class TI_CommentDAO {
 		return cnt;
 	}
 	
-	public ArrayList<TI_CommentVO> list(){
+	public ArrayList<TI_CommentVO> list(String contentid){
 		TI_CommentMapper mapper = sqlSession.getMapper(TI_CommentMapper.class);
 		ArrayList<TI_CommentVO> ar;
-		ar = mapper.list();
+		ar = mapper.list(contentid);
 		return ar;
 	}
 	
@@ -40,5 +40,11 @@ public class TI_CommentDAO {
 		TI_CommentMapper mapper = sqlSession.getMapper(TI_CommentMapper.class);
 		mapper.edit(vo);
 		return;
+	}
+
+	public TI_CommentVO getVO(int num) {
+		TI_CommentMapper mapper = sqlSession.getMapper(TI_CommentMapper.class);
+		TI_CommentVO vo2 = mapper.getVO(num);
+		return vo2;
 	}
 }

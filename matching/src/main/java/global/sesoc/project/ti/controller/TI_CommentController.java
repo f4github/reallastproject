@@ -44,17 +44,31 @@ public class TI_CommentController {
 	@ResponseBody
 	@RequestMapping(value="ti_comment_list", method=RequestMethod.GET,
 			produces="application/json;charset=UTF-8")
-	public ArrayList<TI_CommentVO> list(){
+	public ArrayList<TI_CommentVO> list(String contentid){
 		ArrayList<TI_CommentVO> ar;
-		ar = dao.list();
+		ar = dao.list(contentid);
 		return ar;
 	}
 	
 	@ResponseBody
 	@RequestMapping(value="ti_comment_delete", method=RequestMethod.POST)
-	public void delete(int num){
-		dao.delete(num);
-		return;
+	public String delete(int num, HttpSession session){
+		String id = (String)session.getAttribute("loginId");		
+		logger.debug("id : {}", id);
+		
+		TI_CommentVO check = new TI_CommentVO();
+		String result = "t";
+		
+		check = dao.getVO(num);
+		logger.debug("check : {}", check);
+		
+		if(check.getId().contains(id)){
+			dao.delete(num);			
+		}
+		else{
+			result = "f";	
+		}				
+		return result;
 	}
 	
 	@ResponseBody

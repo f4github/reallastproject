@@ -398,9 +398,11 @@ function dddd(){
 
 //리플 목록 요청
 function list() {
+	var contentid = $('#contentid').val();
 	$.ajax({
 		url: 'ti_comment_list',
 		type: 'get',
+		data: {contentid : contentid},
 		dataType: 'json',
 		success: output,
 		error: function (e) { alert('글읽기 실패'); }
@@ -456,7 +458,11 @@ function commentDel(){
 		url: 'ti_comment_delete',
 		type: 'post',
 		data: {num : num},
-		success: function(){
+		success: function(result){
+			if(result == 'f'){
+				alert('실패');
+				return;
+			}			
 			alert('성공');
 			list();
 		},

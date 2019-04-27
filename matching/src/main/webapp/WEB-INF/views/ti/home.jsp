@@ -115,11 +115,7 @@ font-family: 'Jeju Gothic', sans-serif;
         <div class="row">
           <div class="col-md-12">   
           		
-		
-             
-                <form action="./" class="sidebar-search">
-                
-                <a class="hangul" href="tihome?keyword=${keyword}&arrange=A">제목순</a>
+		        <a class="hangul" href="tihome?keyword=${keyword}&arrange=A">제목순</a>
 				&emsp;
 				<a class="hangul" href="tihome?keyword=${keyword}&arrange=B">조회순</a>
 				&emsp;
@@ -130,7 +126,8 @@ font-family: 'Jeju Gothic', sans-serif;
 				<a class="hangul" href="tihome?keyword=${keyword}&arrange=">댓글순</a>
 				&emsp;
 				<a class="hangul" href="tihome?keyword=${keyword}&arrange=">좋아요순</a>
-				
+             
+                <form action="tihome" class="sidebar-search">               				
                   <div class="form-group">
                     <span class="fa fa-search icon-search"></span> <!-- 검색 아이콘 -->
                     <input type="text" class="form-control search-input" name="keyword" placeholder="Search...">
