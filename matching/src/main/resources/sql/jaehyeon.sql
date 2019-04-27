@@ -176,11 +176,12 @@ commit;
 commit;
 
 create table tbl_reply(
-gdsNum number not null,
+gdsNum number not null references tbl_goods(gdsNum) on delete cascade ,
 userId varchar2(50) not null,
 repNum number primary key,
 repCon varchar2(2000) not null,
 repDate date default sysdate
+
 );
 
 create sequence tbl_reply_seq;

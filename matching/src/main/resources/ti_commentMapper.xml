@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!-- 리플 관련 SQL -->
+<mapper namespace="global.sesoc.project.ti.DAO.TI_CommentMapper">
+	
+	<!-- 리플 입력하기 -->
+	<insert id="insert" parameterType="CVO">
+		insert into ti_comment (num, id, text, contentid)		
+		values (ti_comment_seq.nextval, #{id}, #{text}, #{contentid})
+	</insert>
+
+	<!-- 리플 출력하기 -->
+	<select id="list" resultType="CVO">
+		select 
+			num
+			, id
+			, text
+			, contentid
+		from 
+		 	ti_comment 
+		order by num desc
+	</select>
+	
+	<!-- 리플 삭제하기 -->
+	<delete id="delete" parameterType="int">
+		delete 
+			from
+				ti_comment
+			where
+				num = #{num}
+	</delete>
+	
+	<!-- 리플 수정하기 -->
+	<update id="edit" parameterType="CVO">
+		update
+			ti_comment 
+		set
+			text = #{text}	
+		where
+			num = #{num}
+	</update>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</mapper>
+  
