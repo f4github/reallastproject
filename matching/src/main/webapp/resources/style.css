@@ -646,12 +646,13 @@ img {
 .book-now-area {
   position: relative;
   z-index: 100;
-  margin-bottom: 15px; }
+  margin-bottom: 15px; 
+  }
 
 .book-now-form {
   position: relative;
   z-index: 1;
-  top: -87px; }
+  top: -230px; }
   .book-now-form form {
     display: -webkit-box;
     display: -ms-flexbox;

@@ -267,7 +267,7 @@ fieldset {
 <c:set var="i" value="${i+1 }" /> 
 </c:forEach>
 </table>
-<!-- <input type="submit" value="결정" class="styled"> -->
+<input type="submit" value="결정" class="styled">
 </form>
 
 </fieldset>

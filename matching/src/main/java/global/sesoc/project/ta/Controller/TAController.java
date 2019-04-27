@@ -118,21 +118,17 @@ public class TAController {
 		ArrayList<TAVO> list2 = dao.location2(id); //상세지역
 		model.addAttribute("list2",list2);
 		
-		dao.TAReset(id); 	//TA초기화
+		//dao.TAReset(id); 	//TA초기화
 		return "TA/TACOM";
 	}
 	
-	/*@RequestMapping(value = "Taselect", method=RequestMethod.POST)
-	public String taselectPost(String chk[], Model model) {
+	@RequestMapping(value = "taselect", method=RequestMethod.POST)
+	public String taselectPost(String travelid, Model model) {
+		
+		logger.debug("결과:{}",travelid);
+		dao.selectTravel(travelid);
 		
 		
-		
-		
-		 dao.selectTravel(travelid);
-		
-		ArrayList<Travel_infoVO> list = ;
-		
-		model.addAttribute("list",list);
-		return "ta/Taselect";
-	}*/
+		return "ta/taselect";
+	}
 }
