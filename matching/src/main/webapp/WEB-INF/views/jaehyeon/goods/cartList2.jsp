@@ -105,6 +105,7 @@
 	</nav>
 	
 	<section id = "content">
+	<h2>CartList</h2>
 		<ul>
 			<li>
 			  <div class="allCheck">
@@ -224,9 +225,9 @@
  		</ul>
 	</section>
 	
-			<aside id="aside">
+			<%-- <aside id="aside">
 				<%@ include file="../include/aside.jsp" %>
-			</aside>
+			</aside> --%>
 	
 	<%-- <footer id = "footer">
 		<div id = "footer_box">

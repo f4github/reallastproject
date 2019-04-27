@@ -105,11 +105,12 @@
 	</nav>
 	
 	<section id = "content">
+		<h2>내가 쓴 글</h2>
 		
 		<c:forEach items = "${myArticle }" var = "myArticle">
 		
 		<a href = "usedView?gdsNum=${myArticle.gdsNum}">
-		 <img src="image/${myArticle.gdsSavedfile}" width = 50 height = 50>
+		 <img src="image/${myArticle.gdsSavedfile}" width = 100 height = 100>
 		  
 			     <span>상품명 : </span>${myArticle.gdsName} (${myArticle.replyCount })<br>
 			     
@@ -120,9 +121,9 @@
 		
 	</section>
 	
-			<aside id="aside">
+			<%-- <aside id="aside">
 				<%@ include file="../include/aside.jsp" %>
-			</aside>
+			</aside> --%>
 	
 
 

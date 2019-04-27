@@ -104,6 +104,7 @@ values (tbl_cart_seq.nextval, #{userId}, #{gdsNum}, #{cartStock})
 <select id = "replyList" parameterType = "int" resultType = "Reply">
 	select*from tbl_reply
 	where gdsNum = #{gdsNum}
+	order by gdsNum desc
 
 </select>
 
@@ -113,8 +114,17 @@ values (tbl_cart_seq.nextval, #{userId}, #{gdsNum}, #{cartStock})
 			from 
 				tbl_reply
 			where
-				repNum = #{repNum}			
+				repNum = #{repNum}
+			
+						
 	</delete>
+	
+	
+<!-- <select id="replyUserIdCheck" resultType="String">
+ select userId
+  from tbl_reply
+      where repNum = #{repNum}
+</select> -->
 	
 <!-- 리플 수정하기 -->
 	<update id="replyEdit" parameterType="Reply">

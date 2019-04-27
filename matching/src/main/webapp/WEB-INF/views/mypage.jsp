@@ -210,9 +210,9 @@ function del(likenum){
                 <div class="col-12 col-lg-4">
                     <div class="single-mypage-information mb-100">
                         <div class="section-text">
-                            <h3>MY 중고나라 게시글</h3>
-                            <a href = "myArticle">내가쓴 글</a>	
-			  				<a href = "cartList">내 카트</a>
+                            <h3>MY 중고나라 게시글</h3><br>
+                            <a href = "myArticle"><h4>내가쓴 글</h4></a><br>	
+			  				<a href = "cartList"><h4>내 카트</h4></a>
 			  
 			
 			   

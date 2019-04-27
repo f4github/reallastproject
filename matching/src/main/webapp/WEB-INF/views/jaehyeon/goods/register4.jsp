@@ -131,7 +131,7 @@ function check_submit(){
 		return false;
 	} */
 	
-	if(cate2Arr.length==0){
+	if(cate2Arr.length==0 || cate2Arr==100 || cate2Arr == 200 || cate2Arr == 300){
 		alert('분류를 선택해 주세요');
 		return false;
 	}
@@ -171,7 +171,7 @@ function check_submit(){
 			</select>
 			
 			<label>2차 분류</label>
-			<select class = "category2" name = "cateCode" id = "category2">
+			<select class = "category2" name = "cateCode" id = "category2" required>
 				<option value = "" id = "cateCode2">전체</option>
 			</select>
 			

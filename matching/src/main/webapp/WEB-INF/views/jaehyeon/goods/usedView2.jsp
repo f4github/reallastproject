@@ -78,9 +78,9 @@ function output(ar){
 		str+= '<input type ="button" value = "삭제" class = "buttonDel" datanum = ' + item.repNum + '>';
 		str+= '<input type ="hidden" id = "repId" value = ' + item.userId + '>';
 		str+='</td>';
-		str+='<td>'
+		/* str+='<td>'
 		str += '<input type="button" value="수정" class="buttonEdt" datanum = ' + item.repNum + ' dataName = ' + item.repCon + '>';
-		str += '</td>';
+		str += '</td>'; */
 		str += '</tr>';
 		str += '<tr><td colspan=4><div id="editDiv' + item.gdsNum + '"/></td></tr>';
 		
@@ -107,7 +107,7 @@ function commentDel(){
 		type: 'post',
 		data: {repNum : repNum, userId : userId},
 		success: function(result){
-			
+			alert(result);
 			if(result == 1){
 			alert('삭제성공');
 			replyList();
