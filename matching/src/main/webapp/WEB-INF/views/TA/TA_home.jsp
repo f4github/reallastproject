@@ -19,7 +19,7 @@
     <link rel="icon" href="resources/img/core-img/favicon.ico" type="text/css">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="resources/style.css" type="text/css">
+    <link rel="stylesheet" href="resources/style.css?after" type="text/css">
 
 <style>
 
@@ -132,10 +132,10 @@ function a(){
                                 <div class="line" data-animation="fadeInUp" data-delay="300ms"></div>
                                 <h2 data-animation="fadeInUp" data-delay="500ms">TA guide</h2>
                                 <p data-animation="fadeInUp" data-delay="700ms">아래의 일정과 인원을 입력해주세요.</p>
-                                <form action="ta1" method="get">
+                                <!-- <form action="ta1" method="get">
                                 <input type="submit" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms"
                                 	value="TA START">
-                                </form>
+                                </form> -->
                             </div>
                         </div>
                     </div>
@@ -206,7 +206,7 @@ function a(){
                                 </select>
                             </div>
                             <!-- Button -->
-                            <button type="button" id="start">TA start</button>
+                            <button type="button" id="start" onclick="location.href='ta1'">TA start</button>
                         </form>
                     </div>
                 </div>
