@@ -159,9 +159,35 @@ function formCheck()
 		return false;
 	}
 	return true;
+	
+/* 	$(function(){
+		//아이디 중복체크
+		    $('#userId').blur(function(){
+		        $.ajax({
+			     type:"POST",
+			     url:"checkSignup",
+			     data:{
+			            "id":$('#userId').val()
+			     },
+			     success:function(data){	//data : checkSignup에서 넘겨준 결과값
+			            if($.trim(data)=="YES"){
+			               if($('#userId').val()!=''){ 
+			               	alert("사용가능한 아이디입니다.");
+			               }
+			           	}else{
+			               if($('#userId').val()!=''){
+			                  alert("중복된 아이디입니다.");
+			                  $('#userId').val('');
+			                  $('#userId').focus();
+			               }
+			            }
+			         }
+			    }) 
+		     })
+
+		}); */
 }
 
-}
 </script>
 </head>
 <body class="centered-wrapper">
@@ -266,9 +292,6 @@ function formCheck()
         }).open();
     }
 </script>
-
-
-
 </div>
 </body>
 </html>

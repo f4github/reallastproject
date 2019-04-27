@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import global.sesoc.project.user.DAO.LoginDAO;
@@ -83,6 +84,19 @@ public class LoginController {
 		
 		return"redirect:/login";
 	}
+/*	//아이디 중복 체크
+	@RequestMapping(value = "/checkSignup", method = RequestMethod.POST)
+		public @ResponseBody String AjaxView(  
+			        @RequestParam("id") String id){
+			String str = "";
+			int idcheck = dao.idCheck(id);
+			if(idcheck==1){ //이미 존재하는 계정
+				str = "NO";	
+			}else{	//사용 가능한 계정
+				str = "YES";	
+			}
+			return str;
+		}*/
 }
 
 
