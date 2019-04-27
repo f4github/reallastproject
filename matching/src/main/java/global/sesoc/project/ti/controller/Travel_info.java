@@ -33,7 +33,7 @@ import global.sesoc.project.ti.VO.Travel_info_preVO;
 @Controller
 public class Travel_info {
 	
-	private static final Logger logger = LoggerFactory.getLogger(TIHomeController.class);	
+	private static final Logger logger = LoggerFactory.getLogger(TI_HomeController.class);	
 
 	
 	@Autowired

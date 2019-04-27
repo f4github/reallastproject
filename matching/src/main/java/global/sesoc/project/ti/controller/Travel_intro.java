@@ -42,7 +42,7 @@ import global.sesoc.project.ti.VO.Trip_likeVO;
 @Controller
 public class Travel_intro {
 	
-	private static final Logger logger = LoggerFactory.getLogger(TIHomeController.class);	
+	private static final Logger logger = LoggerFactory.getLogger(TI_HomeController.class);	
 	
 	@Autowired
 	Travel_infoDAO dao;
@@ -307,9 +307,11 @@ public class Travel_intro {
 				ArrayList<Travel_intro_imgVO> list2 = Travel_intro_img(contentid);			
 				logger.debug("list2: {}", list2);
 
+				
 				model.addAttribute("check", "ok");
 				model.addAttribute("list2", list2);							
 			}
+			model.addAttribute("contentid", contentid);
 			
 			return "ti/Travel_intro3";
 	    }

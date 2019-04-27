@@ -39,6 +39,79 @@ font-family: 'Jeju Gothic', sans-serif;
 a.ex4:hover, a.ex4:active {font-family: monospace;}
 
 
+
+/* 코멘트 */
+
+
+ 
+input[type=text] {
+  
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+.button44 {
+  background-color: lightgray; /* Green */
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button4 {
+  background-color: white;
+  color: black;
+  border: 2px solid #e7e7e7;
+}
+
+.button4:hover {background-color: #e7e7e7;}
+
+/* 리플 내용  */
+.button55 {
+  background-color: lightgray; /* Green */
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+}
+.ttt{
+	background-color: white;
+}
+
+/* 좋아요 */
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
 </style>    
 <script src="resources/ti/js/jquery-3.2.1.min.js"></script>
 <script>
@@ -83,7 +156,7 @@ function tigu(){
 
   </head>
   <body onload="initTmap()">
-    
+
     <header class="site-header">
       <div class="container-fluid">
         <div class="row">
@@ -170,9 +243,9 @@ function tigu(){
 			${vo.tel}<br>										
 			${vo.homepage}
 			
-
-			<input type="button" value="좋아요" id="sjj">
-			
+		<c:if test="${loginId != null}">
+			<input type="button" class="button1 button44" value="Like" id="sjj">
+		</c:if>	
 <!--  	 	<i id="asdf" class="fas fa-heart" style="font-size:24px;"></i>  -->
 			<br>
 
@@ -252,11 +325,180 @@ function tigu(){
 
           <div class="col-md-12 text-center"><a href="#" class="">View More Photos</a></div>
         
-        </div>
+
+
+        </div>    
+        
+        
+ <br><br>       
+<!-- 리플 목록 출력 영역 -->
+<div id="listDiv"></div>        
+        
+     
+<!-- 리플 작성 폼 영역 -->
+<div id="formDiv">
+	<form id="writeForm">
+		
+		<input type="hidden" id="contentid" name="contentid" value="${contentid}">
+		<input type="text" class="" id="text" name="text" style="width:90%;float:left;">
+		<input type="button" class="button4 button44" id="formButton" value="등록">
+	</form>
+</div>
+
+
+        
+    
+
+        
+                   
       </div>
+      
     </section>
     <!-- END section -->
     
+    
+
+    
+    <script>
+$(document).ready(function (){
+	$('#formButton').on('click', dddd);
+	list();
+});
+
+function dddd(){
+	<c:if test="${loginId == null}">
+	alert('로그인 하세요');
+	
+	return;
+	</c:if>
+	
+	var text = $('#text').val();
+	var contentid = $('#contentid').val();
+	
+	if(text != ''){
+		$.ajax({
+			url: 'ti_comment_write',
+			type: 'POST',
+			data: {text : text, contentid : contentid},
+			success: function () { 
+				alert('저장되었습니다.');
+				
+				$('#text').val('');
+				list();
+				},
+			error: function (e) {
+				alert(JSON.stringify(e)); 
+				}
+		});
+	}
+	else{
+		alert('내용을 입력하세요.');
+	}
+}
+
+//리플 목록 요청
+function list() {
+	$.ajax({
+		url: 'ti_comment_list',
+		type: 'get',
+		dataType: 'json',
+		success: output,
+		error: function (e) { alert('글읽기 실패'); }
+	});
+}
+
+function output(ob){
+ 	var str = '<table class="list">';
+ 	//key = ob의 크기만큼 루프 한다는 것. item = ArrayList ob 안에 들어있는 각 값들.
+	$.each(ob, function(key, item){
+		str += '<tr>';
+
+		str += '<td class="tdName button55" style="float:left;">' + item.id + '</td>';
+		str += '<td class="tdText button55 ttt">' + item.text + '</td>';
+		
+		//datanum은 내가 임의로 만든 것.
+		    
+    	
+
+<c:if test="${loginId != null}">  
+		str += '<td>';
+		str += '<input type="button" value="삭제" class="buttonDel button55" datanum = ' + item.num + ' dataId = ' + item.id + '>';
+		str += '</td>';
+		str += '<td>';
+		str += '<input type="button" value="수정" class="buttonEdt button55" datanum = ' + item.num + ' dataId = ' + item.id + '>';
+		str += '</td>';
+</c:if>		
+
+
+		
+		str += '</tr>';
+		str += '<tr><td colspan="4"><div id="editDiv' + item.num + '"/></td></tr>';
+	});
+	str += '</table>';
+	//each함수를 이용해 만들고, html을 통해 버튼을 만듦.
+	$('#listDiv').html(str);
+	$('.buttonDel').on('click', commentDel);
+	$('.buttonEdt').on('click', commentEdt);
+}
+//리플 삭제
+function commentDel(){
+	//삭제 버튼 누르면 오는 곳
+	//현재 이벤트를 발생시킨 것을 this라고 가르킬 수 있음. 사용자정의속성을 마음대로 붙이는 것. 여기서는 datanum.
+	var num = $(this).attr('datanum');
+	var id = $(this).attr('dataId');
+/* 	
+	if(${loginId != id}){ 
+		alert('본인 것만 삭제됨');
+		return;
+	}
+ */	
+	$.ajax({
+		url: 'ti_comment_delete',
+		type: 'post',
+		data: {num : num},
+		success: function(){
+			alert('성공');
+			list();
+		},
+		error: function(){
+			alert('실패');
+		}
+	})
+}
+//리플 수정 시작
+function commentEdt(){
+	var num = $(this).attr('datanum');
+	var id = $(this).attr('dataId');
+	var div = $('#editDiv' + num);
+	var formStr = '<form id="editForm' + num + '">';
+	
+	formStr += '<input type="text" style="width:450px;" id="edtText">';
+	formStr += '<input type="button" class="btnEdt button55" value="수정완료" datanum=' + num + ' dataId=' + id + '>';
+	formStr += '</form>';
+	div.html(formStr);
+	$('.btnEdt').on('click', edt);
+}
+
+function edt(){
+	var num = $(this).attr('datanum');
+	var id = $(this).attr('dataId');
+	var text = $('#edtText').val();
+	$.ajax({
+		url: 'ti_comment_edit',
+		type: 'post',
+		data: {num : num, id : id, text : text},
+		success: function(){
+			alert('성공');
+			list();
+		},
+		error: function(){
+			alert('실패');
+		} 
+	})
+}
+
+</script>
+   <!-- /리플 스크립트 끝 --> 
 
     <footer class="section footer-section">
       <div class="container">
