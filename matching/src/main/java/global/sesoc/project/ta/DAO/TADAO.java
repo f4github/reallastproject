@@ -10,6 +10,8 @@ import org.springframework.stereotype.Repository;
 
 import global.sesoc.project.ta.VO.TAVO;
 import global.sesoc.project.ta.VO.Travel_infoVO;
+import global.sesoc.project.ti.DAO.Travel_infoMapper;
+import global.sesoc.project.ti.controller.Travel_info;
 
 
 @Repository
@@ -47,12 +49,12 @@ public class TADAO {
 		mapper.TAReset(id);
 	}
 
-	public ArrayList<Travel_infoVO> selectTravel(String travelid) {
-		TAMapper mapper = sqlsession.getMapper(TAMapper.class);
+	public Travel_info selectTravel(String travelid) {
+		Travel_infoMapper mapper = sqlsession.getMapper(Travel_infoMapper.class);
 		
-		ArrayList<Travel_infoVO> list = mapper.selectTravel(travelid);
+		Travel_info vo =  mapper.selectTravel(travelid);
 		
-		return list;
+		return vo;
 	}
 
 }

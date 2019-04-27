@@ -6,8 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>지역 특정</title>
-<!-- Core Stylesheet -->
-    <link rel="stylesheet" href="resources/style.css?after" type="text/css">
+
 <script src = "resources/js/jquery-3.3.1.min.js"></script>
 <script>
 
@@ -226,68 +225,7 @@ fieldset {
 
 </head>
 <body>
-<!-- ##### Header Area Start ##### -->
-    <header class="header-area">
-        <!-- Navbar Area -->
-        <div class="palatin-main-menu">
-            <div class="classy-nav-container breakpoint-off">
-                <div class="container">
-                    <!-- Menu -->
-                    <nav class="classy-navbar justify-content-between" id="palatinNav">
 
-                        <!-- Nav brand -->
-                        <a href="./" class="nav-brand"><span style="color: white;"><b>AIO Trip</b></span></a>
-
-                        <!-- Navbar Toggler -->
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
-
-                        <!-- Menu -->
-                        <div class="classy-menu">
-
-                            <!-- close btn -->
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
-
-                            <!-- Nav Start -->
-                            <div class="classynav">
-                                <ul>
-                                    <li><a href="./">Home</a></li>
-                                    <li><a href="tihome">여행지 소개</a></li>
-                                    <li><a href="TA_home">Trip aKiNaTor</a></li>
-                                    <li><a href="matching">여행친구찾기</a></li>
-                                    <li><a href="mall">중고장터</a></li>
-                                    <li><a href="mypage">My Pages</a></li>
-                                    <li>${loginInfo.userName}</li>
-                                </ul>
-								<c:if test="${loginInfo==null }">
-                                <!-- Button -->
-                                <div class="menu-btn">
-                                    <a href="login" class="btn palatin-btn">L O G I N </a>
-                                </div>
-								</c:if>
-								
-								<c:if test="${loginInfo!=null }">
-                                <!-- Button -->
-                                
-                                <div class="menu-btn">
-                                	${loginInfo.getUserName() }
-                                    <a href="logout" class="btn palatin-btn">logout </a>
-                                </div>
-								</c:if>
-								
-								
-                            </div>
-                            <!-- Nav End -->
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- ##### Header Area End ##### -->
 <fieldset>
 
 <table>
@@ -307,7 +245,7 @@ fieldset {
 <c:set var="i" value="0" /> 
 <c:set var="j" value="3" /> 
 
-<form action ="Taselect" method="post">
+<form action ="taselect" method="post">
 <table>
 <c:forEach items="${list2 }" var="list2"> 
 <c:if test="${i%j == 0 }"> 
