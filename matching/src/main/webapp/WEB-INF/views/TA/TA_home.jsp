@@ -13,7 +13,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>지리는  AIO TRIP</title>
+    <title>AIO TRIP</title>
 
     <!-- Favicon -->
     <link rel="icon" href="resources/img/core-img/favicon.ico" type="text/css">
@@ -132,17 +132,12 @@ function a(){
                                 <div class="line" data-animation="fadeInUp" data-delay="300ms"></div>
                                 <h2 data-animation="fadeInUp" data-delay="500ms">TA guide</h2>
                                 <p data-animation="fadeInUp" data-delay="700ms">아래의 일정과 인원을 입력해주세요.</p>
-                                <!-- <form action="ta1" method="get">
-                                <input type="submit" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms"
-                                	value="TA START">
-                                </form> -->
+                                
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-  
         </div>
     </section>
     <!-- ##### Hero Area End ##### -->

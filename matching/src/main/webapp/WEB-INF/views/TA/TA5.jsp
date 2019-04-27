@@ -4,6 +4,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<!-- Core Stylesheet -->
+    <link rel="stylesheet" href="resources/style.css?after" type="text/css">
 <style>
 .styled {
     border: 0;
@@ -48,7 +50,7 @@ section{
   padding: 0.5em;
 }
 
-h1{
+.h1{
   font-weight: 400;
   font-size: 2em;
   cursor: default;
@@ -108,7 +110,7 @@ input[type='radio']:checked + label > span{
   border: .5em solid #FFEB3B;
   animation: shrink-bounce 200ms cubic-bezier(.4,.0,.23,1);
 }
-input[type='radio']:checked + label > span:before{
+input[type='radio']:checked + label > span.sapn:before{
   content: "";
   position: absolute;
   top: .6em;
@@ -158,8 +160,70 @@ fieldset{
 <title>T.A5</title>
 </head>
 <body>
+<!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Navbar Area -->
+        <div class="palatin-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="palatinNav">
+
+                        <!-- Nav brand -->
+                        <a href="./" class="nav-brand"><span style="color: white;"><b>AIO Trip</b></span></a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="./">Home</a></li>
+                                    <li><a href="tihome">여행지 소개</a></li>
+                                    <li><a href="TA_home">Trip aKiNaTor</a></li>
+                                    <li><a href="matching">여행친구찾기</a></li>
+                                    <li><a href="mall">중고장터</a></li>
+                                    <li><a href="mypage">My Pages</a></li>
+                                    <li>${loginInfo.userName}</li>
+                                </ul>
+								<c:if test="${loginInfo==null }">
+                                <!-- Button -->
+                                <div class="menu-btn">
+                                    <a href="login" class="btn palatin-btn">L O G I N </a>
+                                </div>
+								</c:if>
+								
+								<c:if test="${loginInfo!=null }">
+                                <!-- Button -->
+                                
+                                <div class="menu-btn">
+                                	${loginInfo.getUserName() }
+                                    <a href="logout" class="btn palatin-btn">logout </a>
+                                </div>
+								</c:if>
+								
+								
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
 <fieldset>
-<h1>Q 5. 여가 시간이 있다면 무엇을 하고 싶나요?</h1>
+<h1 class="h1">Q 5. 여가 시간이 있다면 무엇을 하고 싶나요?</h1>
 <form action ="ta6" method="post">
 <section>
 <input id='one' type="radio" name ="answer5" value="등산" checked>
