@@ -69,8 +69,8 @@
                                     <li><a href="mypage">My Pages</a></li>
                                 </ul>
 
-								<c:if test="${loginInfo==null }">
                                 <!-- Button -->
+								<c:if test="${loginInfo==null }">
                                 <div class="menu-btn">
                                     <a href="login" class="btn palatin-btn">L O G I N </a>
                                 </div>
@@ -81,7 +81,7 @@
                                 
                                 <div class="menu-btn">
                                 	${loginInfo.getUserName() }
-                                    <a href="logout" class="btn palatin-btn">logout </a>
+                                    <a href="logout" class="btn palatin-btn">L O G O U T </a>
                                 </div>
 								</c:if>
 
