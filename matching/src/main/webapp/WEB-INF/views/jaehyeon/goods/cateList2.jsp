@@ -43,7 +43,7 @@
                     <nav class="classy-navbar justify-content-between" id="palatinNav">
 
                         <!-- Nav brand -->
-                        <a href="./" class="nav-brand"><img src="resources/img/core-img/logo.png" alt=""></a>
+                        <a href="./" class="nav-brand"><span style="color: white;"><b>AIO Trip</b></span></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -124,35 +124,6 @@
 		</c:if>
 		<c:if test="${usedCategory.size() != 0}">
 			<table>
-<!-- 			
-				<thead>
-					<tr>
-						<th>번호</th>
-						<td>상품</td>
-						<th>이름</th>
-						<th>카테고리</th>
-						<th>가격</th>
-						<th>수량</th>
-						<th>등록날짜</th>
-					</tr>
-				</thead> 
-
-				<tbody>
-					<c:forEach items="${usedList }" var = "usedList">
-					<tr>
-						<td>${usedList.gdsNum }</td>
-						<td><img src="image/${usedList.gdsSavedfile }" width=50 height=50></td>
-						<td><a href="usedView?gdsNum=${usedList.gdsNum}">${usedList.gdsName }</a></td>
-						<td>${usedList.cateCode }</td>
-						<td>
-							<fmt:formatNumber value="${usedList.gdsPrice }" pattern="###,###,###"/>
-						</td>
-						<td>${usedList.gdsStock }</td>
-						<td>${usedList.gdsDate }</td>
-					</tr>
-					</c:forEach>
-				</tbody>  ${usedCategory.size()-1 }
- -->
  			<c:forEach begin="0" end="${usedCategory.size()-1 }" var="i" step="4">
 	 			<tr>
 	 			<c:forEach begin="${i}" end="${i+3}" var="j" >
@@ -169,7 +140,8 @@
 	 			<c:forEach begin="${i}" end="${i+3}" var="j">
 	 			<c:if test="${j < usedCategory.size()}">
 	 			<td>
-	 				${usedCategory[j].gdsName }
+	 				${usedCategory[j].gdsName }<br>
+	 				${usedCategory[j].gdsPrice }원
 	 			</td>
 	 			</c:if>
 	 			</c:forEach>

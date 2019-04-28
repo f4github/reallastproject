@@ -61,7 +61,8 @@ where gdsNum=#{gdsNum}
 
 <select id = "usedCategory" parameterType = "int" resultType = "Goods">
 select
-    g.gdsNum, g.gdsName, g.cateCode, c.cateCodeRef, c.cateName, gdsPrice, gdsStock, gdsDes, gdsSavedfile, gdsDate, g.gdsSavedfile
+    g.gdsNum, g.gdsName, g.cateCode, c.cateCodeRef, c.cateName, gdsPrice, 
+    gdsStock, gdsDes, gdsSavedfile, gdsDate, g.gdsSavedfile
         from tbl_goods g
             inner join goods_category c
                 on g.cateCode = c.cateCode           

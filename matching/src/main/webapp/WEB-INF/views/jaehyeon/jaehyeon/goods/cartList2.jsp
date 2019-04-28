@@ -41,7 +41,7 @@
                     <nav class="classy-navbar justify-content-between" id="palatinNav">
 
                         <!-- Nav brand -->
-                        <a href="./" class="nav-brand"><img src="resources/img/core-img/logo.png" alt=""></a>
+                         <a href="./" class="nav-brand"><span style="color: white;"><b>AIO Trip</b></span></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
