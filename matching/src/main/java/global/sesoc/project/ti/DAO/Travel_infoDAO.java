@@ -16,11 +16,13 @@ public class Travel_infoDAO {
 	
 	@Autowired
 	SqlSession sqlSession;
-
+/*	
+	//TA에 쓸 DB
 	public void insert(Travel_infoVO vo) {
 		Travel_infoMapper mapper = sqlSession.getMapper(Travel_infoMapper.class);
 		mapper.insert(vo);
 	}
+*/	
 	//좋아요
 	public void trip_like(Trip_likeVO vo) {
 		Travel_infoMapper mapper = sqlSession.getMapper(Travel_infoMapper.class);
@@ -41,6 +43,7 @@ public class Travel_infoDAO {
 		
 		return list;
 	}
+	//좋아요 삭제
 	public void likeDel(int likenum) {
 		Travel_infoMapper mapper = sqlSession.getMapper(Travel_infoMapper.class);
 		mapper.likeDel(likenum);

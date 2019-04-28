@@ -12,10 +12,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import global.sesoc.project.route.DAO.RouteDAO;
+import global.sesoc.project.route.VO.RouteVO;
 import global.sesoc.project.ta.DAO.TADAO;
 
 import global.sesoc.project.ta.VO.TAVO;
-import global.sesoc.project.ti.controller.Travel_info;
+import global.sesoc.project.ta.VO.Travel_infoVO;
 
 
 @Controller
@@ -23,6 +26,9 @@ public class TAController {
 	
 	@Autowired
 	TADAO dao;
+	
+	@Autowired
+	RouteDAO dao2;
 	
 	private static final Logger logger = LoggerFactory.getLogger(TAController.class);
 	
@@ -33,7 +39,15 @@ public class TAController {
 	}*/
 	
 	@RequestMapping(value = "ta1", method=RequestMethod.GET)
-	public String ta1Get() {
+	public String ta1Get(RouteVO vo, HttpSession session) {
+		
+		String loginId = (String) session.getAttribute("loginId");
+		vo.setId(loginId);
+		logger.debug("vo: {}", vo);
+//		dao2.routeInsert(vo);
+		//경로 고유번호 갖고 와서 세션에 담을지 고민중
+		session.setAttribute("routeVO", vo);
+		//출발지(주소) 여기서 넣고 가는게 좋음
 		
 		return "TA/TA1";
 	}
@@ -106,7 +120,7 @@ public class TAController {
 	
 	
 	@RequestMapping(value = "tacomplite", method=RequestMethod.POST)
-	public String tacomPOST(String answer7, Model model,HttpSession session) {
+	public String tacomPOST(String answer7, Model model, HttpSession session) {
 		
 		String id = (String) session.getAttribute("loginId");
 		HashMap<String, Object> map = new HashMap<String, Object>();
@@ -114,6 +128,15 @@ public class TAController {
 		map.put("id", id);
 		dao.vote(map);
 		ArrayList<TAVO> list = dao.location(id); //큰지역
+		logger.debug("큰지역:{}", list);
+		//여기서 경로 큰지역 넣어도 됨
+		RouteVO vo = (RouteVO)session.getAttribute("routeVO");
+		
+		vo.setTripArea(list.get(0).getTravelplace());
+		logger.debug("routeVO:{}",vo);
+		session.setAttribute("routeVO", vo);
+		//
+		
 		model.addAttribute("list", list);
 		
 		ArrayList<TAVO> list2 = dao.location2(id); //상세지역
@@ -127,37 +150,37 @@ public class TAController {
 	public String taselectPost(String travelid[], Model model) {
 		
 		logger.debug("[0]:{}",travelid[0]);
-		logger.debug("[1]:{}",travelid[1]);
-		logger.debug("[2]:{}",travelid[2]);
-		logger.debug("[3]:{}",travelid[3]);
-		Travel_info vo = new Travel_info();
-		ArrayList<Travel_info> list = new ArrayList<>();
+//		logger.debug("[1]:{}",travelid[1]);
+//		logger.debug("[2]:{}",travelid[2]);
+//		logger.debug("[3]:{}",travelid[3]);
+		Travel_infoVO vo = new Travel_infoVO();
+		ArrayList<Travel_infoVO> list = new ArrayList<>();
 		
 		for(int i=0 ; i<travelid.length ; i++){
 			vo = dao.selectTravel(travelid[i]);
 			list.add(vo);
 		}
+		logger.debug("리스트:{}", list);
+		model.addAttribute("list", list);
 		
+		for(int i=0 ; i<list.size() ; i++){
+			model.addAttribute("list_x" + i, list.get(i).getMapx());
+			model.addAttribute("list_y" + i, list.get(i).getMapy());
+			
+		}
 		
-				
-		return "ta/taselect";
+		int end_x = list.size() -1;
+		int end_y = list.size() -1;
+		logger.debug("end_x:{}", end_x);
+		
+		model.addAttribute("list_end_x", list.get(end_x).getMapx());
+		model.addAttribute("list_end_y", list.get(end_y).getMapy());
+		
+//		return "ttt";
+		return "TA/taselect";
 	}
 	
-/*	
-	@RequestMapping(value = "taselect", method=RequestMethod.POST)
-	public String taselectPost(String travelid, Model model) {		
-		logger.debug("결과:{}",travelid);
-		Travel_info vo = new Travel_info();
-		ArrayList<Travel_info> list = new ArrayList<>();
-		
-		vo.
-		
-		//dao.selectTravel(travelid);
-		
-		return "ta/taselect";
-	}
-*/	
-	
+
 	
 	
 	

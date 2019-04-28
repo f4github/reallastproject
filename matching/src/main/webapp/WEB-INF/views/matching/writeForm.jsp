@@ -6,6 +6,7 @@
 <html lang="en">
 
 <head>
+<script src="resources/js/jquery-3.3.1.min.js"></script>
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -59,7 +60,9 @@
 .content_color:hover{
   background-color: #f1f1f1;
 }
-
+.keiro{
+	border: none;
+}
 
 
 
@@ -70,6 +73,22 @@
 
 
 <script>
+
+$(document).ready(function (){
+	$('#bt1').on('click',test1);
+
+});
+
+function test1()
+{
+	win = window.open('keiro','newWin','width=400,height=300,left=0,top=0');	//(url,창이름,창의모양);	
+}
+
+
+
+
+
+
 	function check(){
 		var title = document.getElementById("title");
 		var con = document.getElementById("content");
@@ -107,7 +126,7 @@
                     <nav class="classy-navbar justify-content-between" id="palatinNav">
 
                         <!-- Nav brand -->
-                        <a href="./" class="nav-brand"><img src="resources/img/core-img/logo.png" alt=""></a>
+                        <a href="./" class="nav-brand"><span style="color: white;"><b>AIO Trip</b></span></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -207,9 +226,18 @@
 				<span class="button_bt">글 제목 </span>
 				<input type="text" size="70" name="title" id="title">
 				<br>
-				<span class="button_bt">내용</span>				
+				<p class="button_bt" id="bt1">경로선택</p>			
 				 <br>
-				<textarea rows="30" cols="100" name="content" id="content" class="content_color"></textarea><br>
+				 <table>
+				 	<tr>
+				 		<th>
+				 			여행지역 : <input type="text" class="keiro" readonly>
+				 			남 : <input type="text" class="keiro" readonly>
+				 			여 : <input type="text" class="keiro" readonly>
+				 		</th>
+				 	</tr>				 
+				 </table>
+				<textarea rows="20" cols="100" name="content" id="content" class="content_color"></textarea><br>
 <!-- 				파일첨부 : <input type="file" name="upload" size="30">	 -->
 			<input type="submit" value="작성완료" class="button_bt">
 		</form>

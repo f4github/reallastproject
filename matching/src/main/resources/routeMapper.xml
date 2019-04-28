@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!-- 루트 관련 SQL -->
+<mapper namespace="global.sesoc.project.route.DAO.RouteMapper">
+	
+	<!-- 루트 저장 -->
+	<insert id="routeInsert" parameterType="rvo">
+	insert into route (routeNum, id, title, startDate, endDate, tripArea, male, female)
+	values (routeNum_seq.nextval, #{id}, #{title}, #{startDate}, #{endDate}, #{tripArea}, #{male}, #{female})
+	</insert>
+	
+	<!-- 경로리트스 호출 -->
+	<select id="getRoute_list" parameterType="String" resultType="rvo">
+	select * from route where id like #{loginId}
+	</select>
+
+	
+	
+
+	
+	
+	
+</mapper>
+  

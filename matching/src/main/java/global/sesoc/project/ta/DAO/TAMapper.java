@@ -17,9 +17,7 @@ public interface TAMapper {
 	
 	public void TAReset(String id);
 
-	public ArrayList<Travel_infoVO> selectTravel(String travelid);
-
-
+	public Travel_infoVO selectTravel(String travelid);
 	
 }
 

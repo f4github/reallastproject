@@ -1,3 +1,4 @@
+--여행지 좋아요
 create table trip_like (
 likenum	number	primary key,
 id	varchar2(20),

@@ -6,6 +6,7 @@
 <html lang="en">
 
 <head>
+<script src = "resources/js/jquery-3.3.1.min.js"></script>
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -152,23 +153,23 @@ function a(){
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-10">
                     <div class="book-now-form">
-                        <form action="#">
+                        <form action="ta1" method="get" id="form_ta_start">
                             <!-- Form Group -->
                             <div class="form-group">
                                 <label for="select1">Check In</label>
-                                <input type="date" class="form-control" id="select1" value="2019-05-02" required>
+                                <input type="date" class="form-control" name="startDate" id="select1" value="2019-05-02">
                             </div>
 
                             <!-- Form Group -->
                             <div class="form-group">
                                 <label for="select2">Check Out</label>
-								<input type="date" class="form-control" id="select1" value="2019-05-02" required>
+								<input type="date" class="form-control" name="endDate" id="select1" value="2019-05-02">
                             </div>
 
                             <!-- Form Group -->
                             <div class="form-group">
                                 <label for="select3">Male</label>
-                                <select class="form-control" id="select3">
+                                <select class="form-control" name="male" id="select3">
                                   <option>00</option>
                                   <option>01</option>
                                   <option>02</option>
@@ -186,7 +187,7 @@ function a(){
                             <!-- Form Group -->
                             <div class="form-group">
                                 <label for="select4">Female</label>
-                                <select class="form-control" id="select4">
+                                <select class="form-control" name="female" id="select4">
                                   <option>00</option>
                                   <option>01</option>
                                   <option>02</option>
@@ -201,7 +202,7 @@ function a(){
                                 </select>
                             </div>
                             <!-- Button -->
-                            <button type="button" id="start" onclick="location.href='ta1'">TA start</button>
+                            <button type="button" id="start" onclick="ta1()">TA start</button>
                         </form>
                     </div>
                 </div>
@@ -209,7 +210,24 @@ function a(){
         </div>
     </div>
     <!-- ##### Book Now Area End ##### -->
+    <script>
+    function ta1(){
+    	var male = $('#select3>option:selected').val();
+    	var female = $('#select4>option:selected').val();
+    	
+    	var form = document.getElementById('form_ta_start');
+    	
+    	console.log(male);
+    	console.log(female);
+    	if(male == 00 && female == 00){
+    		alert('인원을 입력해주세요');
+    		return;
+    	}
+    	form.submit();
+//  	location.href='ta1';
+    }
     
+    </script>
     
 
 

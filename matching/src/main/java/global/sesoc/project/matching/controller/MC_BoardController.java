@@ -25,6 +25,8 @@ import org.springframework.web.multipart.MultipartFile;
 import global.sesoc.project.matching.DAO.MC_BoardDAO;
 import global.sesoc.project.matching.VO.MC_BoardVO;
 import global.sesoc.project.matching.VO.MC_ReplyVO;
+import global.sesoc.project.route.DAO.RouteDAO;
+import global.sesoc.project.route.VO.RouteVO;
 import global.sesoc.project.util.FileService;
 import global.sesoc.project.util.PageNavigator;
 
@@ -47,6 +49,8 @@ public class MC_BoardController {
 	
 	@Autowired
 	MC_BoardDAO dao;
+	@Autowired
+	RouteDAO dao2;
 	
 	/**
 	 * 게시판 페이지 만들기
@@ -255,5 +259,16 @@ public class MC_BoardController {
 			dao.replyDelete(replynum, id);
 		}
 		return "redirect:readForm?boardnum=" + boardnum;
+	}
+	
+	
+//경로창	
+	@RequestMapping(value="/keiro", method=RequestMethod.GET)
+	public String keiro(HttpSession session, Model model){
+		String loginId = (String) session.getAttribute("loginId");
+		ArrayList<RouteVO> list = dao2.getRoute_list(loginId);
+		model.addAttribute("list", list);
+		
+		return "matching/keiro";
 	}
 }

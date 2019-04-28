@@ -14,10 +14,14 @@ create table mcboard (
 	hits			number 	default 0,		--조회수
 	originalfile		varchar2(200),			--첨부파일명 (원래 이름)
 	savedfile		varchar2(100),			--첨부파일명 (실제 저장된 이름)
+	
+	routeNum		number,				--경로 번호
+	startDate		date,				--출발일
+	endDate			date,				--도착일
+	startPlace		varchar2(100),	--출발지(주소지 좌표)
+	tripArea		varchar2(20),	--여행 지역
 	male			number,
-	female			number,
-	area			varchar2(200),
-	hashtag			varchar2(2000)
+	female			number
 );
 
 -- 게시판 일련번호에 사용할 시퀀스 
@@ -37,10 +41,6 @@ create table mcreply (
 -- 리플에 사용할 시퀀스
 create sequence mcreply_seq start with 1 increment by 1;
 
-
-
--- 리플에 사용할 시퀀스
-create sequence mcreply_seq start with 1 increment by 1;
 
 -- 글 저장 예
 insert into mcboard (boardnum, id, title, content) values (mcboard_seq.nextval, 'aaa', '글제목', '글내용');
