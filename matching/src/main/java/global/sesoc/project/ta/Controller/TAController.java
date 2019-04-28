@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import global.sesoc.project.ta.DAO.TADAO;
 
 import global.sesoc.project.ta.VO.TAVO;
+import global.sesoc.project.ti.controller.Travel_info;
 
 
 @Controller
@@ -118,21 +119,65 @@ public class TAController {
 		ArrayList<TAVO> list2 = dao.location2(id); //상세지역
 		model.addAttribute("list2",list2);
 		
-		dao.TAReset(id); 	//TA초기화
+		//dao.TAReset(id); 	//TA초기화
 		return "TA/TACOM";
 	}
 	
-	/*@RequestMapping(value = "Taselect", method=RequestMethod.POST)
-	public String taselectPost(String chk[], Model model) {
+	@RequestMapping(value = "taselect", method=RequestMethod.POST)
+	public String taselectPost(String travelid[], Model model) {
+		
+		logger.debug("[0]:{}",travelid[0]);
+		logger.debug("[1]:{}",travelid[1]);
+		logger.debug("[2]:{}",travelid[2]);
+		logger.debug("[3]:{}",travelid[3]);
+		Travel_info vo = new Travel_info();
+		ArrayList<Travel_info> list = new ArrayList<>();
+		
+		for(int i=0 ; i<travelid.length ; i++){
+			vo = dao.selectTravel(travelid[i]);
+			list.add(vo);
+		}
 		
 		
+				
+		return "ta/taselect";
+	}
+	
+/*	
+	@RequestMapping(value = "taselect", method=RequestMethod.POST)
+	public String taselectPost(String travelid, Model model) {		
+		logger.debug("결과:{}",travelid);
+		Travel_info vo = new Travel_info();
+		ArrayList<Travel_info> list = new ArrayList<>();
 		
+		vo.
 		
-		 dao.selectTravel(travelid);
+		//dao.selectTravel(travelid);
 		
-		ArrayList<Travel_infoVO> list = ;
-		
-		model.addAttribute("list",list);
-		return "ta/Taselect";
-	}*/
+		return "ta/taselect";
+	}
+*/	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

@@ -13,13 +13,13 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>지리는  AIO TRIP</title>
+    <title>AIO TRIP</title>
 
     <!-- Favicon -->
     <link rel="icon" href="resources/img/core-img/favicon.ico" type="text/css">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="resources/style.css" type="text/css">
+    <link rel="stylesheet" href="resources/style.css?after" type="text/css">
 
 <style>
 
@@ -63,7 +63,7 @@ function a(){
                     <nav class="classy-navbar justify-content-between" id="palatinNav">
 
                         <!-- Nav brand -->
-                        <a href="./" class="nav-brand"><img src="resources/img/core-img/logo.png" alt=""></a>
+                        <a href="./" class="nav-brand"><span style="color: white;"><b>AIO Trip</b></span></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -132,17 +132,12 @@ function a(){
                                 <div class="line" data-animation="fadeInUp" data-delay="300ms"></div>
                                 <h2 data-animation="fadeInUp" data-delay="500ms">TA guide</h2>
                                 <p data-animation="fadeInUp" data-delay="700ms">아래의 일정과 인원을 입력해주세요.</p>
-                                <form action="ta1" method="get">
-                                <input type="submit" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms"
-                                	value="TA START">
-                                </form>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-  
         </div>
     </section>
     <!-- ##### Hero Area End ##### -->
@@ -161,39 +156,30 @@ function a(){
                             <!-- Form Group -->
                             <div class="form-group">
                                 <label for="select1">Check In</label>
-                                <select class="form-control" id="select1">
-                                  <option>24 April</option>
-                                  <option>25 April</option>
-                                  <option>26 April</option>
-                                  <option>27 April</option>
-                                  <option>28 April</option>
-                                  <option>29 April</option>
-                                  <option>30 April</option>
-                                </select>
+                                <input type="date" class="form-control" id="select1" value="2019-05-02" required>
                             </div>
 
                             <!-- Form Group -->
                             <div class="form-group">
                                 <label for="select2">Check Out</label>
-                                <select class="form-control" id="select2">
-                                  <option>25 April</option>
-                                  <option>26 April</option>
-                                  <option>27 April</option>
-                                  <option>28 April</option>
-                                  <option>29 April</option>
-                                  <option>30 April</option>
-                                </select>
+								<input type="date" class="form-control" id="select1" value="2019-05-02" required>
                             </div>
 
                             <!-- Form Group -->
                             <div class="form-group">
                                 <label for="select3">Male</label>
                                 <select class="form-control" id="select3">
+                                  <option>00</option>
+                                  <option>01</option>
                                   <option>02</option>
                                   <option>03</option>
                                   <option>04</option>
                                   <option>05</option>
                                   <option>06</option>
+                                  <option>07</option>
+                                  <option>08</option>
+                                  <option>09</option>
+                                  <option>10</option>
                                 </select>
                             </div>
 
@@ -201,16 +187,21 @@ function a(){
                             <div class="form-group">
                                 <label for="select4">Female</label>
                                 <select class="form-control" id="select4">
+                                  <option>00</option>
                                   <option>01</option>
                                   <option>02</option>
                                   <option>03</option>
                                   <option>04</option>
                                   <option>05</option>
+                                  <option>06</option>
+                                  <option>07</option>
+                                  <option>08</option>
+                                  <option>09</option>
+                                  <option>10</option>
                                 </select>
                             </div>
-
                             <!-- Button -->
-                            <button type="button" id="start">TA start</button>
+                            <button type="button" id="start" onclick="location.href='ta1'">TA start</button>
                         </form>
                     </div>
                 </div>

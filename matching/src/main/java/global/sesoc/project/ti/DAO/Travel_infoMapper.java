@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import global.sesoc.project.ti.VO.Travel_infoVO;
 import global.sesoc.project.ti.VO.Trip_likeVO;
+import global.sesoc.project.ti.controller.Travel_info;
 
 public interface Travel_infoMapper {
 
@@ -16,5 +17,7 @@ public interface Travel_infoMapper {
 	public ArrayList<Trip_likeVO> getList(String id);
 	//좋아요 취소
 	public void likeDel(int likenum);
+	//
+	public Travel_info selectTravel(String travelid);
 
 }

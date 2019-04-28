@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>지역 특정</title>
+
 <script src = "resources/js/jquery-3.3.1.min.js"></script>
 <script>
 
@@ -224,6 +225,7 @@ fieldset {
 
 </head>
 <body>
+
 <fieldset>
 
 <table>
@@ -243,7 +245,7 @@ fieldset {
 <c:set var="i" value="0" /> 
 <c:set var="j" value="3" /> 
 
-<form action ="Taselect" method="post">
+<form action ="taselect" method="post">
 <table>
 <c:forEach items="${list2 }" var="list2"> 
 <c:if test="${i%j == 0 }"> 
@@ -267,7 +269,7 @@ fieldset {
 <c:set var="i" value="${i+1 }" /> 
 </c:forEach>
 </table>
-<!-- <input type="submit" value="결정" class="styled"> -->
+<input type="submit" value="결정" class="styled">
 </form>
 
 </fieldset>
