@@ -13,7 +13,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>지리는  AIO TRIP</title>
+    <title>AIO TRIP</title>
 
     <!-- Favicon -->
     <link rel="icon" href="resources/img/core-img/favicon.ico" type="text/css">
@@ -107,7 +107,7 @@ table.type09 td {
                     <nav class="classy-navbar justify-content-between" id="palatinNav">
 
                         <!-- Nav brand -->
-                        <a href="./" class="nav-brand"><span style="color: white;"><b>AIO Trip</b></span></a>
+                        <a href="./" class="nav-brand"><img src="resources/img/core-img/logo.png" alt=""></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -125,11 +125,11 @@ table.type09 td {
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li class="active"><a href="./">Home</a></li>
+                                     <li class="active"><a href="./">Home</a></li>
                                     <li><a href="tihome">여행지 소개</a></li>
                                     <li><a href="TA_home">Trip aKiNaTor</a></li>
                                     <li><a href="matching">여행친구찾기</a></li>
-                                    <li><a href="mall">중고장터</a></li>
+                                    <li><a href="mall">중고나라</a></li>
                                     <li><a href="mypage">My Pages</a></li>
                                     <li>${loginInfo.userName}</li>
                                 </ul>
@@ -145,7 +145,7 @@ table.type09 td {
                                 
                                 <div class="menu-btn">
                                 	${loginInfo.getUserName() }
-                                    <a href="logout" class="btn palatin-btn">logout </a>
+                                    <a href="logout" class="btn palatin-btn">L O G O U T</a>
                                 </div>
 								</c:if>
 								
