@@ -48,7 +48,31 @@ html, body {
 }
 
 
+.button11 {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
 
+.button111 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+.button111:hover {
+  background-color: #4CAF50;
+  color: white;
+}
 
 
 
@@ -78,6 +102,13 @@ html, body {
 		<td>${vo.female}</td>
 	</tr>
 </table>
+
+
+<a href="./"><button class="button11 button111">집</button></a>
+
+
+
+
 </div>
 </body>
 </html>

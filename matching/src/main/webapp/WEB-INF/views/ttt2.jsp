@@ -25,6 +25,7 @@ function Conversion(country){
  }
  
   function split (con) {
+	console.log(con);
     var loc = $(con).find("location").text();
     $.ajax({
        url: 'split',
@@ -34,6 +35,8 @@ function Conversion(country){
        success: function(hash){
           var lon = hash.lng;
           var lat = hash.lat;
+          console.log(lon);
+          console.log(lat);
        }
     });
   }
@@ -43,7 +46,7 @@ function Conversion(country){
 </head>
 <body>
 
-<a href="javascript:Conversion('서울특별시 용산구 한강대로 405')">좌표변환</a>
+<a href="javascript:Conversion('서울특별시 용산구 한강대로 405')">변환</a>
 
 
 
