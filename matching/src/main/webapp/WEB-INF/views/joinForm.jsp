@@ -1,314 +1,295 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" %>
-
-<!DOCTYPE jsp>
-<html lang="en">
-
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<script src="resources/js/jquery-3.3.1.min.js"></script>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AIO Trip Sign Up</title>
+<script src="resources/jquery/jquery-3.3.1.min.js"></script>
 
-    <!-- Title -->
-    <title>지리는  AIO TRIP</title>
+<style>
+body  {
+  background-image: url("resources/login/images/bgimg1.jpg");
 
-    <!-- Favicon -->
-    <link rel="icon" href="resources/img/core-img/favicon.ico" type="text/css">
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+.centered-wrapper {
+    position: relative;
+    text-align: center;
+}
+.centered-wrapper:before {
+    content: "";
+    position: relative;
+    display: inline-block;
+    width: 0; height: 100%;
+    vertical-align: middle;
+}
+.centered-content {
+    display: inline-block;
+    vertical-align: middle;
+}
 
-    <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="resources/style.css" type="text/css">
-
-
-	<style>
-	.rudfhcnrk{
-		color: blue;
-		float: right;
-		width: 100%
-
-	}
-
-	.col-12 col-lg-4{
-	width: 100%;
-	}
-	
-	
-	
-	
-		
-
-.button_bt {
-  background-color: #ddd;
-  border: none;
-  color: black;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px 0px;
+  margin: 5px 0 22px 0;
   display: inline-block;
-  margin: 4px 2px;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
   cursor: pointer;
-  border-radius: 16px;
+  width: 100%;
+  opacity: 0.9;
 }
 
-.button_bt:hover {
-  background-color: #f1f1f1;
+button:hover {
+  opacity:1;
 }
 
-.content_color:hover{
-  background-color: #f1f1f1;
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
 }
-.keiro{
-	border: none;
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 50px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 
-
-	</style>
-	
-
-
-
+</style>
 
 <script>
-
-$(document).ready(function (){
-	$('#bt1').on('click',test1);
-
-});
-
-function test1()
+function formCheck()
 {
-	win = window.open('keiro','newWin','width=400,height=300,left=0,top=0');	//(url,창이름,창의모양);	
+	var id = document.getElementById("userId");
+	var pw = document.getElementById("userPass");
+	var name = document.getElementById("userName");
+	var phone = document.getElementById("userPhon");
+	var addr1 = document.getElementById("sample6_postcode");
+	var addr2 = document.getElementById("sample6_address");
+	var addr3 = document.getElementById("sample6_detailAddress");
+	
+	if (id.value.length < 3)
+	{
+		alert('ID를 세글자 이상 입력해주세요.');
+		id.focus();
+		id.select();
+		return false;
+	}
+	else if (pw.value.length < 3)
+	{
+		alert('패스워드를 세글자 이상 입력해주세요.');
+		pw.focus();
+		pw.select();
+		return false;
+	}
+	
+	else if (name.value.length == 0)
+	{
+		alert('이름을 입력해주세요.');
+		name.focus();
+		name.select();
+		return false;
+	}
+	else if (phone.value.length < 10)
+	{
+		alert('핸드폰번호를 입력해주세요. ex)01012345678');
+		phone.focus();
+		phone.select();
+		return false;
+	}
+	else if (addr1.value.length < 1 || addr1.value == null)
+	{
+		alert('우편번호를 입력해주세요.');
+		addr1.focus();
+		addr1.select();
+		return false;
+	}
+	else if (addr2.value.length < 1 || addr2.value == null)
+	{
+		alert('주소를 입력해주세요.');
+		addr2.focus();
+		addr2.select();
+		return false;
+	}
+	else if (addr3.value.length < 1 || addr3.value == null)
+	{
+		alert('나머지주소를 입력해주세요.');
+		addr3.focus();
+		addr3.select();
+		return false;
+	}
+	return true;
+	
+/* 	$(function(){
+		//아이디 중복체크
+		    $('#userId').blur(function(){
+		        $.ajax({
+			     type:"POST",
+			     url:"checkSignup",
+			     data:{
+			            "id":$('#userId').val()
+			     },
+			     success:function(data){	//data : checkSignup에서 넘겨준 결과값
+			            if($.trim(data)=="YES"){
+			               if($('#userId').val()!=''){ 
+			               	alert("사용가능한 아이디입니다.");
+			               }
+			           	}else{
+			               if($('#userId').val()!=''){
+			                  alert("중복된 아이디입니다.");
+			                  $('#userId').val('');
+			                  $('#userId').focus();
+			               }
+			            }
+			         }
+			    }) 
+		     })
+
+		}); */
 }
 
-
-
-
-
-
-	function check(){
-		var title = document.getElementById("title");
-		var con = document.getElementById("content");
-		
-		if(title.value == '' || title.value == null){
-			alert('제목을 1글자 이상 입력하세요.');
-			return false;
-		}
-		if(con.value == '' || con.value == null){
-			alert('내용을 1글자 이상 입력하세요.');
-			return false;
-		}
-		return true;
-	}
 </script>
-
-
 </head>
+<body class="centered-wrapper">
+<div class="centered-content"  style="background-color:white;">
 
-<body>
-    <!-- Preloader -->
-    <div class="preloader d-flex align-items-center justify-content-center">
-        <div class="cssload-container">
-            <div class="cssload-loading"><i></i><i></i><i></i><i></i></div>
-        </div>
+<form action="join" style="border:1px solid #ccc" method = "post" onsubmit = "return formCheck();">
+  <div class="container">
+    <h1>Sign Up</h1>
+    <hr>
+   
+<label for="userId"><b>ID</b></label><br>
+<input type="text" placeholder="ID를 입력해주세요." name="userId" required id = "userId"><br>
+
+<label for="userPass"><b>Password</b></label><br>
+<input type="password" placeholder="비밀번호를 입력해주세요." name="userPass" required id = "userPass"><br>
+
+<label for="userName"><b>Name</b></label><br>
+<input type="text" placeholder="이름을 입력해주세요." name="userName" required id = "userName"><br>
+
+<label for="userPhon"><b>Phone</b></label><br>
+<input type="text" placeholder="전화번호를 입력해주세요." name="userPhon" required id = "userPhon"><br>
+
+<!-- <label for="userAddr"><b>우편번호</b></label><br>
+<input type="text" id="userAddr1" name="userAddr1" placeholder="우편번호">
+<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+<input type="text" id="userAddr2" name="userAddr2" placeholder="주소"><br>
+<input type="text" id="userAddr3" name="userAddr3" placeholder="나머지주소"> -->
+
+<label for="userAddr"><b>우편번호</b></label><br>
+<input type="text" id="sample6_postcode" name="userAddr1" placeholder="우편번호" readonly >
+<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+<input type="text" id="sample6_address" name="userAddr2" placeholder="주소" readonly ><br>
+<input type="text" id="sample6_detailAddress" name="userAddr3" placeholder="나머지주소">
+<input type="hidden" id="sample6_extraAddress" placeholder="참고항목">
+
+    <div class="clearfix">
+      <button type="button" class="cancelbtn" id = "cancel_btn">Cancel</button>
+      <button type="submit" class="signupbtn">Sign Up</button>
     </div>
-
-    <!-- ##### Header Area Start ##### -->
-    <header class="header-area">
-        <!-- Navbar Area -->
-        <div class="palatin-main-menu">
-            <div class="classy-nav-container breakpoint-off">
-                <div class="container">
-                    <!-- Menu -->
-                    <nav class="classy-navbar justify-content-between" id="palatinNav">
-
-                        <!-- Nav brand -->
-                        <a href="./" class="nav-brand"><span style="color: white;"><b>AIO Trip</b></span></a>
-
-                        <!-- Navbar Toggler -->
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
-
-                        <!-- Menu -->
-                        <div class="classy-menu">
-
-                            <!-- close btn -->
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
-
-                            <!-- Nav Start -->
-                            <div class="classynav">
-                                <ul>
-                                     <li class="active"><a href="./">Home</a></li>
-                                    <li><a href="tihome">여행지 소개</a></li>
-                                    <li><a href="TA_home">Trip aKiNaTor</a></li>
-                                    <li><a href="matching">여행친구찾기</a></li>
-                                    <li><a href="mall">중고나라</a></li>
-                                    <li><a href="mypage">My Pages</a></li>
-                                    <li>${loginInfo.userName}</li>
-                                </ul>
-								<c:if test="${loginInfo==null }">
-                                <!-- Button -->
-                                <div class="menu-btn">
-                                    <a href="login" class="btn palatin-btn">L O G I N </a>
-                                </div>
-								</c:if>
-								
-								<c:if test="${loginInfo!=null }">
-                                <!-- Button -->
-                                
-                                <div class="menu-btn">
-                                	${loginInfo.getUserName() }
-                                    <a href="logout" class="btn palatin-btn">L O G O U T</a>
-                                </div>
-								</c:if>
-								
-								
-                            </div>
-                            <!-- Nav End -->
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- ##### Header Area End ##### -->
-
-    <!-- ##### Hero Area Start ##### -->
-    <section class="hero-area">
-        <div class="hero-slides owl-carousel">
-
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide d-flex align-items-center justify-content-center">
-                <!-- Slide Img -->
-                <div class="slide-img bg-img" style="background-image: url(resources/img/bg-img/bg-1.jpg);"></div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-lg-9">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <!-- ##### Hero Area End ##### -->
-
-    
-<br><br><br><br><br>
-
-
-    <!-- ##### mypage Form Area Start ##### -->
-    <section class="mypage-form-area mb-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading">
-                        <div class="line-"></div>
-                        <h2>With Travel Friend</h2>
-                    </div>
-                </div>
-            </div>
-
-            
-            
-
-	<div align="center">
-	<!-- 바이너리 데이터 포함되는 폼. 파일이 안올라가면 enctype 추가했는지 확인하자. 2월 1일 작성. -->
-		<form action="write2" method="post" onsubmit="return check()"
-			enctype="multipart/form-data">
-				<span class="button_bt">글 제목 </span>
-				<input type="text" size="70" name="title" id="title">
-				<br>
-				<p class="button_bt" id="bt1">경로선택</p>			
-				 <br>
-				 <table>
-				 	<tr>
-				 		<th>
-				 			여행지역 : <input type="text" class="keiro" readonly>
-				 			남 : <input type="text" class="keiro" readonly>
-				 			여 : <input type="text" class="keiro" readonly>
-				 		</th>
-				 	</tr>				 
-				 </table>
-				<textarea rows="20" cols="100" name="content" id="content" class="content_color"></textarea><br>
-<!-- 				파일첨부 : <input type="file" name="upload" size="30">	 -->
-			<input type="submit" value="작성완료" class="button_bt">
-		</form>
+<script>
+             $("#cancel_btn").click(function(){
+              history.back();
+             });   
+</script>
 	</div>
-	
-	  
-            
-            
-        </div>
-    </section>
-    <!-- ##### mypage Form Area End ##### -->
+      
+ 
+</form>
 
 
-    <!-- ##### Footer Area Start ##### -->
-    <footer class="footer-area">
-        <div class="container">
-            <div class="row">
 
-                <!-- Footer Widget Area -->
-                <div class="col-12 col-lg-5">
-                    <div class="footer-widget-area mt-50">
-                        <a href="#" class="d-block mb-5"><img src="resources/img/core-img/logo.png" alt=""></a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. </p>
-                    </div>
-                </div>
+<!-- 도로명주소 -->
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script>
+    function sample6_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
 
-                <!-- Footer Widget Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="footer-widget-area mt-50">
-                        <h6 class="widget-title mb-5">Find us on the map</h6>
-                        <img src="resources/img/bg-img/footer-map.png" alt="">
-                    </div>
-                </div>
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var addr = ''; // 주소 변수
+                var extraAddr = ''; // 참고항목 변수
 
-                <!-- Footer Widget Area -->
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="footer-widget-area mt-50">
-                        <h6 class="widget-title mb-5">Subscribe to our newsletter</h6>
-                        <form action="#" method="post" class="subscribe-form">
-                            <input type="email" name="subscribe-email" id="subscribeemail" placeholder="Your E-mail">
-                            <button type="submit">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
+                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    addr = data.roadAddress;
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    addr = data.jibunAddress;
+                }
 
-                <!-- Copywrite Text -->
-                <div class="col-12">
-                    <div class="copywrite-text mt-30">
-                        <p><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- ##### Footer Area End ##### -->
-    
-    
+                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+                if(data.userSelectedType === 'R'){
+                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                        extraAddr += data.bname;
+                    }
+                    // 건물명이 있고, 공동주택일 경우 추가한다.
+                    if(data.buildingName !== '' && data.apartment === 'Y'){
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                    if(extraAddr !== ''){
+                        extraAddr = ' (' + extraAddr + ')';
+                    }
+                    // 조합된 참고항목을 해당 필드에 넣는다.
+                    document.getElementById("sample6_extraAddress").value = extraAddr;
+                
+                } else {
+                    document.getElementById("sample6_extraAddress").value = '';
+                }
 
-    <!-- ##### All Javascript Script ##### -->
-    <!-- jQuery-2.2.4 js -->
-    <script src="resources/js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="resources/js/bootstrap/popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="resources/js/bootstrap/bootstrap.min.js"></script>
-    <!-- All Plugins js -->
-    <script src="resources/js/plugins/plugins.js"></script>
-    <!-- Active js -->
-    <script src="resources/js/active.js"></script>
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('sample6_postcode').value = data.zonecode;
+                document.getElementById("sample6_address").value = addr;
+                // 커서를 상세주소 필드로 이동한다.
+                document.getElementById("sample6_detailAddress").focus();
+            }
+        }).open();
+    }
+</script>
+</div>
 </body>
-
 </html>

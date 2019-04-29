@@ -11,6 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<script src="resources/ti/js/jquery-3.2.1.min.js"></script>
 
     <!-- Title -->
     <title>지리는  AIO TRIP</title>
@@ -22,19 +23,22 @@
     <link rel="stylesheet" href="resources/style.css" type="text/css">
 
 
-	<style>
-	.rudfhcnrk{
-		color: blue;
-		float: right;
-		width: 100%
+<style>
+.rudfhcnrk{
+	color: blue;
+	float: right;
+	width: 100%
 
-	}
+}
 
-	.col-12 col-lg-4{
-	width: 100%;
-	}
+.col-12 col-lg-4{
+width: 100%;
+}
 	
 	
+.keiro{
+	border: none;
+}
 	
 	
 	
@@ -55,7 +59,38 @@
 .button_bt:hover {
   background-color: #f1f1f1;
 }
-	</style>
+
+
+.button11 {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button111 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+.button111:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+
+
+</style>
 
 
 
@@ -127,7 +162,7 @@ table.type09 td {
                     <nav class="classy-navbar justify-content-between" id="palatinNav">
 
                         <!-- Nav brand -->
-                        <a href="./" class="nav-brand"><img src="resources/img/core-img/logo.png" alt=""></a>
+                        <a href="./" class="nav-brand"><span style="color: white;"><b>AIO Trip</b></span></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -145,11 +180,11 @@ table.type09 td {
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                     <li class="active"><a href="./">Home</a></li>
+                                    <li class="active"><a href="./">Home</a></li>
                                     <li><a href="tihome">여행지 소개</a></li>
                                     <li><a href="TA_home">Trip aKiNaTor</a></li>
                                     <li><a href="matching">여행친구찾기</a></li>
-                                    <li><a href="mall">중고나라</a></li>
+                                    <li><a href="mall">중고장터</a></li>
                                     <li><a href="mypage">My Pages</a></li>
                                     <li>${loginInfo.userName}</li>
                                 </ul>
@@ -165,7 +200,7 @@ table.type09 td {
                                 
                                 <div class="menu-btn">
                                 	${loginInfo.getUserName() }
-                                    <a href="logout" class="btn palatin-btn">L O G O U T</a>
+                                    <a href="logout" class="btn palatin-btn">logout </a>
                                 </div>
 								</c:if>
 								
@@ -225,6 +260,7 @@ table.type09 td {
 				<thead>					<tr>
 					    <th scope="cols" >제목</th>
 			 		    <td>${read.title}</td>
+			 		    <td><button class="button11 button111"  style="float: right;"  id="sjj">Like</button></td>
 			 		</tr>
 				</thead>
 				<tbody>
@@ -232,7 +268,18 @@ table.type09 td {
 						<td colspan="2">아이디: ${read.id}  <span style="float: right">작성일: ${read.inputdate}</span></td>
 					</tr>
 					<tr>
-				   		<th scope="row" colspan="3" width="20px" height="300px">${read.content}</th>
+				 		<th>
+				 			
+				 			여행지역 : <input id="tripArea1" name="tripArea" type="text" class="keiro" value="${read.tripArea}" readonly>				 			
+				 			남 : <input id="male1" name="male" type="text" class="keiro" value="${read.male}" readonly>
+				 			여 : <input id="female1" name="female" type="text" class="keiro" value="${read.female}" readonly>
+				 			출발일 : <input id="startDate1" name="startDate" type="text" class="keiro" value="${read.startDate}" readonly>
+				 			도착일 : <input id="endDate1" name="endDate" type="text" class="keiro" value="${read.endDate}" readonly>
+				 			출발지 : <input id="startPlace1" name="startPlace" type="text" class="keiro" value="" readonly>
+
+				 		</th>
+
+				   		<th scope="row" colspan="3" width="20px" height="300px" style="text-align: center;">${read.content}</th>
 			  		</tr>
 			  		<tr>
   			  		 <td >첨부파일</td> 
