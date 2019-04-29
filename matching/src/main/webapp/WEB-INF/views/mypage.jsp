@@ -76,11 +76,11 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li class="active"><a href="home">Home</a></li>
+                                     <li class="active"><a href="./">Home</a></li>
                                     <li><a href="tihome">여행지 소개</a></li>
                                     <li><a href="TA_home">Trip aKiNaTor</a></li>
                                     <li><a href="matching">여행친구찾기</a></li>
-                                    <li><a href="mall">중고장터</a></li>
+                                    <li><a href="mall">중고나라</a></li>
                                     <li><a href="mypage">My Pages</a></li>
                                     <li>${loginInfo.userName}</li>
                                 </ul>
@@ -96,7 +96,7 @@
                                 
                                 <div class="menu-btn">
                                 	${loginInfo.getUserName() }
-                                    <a href="logout" class="btn palatin-btn">logout </a>
+                                    <a href="logout" class="btn palatin-btn">L O G O U T</a>
                                 </div>
 								</c:if>
 								
