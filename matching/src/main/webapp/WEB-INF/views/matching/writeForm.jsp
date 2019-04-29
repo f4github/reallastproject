@@ -81,7 +81,7 @@ $(document).ready(function (){
 
 function test1()
 {
-	win = window.open('keiro','newWin','width=400,height=300,left=0,top=0');	//(url,창이름,창의모양);	
+	win = window.open('keiro','newWin','width=1500,height=300,left=0,top=0');	//(url,창이름,창의모양);	
 }
 
 
@@ -90,7 +90,7 @@ function test1()
 
 
 	function check(){
-		var title = document.getElementById("title");
+		var title = document.getElementById("title_write");
 		var con = document.getElementById("content");
 		
 		if(title.value == '' || title.value == null){
@@ -224,16 +224,21 @@ function test1()
 		<form action="write2" method="post" onsubmit="return check()"
 			enctype="multipart/form-data">
 				<span class="button_bt">글 제목 </span>
-				<input type="text" size="70" name="title" id="title">
+				<input type="text" size="70" name="title" id="title_write">
 				<br>
 				<p class="button_bt" id="bt1">경로선택</p>			
 				 <br>
 				 <table>
 				 	<tr>
 				 		<th>
-				 			여행지역 : <input type="text" class="keiro" readonly>
-				 			남 : <input type="text" class="keiro" readonly>
-				 			여 : <input type="text" class="keiro" readonly>
+				 			
+				 			여행지역 : <input id="tripArea1" name="tripArea" type="text" class="keiro" readonly>				 			
+				 			남 : <input id="male1" name="male" type="text" class="keiro" readonly>
+				 			여 : <input id="female1" name="female" type="text" class="keiro" readonly><br>
+				 			출발일 : <input id="startDate1" name="startDate" type="text" class="keiro" readonly>
+				 			도착일 : <input id="endDate1" name="endDate" type="text" class="keiro" readonly><br>
+				 			출발지 : <input id="startPlace1" name="startPlace" type="text" class="keiro" readonly>
+
 				 		</th>
 				 	</tr>				 
 				 </table>

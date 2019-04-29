@@ -104,6 +104,7 @@ public class MC_BoardController {
 	
 	@RequestMapping(value="/write", method=RequestMethod.GET)
 	public String writeForm(){
+		logger.info("지나감");
 		return "matching/writeForm";
 	}
 	
@@ -113,6 +114,7 @@ public class MC_BoardController {
 			, HttpSession session
 			, MultipartFile upload){
 		String id = (String) session.getAttribute("loginId");
+		logger.debug("오는거냐id: {}", id);
 		vo.setId(id);
 		int cnt = 0;
 		
@@ -123,8 +125,9 @@ public class MC_BoardController {
 			vo.setOriginalfile(upload.getOriginalFilename());
 			vo.setSavedfile(savedfile);
 		}
-		
+		logger.debug("오는거냐vo: {}", vo);
 		cnt = dao.write(vo);
+		
 		if(cnt == 0){
 			return "matching/writeForm";
 		}
@@ -271,4 +274,17 @@ public class MC_BoardController {
 		
 		return "matching/keiro";
 	}
+	
+	
+//좋아요
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
