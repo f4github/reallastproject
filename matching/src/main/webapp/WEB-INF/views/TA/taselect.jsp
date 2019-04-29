@@ -9,7 +9,7 @@
 <script src="resources/js/jquery-3.3.1.min.js"></script>
 <script src="https://api2.sktelecom.com/tmap/js?version=1&format=javascript&appKey=1018f748-875f-4cd5-9b13-6d2f70ac2aa3"></script>
 <style>
-
+/* 
 body {
   color: white;
   background-color: #212121;
@@ -20,14 +20,111 @@ body {
   margin: 0;
   height: 100%;
 }
+ */
+ 
+ 
+ 
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #212121;
+    color: white;
+}
+.centered-wrapper {
+    position: relative;
+    text-align: center;
+}
+.centered-wrapper:before {
+    content: "";
+    position: relative;
+    display: inline-block;
+    width: 0; height: 100%;
+    vertical-align: middle;
+}
+.centered-content {
+    display: inline-block;
+    vertical-align: middle;
+}
 
+
+
+.button11 {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button111 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+.button111:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+.mapp{
+	
+}
 </style>
 <script>
 $(document).ready(function() {
-   initTmap();
+	console.log('어디가 먼저');
+   
 });
 
-function initTmap(){
+function Conversion(country){
+	console.log(country);
+    var latlng = "https://maps.googleapis.com/maps/api/geocode/xml?address=" + 
+          country + "&language=ko&sensor=false&key=AIzaSyARgIl9tzK5H6IVnKN9g_OcnMqqGpKmLXU"
+    
+    $.ajax({
+       url: latlng,
+       dataType: "xml",
+       type: "GET",
+       async: "false",
+       success: split,
+       error: function(e){
+          alert(json.stringify(e));
+       }
+    });
+ }
+ 
+  function split (con) {
+	console.log(con);
+    var loc = $(con).find("location").text();
+    $.ajax({
+       url: 'split',
+       type: 'POST',
+       data: {loc: loc},
+       dataType: 'json',
+       success: function(hash){
+          var lon = hash.lng;
+          var lat = hash.lat;
+          console.log(lon);
+          console.log(lat);
+          initTmap(lat, lon);
+       }
+    });
+  }
+
+function initTmap(lat, lon){
+	
+	console.log(lat);
    // map 생성
    // Tmap.map을 이용하여, 지도가 들어갈 div, 넓이, 높이를 설정합니다.                  
    map = new Tmap.Map({
@@ -35,7 +132,7 @@ function initTmap(){
       width : "400px", // map의 width 설정
       height : "400px", // map의 height 설정
    });
-   map.setCenter(new Tmap.LonLat("${list_x0}", "${list_y0}").transform("EPSG:4326", "EPSG:3857"), 8);//설정한 좌표를 "EPSG:3857"로 좌표변환한 좌표값으로 즁심점으로 설정합니다.
+   map.setCenter(new Tmap.LonLat(lat, lon).transform("EPSG:4326", "EPSG:3857"), 8);//설정한 좌표를 "EPSG:3857"로 좌표변환한 좌표값으로 즁심점으로 설정합니다.
    
    var routeLayer = new Tmap.Layer.Vector("route");// 백터 레이어 생성
    var markerLayer = new Tmap.Layer.Markers("point");//마커 레이어 생성
@@ -49,7 +146,7 @@ function initTmap(){
    var size = new Tmap.Size(24, 38);//아이콘 크기 설정
    var offset = new Tmap.Pixel(-(size.w / 2), -size.h);//아이콘 중심점 설정
    var icon = new Tmap.IconHtml('<img src=http://tmapapis.sktelecom.com/upload/tmap/marker/pin_r_m_s.png />', size, offset);//마커 아이콘 설정
-   var marker_s = new Tmap.Marker(new Tmap.LonLat("${list_x0}", "${list_y0}").transform("EPSG:4326", "EPSG:3857"), icon);//설정한 좌표를 "EPSG:3857"로 좌표변환한 좌표값으로 설정합니다.
+   var marker_s = new Tmap.Marker(new Tmap.LonLat(lat, lon).transform("EPSG:4326", "EPSG:3857"), icon);//설정한 좌표를 "EPSG:3857"로 좌표변환한 좌표값으로 설정합니다.
    markerLayer.addMarker(marker_s);//마커 레이어에 마커 추가
    
    // 도착
@@ -70,7 +167,7 @@ function initTmap(){
 	console.log(arr);
 	$.each(arr, function (index, item) {
 		//alert(index +' '+ item);
-		if(index >= 1 && index < arr.length-1){
+		if(index >= 0 && index < arr.length-1){
 						
 			var icon = new Tmap.IconHtml('<img src=http://tmapapis.sktelecom.com/upload/tmap/marker/pin_b_m_p.png />', size, offset);
 			var marker = new Tmap.Marker(new Tmap.LonLat(item.mapx,item.mapy).transform("EPSG:4326", "EPSG:3857"), icon);//설정한 좌표를 "EPSG:3857"로 좌표변환한 좌표값으로 설정합니다.
@@ -88,7 +185,7 @@ function initTmap(){
 //   
 	var viaPoints = new Array(); 
 	var j = 1;
-	<c:forEach var="i" begin="1" end="${list.size()-2}">
+	<c:forEach var="i" begin="0" end="${list.size()-2}">
 	viaPoints.push({viaPointId: "test0" + j, viaPointName: "name0" + j, viaX: "${list[i].mapx}", viaY: "${list[i].mapy}"});	
 	j++;
 	</c:forEach> 
@@ -127,8 +224,8 @@ function initTmap(){
          data:JSON.stringify({
             "startName" : "출발지", //출발지 명칭  
             //출발지 위경도 좌표입니다.
-            "startX" : "${list_x0}",
-            "startY" : "${list_y0}",
+            "startX" : lat,
+            "startY" : lon,
             "startTime" : "201708081103",//출발 시간(YYYYMMDDHHMM)
             "endName" : "목적지", //목적지 명칭
             //목적지 위경도 좌표입니다.
@@ -198,19 +295,28 @@ function initTmap(){
 
 
 </head>
-<body>
+<body onload="Conversion('${add}')" class="centered-wrapper">
+<div class="centered-content">
 <h1>여행 추천 경로</h1>
 <br>
-<div id="map_div"></div>
+<div id="map_div" class="mapp"></div>
 <p id="result"></p>                                       
 
+<br>
+	<c:forEach var="i" begin="0" end="${list.size()-1}">
+		<c:if test="${i < list.size()-2}">
+		${list[i].travelid} ▶
+		</c:if>
+		<c:if test="${i == list.size()-1}">
+		${list[i].travelid}
+		</c:if>
+	</c:forEach> 
+<br>
 
-<c:forEach var="value" items="${list}">
-	<p>${value.travelid}</p>
-</c:forEach>
 
-<span>취소</span>
-<span><a href="javascript:sss()">저장</a></span>
+
+<a href="./"><button class="button11 button111">취소</button></a>
+<a href="javascript:sss()"><button class="button11 button111">저장</button></a>
 
 <script>
 function sss(){
@@ -218,6 +324,7 @@ function sss(){
 	location.href='routePrint?title='+input;
 }
 </script>
+</div>
 </body>
 
 </html>

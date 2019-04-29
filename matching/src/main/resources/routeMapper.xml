@@ -14,7 +14,17 @@
 	
 	<!-- 경로리트스 호출 -->
 	<select id="getRoute_list" parameterType="String" resultType="rvo">
-	select * from route where id like #{loginId}
+	select
+		routeNum
+		, id
+		, title
+		, to_char(startDate, 'YYYY-MM-DD') startDate
+		, to_char(endDate, 'YYYY-MM-DD') endDate
+		, startPlace
+		, tripArea
+		, male
+		, female
+	from route where id like #{loginId}
 	</select>
 
 	

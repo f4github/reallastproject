@@ -43,5 +43,11 @@
 	where 
 		upper(userId) like upper(#{userId})
 	</select>
+	
+	
+		<!-- ID로 회원 정보 검색 -->
+	<select id = "getOneVO" parameterType = "String" resultType = "Member">
+	select * from tbl_member where userId = #{id}
+	</select>
 
 </mapper>

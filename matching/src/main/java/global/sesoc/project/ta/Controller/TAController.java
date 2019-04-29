@@ -20,6 +20,8 @@ import global.sesoc.project.ta.DAO.TADAO;
 
 import global.sesoc.project.ta.VO.TAVO;
 import global.sesoc.project.ta.VO.Travel_infoVO;
+import global.sesoc.project.user.DAO.LoginDAO;
+import global.sesoc.project.user.VO.LoginVO;
 
 
 @Controller
@@ -30,6 +32,9 @@ public class TAController {
 	
 	@Autowired
 	RouteDAO dao2;
+	
+	@Autowired
+	LoginDAO dao3;
 	
 	private static final Logger logger = LoggerFactory.getLogger(TAController.class);
 	
@@ -148,7 +153,7 @@ public class TAController {
 	}
 	
 	@RequestMapping(value = "taselect", method=RequestMethod.POST)
-	public String taselectPost(String travelid[], Model model) {
+	public String taselectPost(String travelid[], Model model, HttpSession session) {
 		
 		logger.debug("[0]:{}",travelid[0]);
 //		logger.debug("[1]:{}",travelid[1]);
@@ -177,6 +182,13 @@ public class TAController {
 		model.addAttribute("list_end_x", list.get(end_x).getMapx());
 		model.addAttribute("list_end_y", list.get(end_y).getMapy());
 		
+		String id = (String) session.getAttribute("loginId");
+		LoginVO vo3 = dao3.getOneVO(id);
+		logger.debug("vo3:{}", vo3);
+		String add = vo3.getUserAddr2();
+		logger.debug("add:{}", add);
+		model.addAttribute("add", add);
+		
 //		return "ttt";
 		return "TA/taselect";
 	}
@@ -186,19 +198,21 @@ public class TAController {
 	{
 		return "ttt2";
 	}
-	  //지역명 -> 좌표 변환
+	  //
 	   @ResponseBody
 	   @RequestMapping(value="split", method=RequestMethod.POST)
 	   public  HashMap<String, Object> split(String loc, HttpSession session){
-	      String ar[] = loc.split("\n");
-	      String lat = ar[1].substring(4);
-	      String lng = ar[2].substring(4);
-	      
-	      HashMap<String,Object> map=new HashMap<>();
-	      map.put("lat", lat);
-	      map.put("lng", lng);
-	      
-	      return map;
+		   
+		   	logger.debug("loc:{}", loc);
+			String ar[] = loc.split("\n");
+			String lng = ar[1].substring(4);
+			String lat = ar[2].substring(4);
+			  
+			HashMap<String,Object> map = new HashMap<>();
+			map.put("lat", lat);
+			map.put("lng", lng);
+  
+			return map;
 	   }
 	
 	

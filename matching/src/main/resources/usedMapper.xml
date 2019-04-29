@@ -164,7 +164,6 @@ values (tbl_cart_seq.nextval, #{userId}, #{gdsNum}, #{cartStock})
 	
 	</select>
 	
-	
 
 
 </mapper>

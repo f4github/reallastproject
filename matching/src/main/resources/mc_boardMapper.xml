@@ -44,6 +44,12 @@
 			, id
 			, title
 			, content
+			, startDate
+			, endDate
+			, startPlace
+			, tripArea
+			, male
+			, female
 			<if test="originalfile != null and savedfile != null">
 			, originalfile
 			, savedfile
@@ -54,6 +60,12 @@
 			, #{id}
 			, #{title}
 			, #{content}
+			, #{startDate}
+			, #{endDate}
+			, #{startPlace}
+			, #{tripArea}
+			, #{male}
+			, #{female}
 			<if test="originalfile != null and savedfile != null">
 			, #{originalfile}
 			, #{savedfile}

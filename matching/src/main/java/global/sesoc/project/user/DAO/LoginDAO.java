@@ -43,4 +43,10 @@ public class LoginDAO {
 		}
 		return a;
 	}
+//하나 가져온다
+	public LoginVO getOneVO(String id) {
+		LoginMapper mapper = sqlSession.getMapper(LoginMapper.class);
+		LoginVO vo = mapper.getOneVO(id);
+		return vo;
+	}
 }
