@@ -201,8 +201,6 @@ function formCheck()
 <label for="userId"><b>ID</b></label><br>
 <input type="text" placeholder="ID를 입력해주세요." name="userId" required id = "userId"><br>
 
-<input type="button" value = "ID중복체크" id = "idck"><br>
-
 <label for="userPass"><b>Password</b></label><br>
 <input type="password" placeholder="비밀번호를 입력해주세요." name="userPass" required id = "userPass"><br>
 

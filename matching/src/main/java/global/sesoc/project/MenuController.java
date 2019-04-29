@@ -85,11 +85,7 @@ public class MenuController {
 			
 			return "mypage";
 		}
-		@RequestMapping(value = "/cusupdate", method = RequestMethod.GET)
-		public String Menu6()
-		{
-			return "cusupdate";
-		}
+
 		
 		@RequestMapping(value = "/mall", method = RequestMethod.GET)
 		public String mall(Model model){

@@ -186,22 +186,8 @@ function del(likenum){
                     <div class="single-mypage-information mb-100">
                         <div class="section-text">
                             <h3>MY 여행경로</h3>
-                            <p>Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Integer tempus ligula sem.</p>
+                            
                         </div>
-                        <!-- Single mypage Information -->
-                        <div class="mypage-content d-flex">
-                            <p>Address</p>
-                            <p>245 Principe Lane <br>Avila Beach, Spain</p>
-                        </div>
-                        <!-- Single mypage Information -->
-                        <div class="mypage-content d-flex">
-                            <p>Phone</p>
-                            <p>+36 345 7953 4994</p>
-                        </div>
-                        <!-- Single mypage Information -->
-                        <div class="mypage-content d-flex">
-                            <p>E-mail</p>
-                            <p>yourmail@gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -212,7 +198,8 @@ function del(likenum){
                         <div class="section-text">
                             <h3>MY 중고나라 게시글</h3><br>
                             <a href = "myArticle"><h4>내가쓴 글</h4></a><br>	
-			  				<a href = "cartList"><h4>내 카트</h4></a>
+			  				<a href = "cartList"><h4>내 카트</h4></a><br>
+			  				<!-- <a href = "userupdate"><h4>회원정보 수정</h4></a> -->
 			  
 			
 			   
@@ -221,22 +208,6 @@ function del(likenum){
 
 			  <hr>
 			 
-                        </div>
-                        <!-- Single mypage Information -->
-                        <div class="mypage-content d-flex">
-                            <p>Address</p>
-                            <p>889 Creekside Lane <br>Avila Beach, Dubai</p>
-                        </div>
-                        <!-- Single mypage Information -->
-                        <div class="mypage-content d-flex">
-                            <p>Phone</p>
-                            <p>+77 345 7953 2406</p>
-                        </div>
-                        <!-- Single mypage Information -->
-                        <div class="mypage-content d-flex">
-                            <p>E-mail</p>
-                            <p>yourmail@gmail.com</p>
-                        </div>
                     </div>
                 </div>
 
@@ -245,46 +216,7 @@ function del(likenum){
     </section>
     <!-- ##### mypage Area End ##### -->
 
-    <!-- ##### mypage Form Area Start ##### -->
-    <section class="mypage-form-area mb-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading">
-                        <div class="line-"></div>
-                        <h2>Get in touch</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <!-- mypage Form -->
-                    <form action="#" method="post">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <input type="text" class="form-control" name="text" placeholder="Your Name">
-                            </div>
-                            <div class="col-lg-4">
-                                <input type="email" class="form-control" name="email" placeholder="E-mail">
-                            </div>
-                            <div class="col-lg-4">
-                                <input type="text" class="form-control" name="subject" placeholder="Subject">
-                            </div>
-                            <div class="col-12">
-                                <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button type="submit" class="btn palatin-btn mt-50">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ##### mypage Form Area End ##### -->
-
+    
 
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">

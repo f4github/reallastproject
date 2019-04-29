@@ -6,7 +6,6 @@
 <html lang="en">
 
 <head>
-<script src = "resources/js/jquery-3.3.1.min.js"></script>
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,29 +19,7 @@
     <link rel="icon" href="resources/img/core-img/favicon.ico" type="text/css">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="resources/style.css?after" type="text/css">
-
-<style>
-
-.single-hero-slide .hero-slides-content {
-    width: -webkit-fill-available;
-}
-
-
-</style>
-
-<script>
-/* 
-$(document).ready(function (){
-	$('#start').on('click', a);
-});
-
-function a(){
-	location.href = "https://www.naver.com/";
-}
- */
-
-</script>
+    <link rel="stylesheet" href="resources/style.css" type="text/css">
 
 </head>
 
@@ -128,138 +105,108 @@ function a(){
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-12 col-lg-9">
-                            <!-- Slide Content -->
-                            <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
-                                <div class="line" data-animation="fadeInUp" data-delay="300ms"></div>
-                                <h2 data-animation="fadeInUp" data-delay="500ms">TA guide</h2>
-                                <p data-animation="fadeInUp" data-delay="700ms">아래의 일정과 인원을 입력해주세요.</p>
-                                
-                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
     <!-- ##### Hero Area End ##### -->
 
+     <!-- Footer Widget Area -->
+   <section class="hero-area">
+        <div class="hero-slides owl-carousel">
 
+            
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="footer-widget-area mt-50">
+                        <h2 class="widget-title mb-5">회원 정보 수정</h2>
+<hr>
 
+<form action="userupdate" method="post" onsubmit="return check()">
+<table class="table">
+   <tr>
+      <th>
+         <p>ID </p>
+      </th>
+      <td>
+        ${updateUser.getUserId()}
+      </td>
+   </tr>
+   <tr>
+      <th>
+         <p>닉네임 </p>
+      </th>
+      <td>
+         &nbsp;&nbsp;<input type="text" name="userName" id="userName" value="${updateUser.getUserName()}" size="40"><br>   
+      </td>
+   </tr>
+   <tr>
+      <th>
+         <p>전화번호</p>
+      </th>
+      <td>
+         &nbsp;&nbsp;<input type="text" name="userPhon" id = "userPhon" value="${updateUser.getUserPhon()}" size="70">
+      </td>
+   </tr>
+</table>
+      <p><input type="submit" value="수정"></p>
+</form>
 
-
-    <!-- ##### Book Now Area Start ##### -->
-    <div class="book-now-area">
+                    </div>
+               </div>
+          </div>
+<br><br><br><br><br>
+		</section>
+   
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-lg-10">
-                    <div class="book-now-form">
-                        <form action="ta1" method="get" id="form_ta_start">
-                            <!-- Form Group -->
-                            <div class="form-group">
-                                <label for="select1">Check In</label>
-                                <input type="date" class="form-control" name="startDate" id="select1" value="2019-05-02">
-                            </div>
+            <div class="row">
 
-                            <!-- Form Group -->
-                            <div class="form-group">
-                                <label for="select2">Check Out</label>
-								<input type="date" class="form-control" name="endDate" id="select1" value="2019-05-02">
-                            </div>
+                <!-- Footer Widget Area -->
+                <div class="col-12 col-lg-5">
+                    <div class="footer-widget-area mt-50">
+                        <a href="#" class="d-block mb-5"><img src="resources/img/core-img/logo.png" alt=""></a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. </p>
+                    </div>
+                </div>
 
-                            <!-- Form Group -->
-                            <div class="form-group">
-                                <label for="select3">Male</label>
-                                <select class="form-control" name="male" id="select3">
-                                  <option>00</option>
-                                  <option>01</option>
-                                  <option>02</option>
-                                  <option>03</option>
-                                  <option>04</option>
-                                  <option>05</option>
-                                  <option>06</option>
-                                  <option>07</option>
-                                  <option>08</option>
-                                  <option>09</option>
-                                  <option>10</option>
-                                </select>
-                            </div>
+                <!-- Footer Widget Area -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="footer-widget-area mt-50">
+                        <h6 class="widget-title mb-5">Find us on the map</h6>
+                        <img src="resources/img/bg-img/footer-map.png" alt="">
+                    </div>
+                </div>
 
-                            <!-- Form Group -->
-                            <div class="form-group">
-                                <label for="select4">Female</label>
-                                <select class="form-control" name="female" id="select4">
-                                  <option>00</option>
-                                  <option>01</option>
-                                  <option>02</option>
-                                  <option>03</option>
-                                  <option>04</option>
-                                  <option>05</option>
-                                  <option>06</option>
-                                  <option>07</option>
-                                  <option>08</option>
-                                  <option>09</option>
-                                  <option>10</option>
-                                </select>
-                            </div>
-                            <!-- Button -->
-                            <button type="button" id="start" onclick="ta1()">TA start</button>
+                <!-- Footer Widget Area -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="footer-widget-area mt-50">
+                        <h6 class="widget-title mb-5">Subscribe to our newsletter</h6>
+                        <form action="#" method="post" class="subscribe-form">
+                            <input type="email" name="subscribe-email" id="subscribeemail" placeholder="Your E-mail">
+                            <button type="submit">Subscribe</button>
                         </form>
+                    </div>
+                </div>
+
+                <!-- Copywrite Text -->
+                <div class="col-12">
+                    <div class="copywrite-text mt-30">
+                        <p><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- ##### Book Now Area End ##### -->
-    <script>
-    function ta1(){
-    	var male = $('#select3>option:selected').val();
-    	var female = $('#select4>option:selected').val();
-    	
-    	var form = document.getElementById('form_ta_start');
-    	
-    	console.log(male);
-    	console.log(female);
-    	if(male == 00 && female == 00){
-    		alert('인원을 입력해주세요');
-    		return;
-    	}
-    	form.submit();
-//  	location.href='ta1';
-    }
+    </footer>
+    <!-- ##### Footer Area End ##### -->
     
-    </script>
     
-
-
-    <!-- ##### About Us Area Start ##### -->
-    <section class="about-us-area">
-        <div class="container">
-            <div class="row align-items-center">
-
-               
-            </div>
-        </div>
-    </section>
-    <!-- ##### About Us Area End ##### -->
-
- 
-
- 
-  
-    
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
 
     <!-- ##### All Javascript Script ##### -->
     <!-- jQuery-2.2.4 js -->
@@ -272,8 +219,6 @@ function a(){
     <script src="resources/js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="resources/js/active.js"></script>
-    
-
 </body>
 
 </html>
