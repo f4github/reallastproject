@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import global.sesoc.project.route.DAO.RouteDAO;
 import global.sesoc.project.route.VO.RouteVO;
@@ -118,7 +119,7 @@ public class TAController {
 		return "TA/TA7";
 	}
 	
-	
+
 	@RequestMapping(value = "tacomplite", method=RequestMethod.POST)
 	public String tacomPOST(String answer7, Model model, HttpSession session) {
 		
@@ -180,7 +181,26 @@ public class TAController {
 		return "TA/taselect";
 	}
 	
-
+	@RequestMapping(value = "/ttt2", method = RequestMethod.GET)
+	public String ttt2()
+	{
+		return "ttt2";
+	}
+	  //지역명 -> 좌표 변환
+	   @ResponseBody
+	   @RequestMapping(value="split", method=RequestMethod.POST)
+	   public  HashMap<String, Object> split(String loc, HttpSession session){
+	      String ar[] = loc.split("\n");
+	      String lat = ar[1].substring(4);
+	      String lng = ar[2].substring(4);
+	      
+	      HashMap<String,Object> map=new HashMap<>();
+	      map.put("lat", lat);
+	      map.put("lng", lng);
+	      
+	      return map;
+	   }
+	
 	
 	
 	
