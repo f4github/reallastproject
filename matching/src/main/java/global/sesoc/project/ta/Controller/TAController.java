@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import global.sesoc.project.route.DAO.RouteDAO;
 import global.sesoc.project.route.VO.RouteVO;
-import global.sesoc.project.route.VO.Route_plusVO;
 import global.sesoc.project.ta.DAO.TADAO;
+
 import global.sesoc.project.ta.VO.TAVO;
 import global.sesoc.project.ta.VO.Travel_infoVO;
 import global.sesoc.project.user.DAO.LoginDAO;
@@ -161,11 +161,8 @@ public class TAController {
 //		logger.debug("[3]:{}",travelid[3]);
 		Travel_infoVO vo = new Travel_infoVO();
 		ArrayList<Travel_infoVO> list = new ArrayList<>();
-		Route_plusVO vo9 = new Route_plusVO();		//경유지 잠깐 보류 (아래서 타이틀 받고 세션에 넘겨서 루트넘버 받아와야함)
 		
 		for(int i=0 ; i<travelid.length ; i++){
-			
-			
 			vo = dao.selectTravel(travelid[i]);
 			list.add(vo);
 		}
@@ -191,13 +188,6 @@ public class TAController {
 		String add = vo3.getUserAddr2();
 		logger.debug("add:{}", add);
 		model.addAttribute("add", add);
-
-		String startPlace = add.substring(0, 5);		
-		logger.debug("startPlace:{}", startPlace);
-		RouteVO vo2 = (RouteVO)session.getAttribute("routeVO");
-		vo2.setStartPlace(startPlace);
-		session.setAttribute("routeVO", vo2);
-		logger.debug("{}", vo2);
 		
 //		return "ttt";
 		return "TA/taselect";
