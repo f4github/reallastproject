@@ -8,8 +8,8 @@
 	
 	<!-- 루트 저장 -->
 	<insert id="routeInsert" parameterType="rvo">
-	insert into route (routeNum, id, title, startDate, endDate, tripArea, male, female)
-	values (routeNum_seq.nextval, #{id}, #{title}, #{startDate}, #{endDate}, #{tripArea}, #{male}, #{female})
+	insert into route (routeNum, id, title, startDate, endDate, startPlace, tripArea, male, female)
+	values (routeNum_seq.nextval, #{id}, #{title}, #{startDate}, #{endDate}, #{startPlace}, #{tripArea}, #{male}, #{female})
 	</insert>
 	
 	<!-- 경로리트스 호출 -->

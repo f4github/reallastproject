@@ -31,11 +31,25 @@
 	</select>
 	
 	<select id="search" parameterType="string" resultType="mcb">
-		select * from mcboard where title like #{title}
+		select *			 
+		from mcboard 
+		where title like #{title}
 	</select>
 	
 	<select id="read" parameterType="int" resultType="mcb">
-		select * from mcboard where boardnum = #{boardnum}
+		select
+			boardnum
+			, id
+			, title
+			, content
+			, to_char(startDate, 'YYYY-MM-DD') startDate
+			, to_char(endDate, 'YYYY-MM-DD') endDate
+			, startPlace
+			, tripArea
+			, male
+			, female
+			, to_char(inputdate, 'YYYY-MM-DD') inputdate
+		from mcboard where boardnum = #{boardnum}
 	</select>
 	
 	<insert id="write" parameterType="mcb">
@@ -133,4 +147,19 @@
 	<delete id="replyDelete" parameterType="HashMap">
 		delete from mcreply where replynum = #{replynum} and id = #{id}
 	</delete>
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </mapper>

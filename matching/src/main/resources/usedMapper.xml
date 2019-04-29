@@ -67,6 +67,7 @@ select
             inner join goods_category c
                 on g.cateCode = c.cateCode           
             where g.cateCode = #{cateCode }
+            order by g.gdsNum desc
 
 </select>
 
