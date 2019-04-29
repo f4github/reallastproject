@@ -50,6 +50,20 @@
 	
 	</li>
 	
+	<li>기타
+	
+	<ul class = "low">
+	<li><a href="usedCategory?c=401&l=2">텐트</a></li>
+	<li><a href="usedCategory?c=402&l=2">코펠</a></li>
+	<li><a href="usedCategory?c=403&l=2">아이스박스</a></li>
+	<li><a href="usedCategory?c=404&l=2">랜턴</a></li>
+	<li><a href="usedCategory?c=405&l=2">침낭</a></li>
+	</ul>
+	
+	</li>
+	
+	
+	
 </ul>
 </body>
 </html>
