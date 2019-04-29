@@ -1,5 +1,6 @@
-
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" %>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>AIO TRIP Login</title>
@@ -39,19 +40,19 @@
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
-						<span class="label-input100">Username</span>
-						<input class="input100" type="text" name="userId" placeholder="Type your username">
+						<span class="label-input100">ID</span>
+						<input class="input100" type="text" name="userId" placeholder="ID를 입력해주세요.">
 						<span class="focus-input100" data-symbol="&#xf206;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
 						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="userPass" placeholder="Type your password">
+						<input class="input100" type="password" name="userPass" placeholder="Password를 입력해주세요.">
 						<span class="focus-input100" data-symbol="&#xf190;"></span>
 					</div>
 					<div class="text-right p-t-8 p-b-31">
 						<a href="joinForm" class="txt2">
-							Sign Up
+							회원 가입
 						</a>
 					</div>
 					

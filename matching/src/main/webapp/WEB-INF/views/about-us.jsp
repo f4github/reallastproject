@@ -81,7 +81,7 @@
                                 
                                 <div class="menu-btn">
                                 	${loginInfo.getUserName() }
-                                    <a href="logout" class="btn palatin-btn">logout </a>
+                                    <a href="logout" class="btn palatin-btn">L O G O U T </a>
                                 </div>
 								</c:if>
 

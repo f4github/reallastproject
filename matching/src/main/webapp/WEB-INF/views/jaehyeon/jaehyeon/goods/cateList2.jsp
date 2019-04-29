@@ -43,8 +43,7 @@
                     <nav class="classy-navbar justify-content-between" id="palatinNav">
 
                         <!-- Nav brand -->
-                        <a href="./" class="nav-brand"><img src="resources/img/core-img/logo.png" alt=""></a>
-
+                         <a href="./" class="nav-brand"><span style="color: white;"><b>AIO Trip</b></span></a>
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
                             <span class="navbarToggler"><span></span><span></span><span></span></span>
@@ -169,7 +168,8 @@
 	 			<c:forEach begin="${i}" end="${i+3}" var="j">
 	 			<c:if test="${j < usedCategory.size()}">
 	 			<td>
-	 				${usedCategory[j].gdsName }
+	 				${usedCategory[j].gdsName }<br>
+	 				${usedCategory[j].gdsPrice }원
 	 			</td>
 	 			</c:if>
 	 			</c:forEach>
@@ -180,7 +180,13 @@
 		</div><!--  테이블 div끝 -->
 	
 		
-			
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>	
 		</div>
 	</div><!-- 메인뷰 끝 -->
 </div>

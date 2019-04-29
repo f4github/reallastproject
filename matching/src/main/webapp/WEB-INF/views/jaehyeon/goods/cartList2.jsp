@@ -41,8 +41,7 @@
                     <nav class="classy-navbar justify-content-between" id="palatinNav">
 
                         <!-- Nav brand -->
-                        <a href="./" class="nav-brand"><img src="resources/img/core-img/logo.png" alt=""></a>
-
+                        <a href="./" class="nav-brand"><span style="color: white;"><b>AIO Trip</b></span></a>
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
                             <span class="navbarToggler"><span></span><span></span><span></span></span>
@@ -105,6 +104,7 @@
 	</nav>
 	
 	<section id = "content">
+	<h2>CartList</h2>
 		<ul>
 			<li>
 			  <div class="allCheck">
@@ -224,9 +224,9 @@
  		</ul>
 	</section>
 	
-			<aside id="aside">
+			<%-- <aside id="aside">
 				<%@ include file="../include/aside.jsp" %>
-			</aside>
+			</aside> --%>
 	
 	<%-- <footer id = "footer">
 		<div id = "footer_box">

@@ -19,7 +19,7 @@
 	
 	<%-- <c:if test="${loginInfo!=null }">
 	<li>${loginInfo.userName}님 환영합니다.</li> --%>
-	<li><a href = "logout">Logout</a></li>
+	<!-- <li><a href = "logout">Logout</a></li> -->
 	
 	<li><a href = "usedregister">usedregister</a></li>  <!-- 임시 -->
 	<li><a href = "usedList">usedList</a></li><!-- 임시 -->
