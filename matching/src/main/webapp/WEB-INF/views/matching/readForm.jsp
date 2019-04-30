@@ -275,7 +275,7 @@ table.type09 td {
 				 			여 : <input id="female1" name="female" type="text" class="keiro" value="${read.female}" readonly>
 				 			출발일 : <input id="startDate1" name="startDate" type="text" class="keiro" value="${read.startDate}" readonly>
 				 			도착일 : <input id="endDate1" name="endDate" type="text" class="keiro" value="${read.endDate}" readonly>
-				 			출발지 : <input id="startPlace1" name="startPlace" type="text" class="keiro" value="" readonly>
+				 			출발지 : <input id="startPlace1" name="startPlace" type="text" class="keiro" value="${read.startPlace}" readonly>
 
 				 		</th>
 
@@ -313,7 +313,43 @@ table.type09 td {
 <!-- /삭제폼 -->
 </c:if>	
 	
+	<script>
+$(document).ready(function (){
+	$('#sjj').on('click', tigu);
 	
+});
+
+function tigu(){
+	
+	var boardnum = '${read.boardnum}';
+	var title = '${read.title}'; 
+	var tripArea = '${read.tripArea}'; 	
+	
+	$.ajax({
+		url: 'matching_like',
+		type: 'get',
+		data: {boardnum : boardnum, title : title, tripArea : tripArea},
+		success: function (result) { 
+			if(result == 't'){
+				alert('좋아요 성공');
+			}
+			else{
+				alert('이미 좋아요 누르셨어요');
+			}
+//			$("#sjj").hide();
+			},
+		error: function (e) {
+			alert(JSON.stringify(e)); 
+			}
+	});
+	
+		//location.href = 'https://www.youtube.com/watch?v=WPni755-Krg&t=1429s';
+}
+
+
+
+
+</script>  s
 	
 	<br><br>
 <c:if test="${sessionScope.loginId != null}">

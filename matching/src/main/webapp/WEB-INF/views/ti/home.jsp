@@ -64,7 +64,6 @@ font-family: 'Jeju Gothic', sans-serif;
                         <li><a href="#">Travel Course</a></li>
                         <li><a href="Travel_intro1?contentTypeId=39">Eatery</a></li>
                         <li><a href="Travel_intro1?contentTypeId=12">Attractions</a></li>
-                        <li><a href="mapTest">Maps</a></li>
                       </ul>
                     </div>
                     <div class="col-md-6 extra-info">
@@ -171,15 +170,19 @@ font-family: 'Jeju Gothic', sans-serif;
               <div class="col-md-12">
                 <nav role="navigation">
                   <ul class="pagination custom-pagination pagination-lg">
+                  
+                  
+              <c:if test="${p > 0}">
+            <c:forEach var="i" begin="1" end="${p-1}">
+            
                     <li class="page-item active">
-                      <a class="page-link" href="stihome?keyword=${keyword}&pageNo=1">1</a>
+                      <a class="page-link" href="tihome?keyword=${keyword}&pageNo=${count}">${count}</a>
                     </li>
-                    <li class="page-item active ">
-                      <a class="page-link " href="tihome?keyword=${keyword}&pageNo=2">2</a>
-                    </li>
-                    <li class="page-item active ">
-                      <a class="page-link " href="tihome?keyword=${keyword}&pageNo=3">3</a>
-                    </li>
+                    <c:set var="count" value="${count + 1}" />
+            </c:forEach>
+            </c:if>
+                    
+                    
                   </ul>
                 </nav>
               </div>

@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
@@ -38,6 +39,7 @@ public class TI_HomeController {
 	public String home(Model model			
 			, @RequestParam(value="pageNo", defaultValue="1") String pageNo
 			, @RequestParam(value="keyword", defaultValue="광주") String keyword
+	        , @RequestParam(value="arrange", defaultValue="B") String arrange
 			) throws IOException {
 		logger.info("홈 지나감");
 		
@@ -50,7 +52,7 @@ public class TI_HomeController {
         urlBuilder.append("&" + URLEncoder.encode("pageNo","UTF-8") + "=" + URLEncoder.encode(pageNo, "UTF-8")); /*현재 페이지 번호*/
         urlBuilder.append("&" + URLEncoder.encode("numOfRows","UTF-8") + "=" + URLEncoder.encode("12", "UTF-8")); /*한 페이지 결과 수*/
         urlBuilder.append("&" + URLEncoder.encode("listYN","UTF-8") + "=" + URLEncoder.encode("Y", "UTF-8")); /*목록 구분 (Y=목록, N=개수)*/
-        urlBuilder.append("&" + URLEncoder.encode("arrange","UTF-8") + "=" + URLEncoder.encode("A", "UTF-8")); /*(A=제목순, B=조회순, C=수정일순, D=생성일순) 대표이미지가 반드시 있는 정렬(O=제목순, P=조회순, Q=수정일순, R=생성일순)*/
+        urlBuilder.append("&" + URLEncoder.encode("arrange","UTF-8") + "=" + URLEncoder.encode(arrange, "UTF-8")); /*(A=제목순, B=조회순, C=수정일순, D=생성일순) 대표이미지가 반드시 있는 정렬(O=제목순, P=조회순, Q=수정일순, R=생성일순)*/
         urlBuilder.append("&" + URLEncoder.encode("contentTypeId","UTF-8") + "=" + URLEncoder.encode("12", "UTF-8")); /*관광타입(관광지, 숙박 등) ID*/
         urlBuilder.append("&" + URLEncoder.encode("areaCode","UTF-8") + "=" + URLEncoder.encode("", "UTF-8")); /*지역코드*/
         urlBuilder.append("&" + URLEncoder.encode("sigunguCode","UTF-8") + "=" + URLEncoder.encode("", "UTF-8")); /*시군구코드(areaCode 필수)*/
@@ -90,6 +92,22 @@ public class TI_HomeController {
 		JsonObject jo2 = (JsonObject) jo1.get("response");  
 		JsonObject jo3 = (JsonObject) jo2.get("body");  
 		logger.debug("jo3:{}", jo3);
+		
+		
+	      //totalCount
+	      JsonElement tot = jo3.get("totalCount");
+	      int toc = tot.getAsInt();
+	      logger.debug("숫자 발견:{}", toc);
+	      if(toc == 0){
+	         model.addAttribute("p", 0);
+	      }
+	      else{
+	         int p = (toc / 12) + 1;
+	         model.addAttribute("p", p);
+	         model.addAttribute("count", 1);
+	         
+	      }
+		
 		
 		JsonObject jo4 = (JsonObject) jo3.get("items");  		
 		logger.debug("jo4:{}", jo4);

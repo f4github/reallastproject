@@ -183,7 +183,6 @@ function tigu(){
                         <li><a href="#">Travel Course</a></li>
                         <li><a href="Travel_intro1?contentTypeId=39">Eatery</a></li>
                         <li><a href="Travel_intro1?contentTypeId=12">Attractions</a></li>
-                        <li><a href="mapTest">Maps</a></li>
                       </ul>
                     </div>
                     <div class="col-md-6 extra-info">

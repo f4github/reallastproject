@@ -306,7 +306,7 @@ public class MC_BoardController {
 		}						
 	}
 	
-	
+
 	
 	
 	
