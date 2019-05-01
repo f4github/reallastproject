@@ -16,19 +16,6 @@ CREATE TABLE sns
 
 create sequence sns_seq;
 
-CREATE TABLE sns_reply
-(
-	replynum number NOT NULL,
-	id varchar2(20),
-	content varchar2(2000),
-	inputdate date default sysdate,
-	boardnum number NOT NULL,
-	PRIMARY KEY (replynum)
-	constraint sns_reply_fk foreign key(boardnum) 
-		references sns(boardnum) on delete cascade
-);
-
-create sequence sns_reply_seq start with 1 increment by 1;
 
 create table Travel_info(
 boardnum        number primary KEY,
@@ -50,19 +37,6 @@ tel             varchar(100)
 
 create sequence travel_info_seq;
 
-CREATE TABLE travel_info_reply
-(
-	replynum number NOT NULL,
-	id varchar2(20) UNIQUE,
-	content varchar2(2000),
-	-- default sysdate
-	inputdate date,
-	-- create sequence tokoro_seq;
-	-- 
-	-- tokoro_seq.nextval;
-	boardnum number NOT NULL,
-	PRIMARY KEY (replynum)
-);
 
 create table TA
 (

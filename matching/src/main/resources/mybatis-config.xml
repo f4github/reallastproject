@@ -20,6 +20,7 @@
 		
 		<typeAlias type="global.sesoc.project.ta.VO.Travel_infoVO" alias="travel" />
 		<typeAlias type="global.sesoc.project.ta.VO.TAVO" alias="ta" />
+		<typeAlias type="global.sesoc.project.sns.VO.SNSVO" alias="sns" />
 		
 		
 		
@@ -34,6 +35,7 @@
 	<mapper resource="ti_commentMapper.xml"/>	
 	<mapper resource="routeMapper.xml"/>			
 	<mapper resource="TAMapper.xml" />
+	<mapper resource="SnsMapper.xml" />
 
 	</mappers>
 </configuration>
