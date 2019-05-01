@@ -107,14 +107,14 @@ function commentDel(){
 		type: 'post',
 		data: {repNum : repNum, userId : userId},
 		success: function(result){
-			/* alert(result); */
+			alert(result);
 			if(result == 1){
 			alert('삭제성공');
 			replyList();
 			}
 			else{
 				/* alert(result); */
-				/* alert('작성자만 삭제할 수 있습니다.') */
+				alert('작성자만 삭제할 수 있습니다.')
 			}
 			
 			
@@ -208,15 +208,15 @@ function deleteCheck(){
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li class="active"><a href="./">Home</a></li>
+                                     <li class="active"><a href="./">Home</a></li>
                                     <li><a href="tihome">여행지 소개</a></li>
                                     <li><a href="TA_home">Trip aKiNaTor</a></li>
                                     <li><a href="matching">여행친구찾기</a></li>
                                     <li><a href="mall">중고나라</a></li>
                                     <li><a href="mypage">My Pages</a></li>
+                                    <li>${loginInfo.userName}</li>
                                 </ul>
-
-                               <c:if test="${loginInfo==null }">
+								<c:if test="${loginInfo==null }">
                                 <!-- Button -->
                                 <div class="menu-btn">
                                     <a href="login" class="btn palatin-btn">L O G I N </a>
@@ -228,10 +228,11 @@ function deleteCheck(){
                                 
                                 <div class="menu-btn">
                                 	${loginInfo.getUserName() }
-                                    <a href="logout" class="btn palatin-btn">logout </a>
+                                    <a href="logout" class="btn palatin-btn">L O G O U T</a>
                                 </div>
 								</c:if>
-
+								
+								
                             </div>
                             <!-- Nav End -->
                         </div>
@@ -373,12 +374,7 @@ function deleteCheck(){
 				    	if(result == 1) {
 				    	     alert("카트 담기 성공");
 				    	     $(".numBox").val("1");
-				    	    }else if(result == 2){
-				    	    	alert("이미 카트에 담겨있는 물건입니다.");
-				    	    	$(".numBox").val("1");
-				    	    }
-				    	
-				    	else {
+				    	    } else {
 				    	     alert("회원만 사용할 수 있습니다.")
 				    	     $(".numBox").val("1");
 				    	    }

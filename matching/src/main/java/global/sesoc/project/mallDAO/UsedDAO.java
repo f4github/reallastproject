@@ -212,18 +212,5 @@ public class UsedDAO {
 		}
 		return reply;
 	}
-	
-	public CartVO checkCart(CartVO cart){
-		UsedMapper mapper = sqlSession.getMapper(UsedMapper.class);
-		CartVO vo = null;
-		try{
-			vo = mapper.checkCart(cart);
-			System.out.println(vo);
-		}
-		catch(Exception e){
-			e.printStackTrace();
-		}
-		return vo;
-	}
 
 }
