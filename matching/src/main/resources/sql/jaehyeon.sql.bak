@@ -195,35 +195,3 @@ alter table tbl_reply
     references tbl_member(userId);
     
     commit;
-
-
-
-
-
-
-
-
-
-
-
-
-새롭게 수정된 내용
-    ------------------------
-    drop table tbl_reply;
-create table tbl_reply(
-gdsNum number not null references tbl_goods(gdsNum) on delete cascade,
-userId varchar2(50) not null,
-repNum number primary key,
-repCon varchar2(2000) not null,
-repDate date default sysdate
-);
-
-drop table tbl_cart;
-
-create table tbl_cart(
-cartNum number primary key,
-userId varchar2(50) not null,
-gdsNum number not null references tbl_goods(gdsNum) on delete cascade,
-cartStock number not null,
-addDate date default sysdate
-);
