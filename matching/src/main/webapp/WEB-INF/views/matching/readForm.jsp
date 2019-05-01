@@ -90,9 +90,25 @@ width: 100%;
 
 
 
+
 </style>
 
+<style> 
+input[type=text] {
 
+
+
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+</style>
 
 
 <script>
@@ -270,12 +286,12 @@ table.type09 td {
 					<tr>
 				 		<th>
 				 			
-				 			여행지역 : <input id="tripArea1" name="tripArea" type="text" class="keiro" value="${read.tripArea}" readonly>				 			
-				 			남 : <input id="male1" name="male" type="text" class="keiro" value="${read.male}" readonly>
-				 			여 : <input id="female1" name="female" type="text" class="keiro" value="${read.female}" readonly>
-				 			출발일 : <input id="startDate1" name="startDate" type="text" class="keiro" value="${read.startDate}" readonly>
-				 			도착일 : <input id="endDate1" name="endDate" type="text" class="keiro" value="${read.endDate}" readonly>
-				 			출발지 : <input id="startPlace1" name="startPlace" type="text" class="keiro" value="${read.startPlace}" readonly>
+				 			여행지역  <input id="tripArea1" name="tripArea" type="text" class="keiro" value="${read.tripArea}" readonly>				 			
+				 			남  <input id="male1" name="male" type="text" class="keiro" value="${read.male}" readonly>
+				 			여  <input id="female1" name="female" type="text" class="keiro" value="${read.female}" readonly>
+				 			출발일  <input id="startDate1" name="startDate" type="text" class="keiro" value="${read.startDate}" readonly>
+				 			도착일  <input id="endDate1" name="endDate" type="text" class="keiro" value="${read.endDate}" readonly>
+				 			출발지  <input id="startPlace1" name="startPlace" type="text" class="keiro" value="${read.startPlace}" readonly>
 
 				 		</th>
 

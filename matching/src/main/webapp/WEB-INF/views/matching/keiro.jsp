@@ -7,19 +7,43 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="resources/js/jquery-3.3.1.min.js"></script>
 <title>Insert title here</title>
+
+<style> 
+input[type=text] {
+
+
+
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+</style>
 <style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
 h1{
 	text-align: center;
 }
-table{
-text-align: center;
-}
-tr, td{
-	border-bottom: 2px solid black;
-	text-align: center;
-}
-
-
 </style>
 
 <script>

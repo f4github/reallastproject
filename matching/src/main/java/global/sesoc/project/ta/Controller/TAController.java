@@ -148,7 +148,7 @@ public class TAController {
 		ArrayList<TAVO> list2 = dao.location2(id); //상세지역
 		model.addAttribute("list2",list2);
 		
-		//dao.TAReset(id); 	//TA초기화
+		dao.TAReset(id); 	//TA초기화
 		return "TA/TACOM";
 	}
 	

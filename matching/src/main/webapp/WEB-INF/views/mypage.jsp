@@ -39,6 +39,7 @@
 
 
 table {
+	
 	width: 100%;
 	border-spacing: 5px;
  }
@@ -46,7 +47,15 @@ table {
 	padding: 5px;
  }
 
-
+.button_keiro {
+width: 10em;
+padding: 5px 5px;
+  background-color: gray;
+  border: thick;
+  color: white;
+text-align: center;
+  cursor: pointer;
+}
 
 </style>
 </head>
@@ -209,10 +218,10 @@ function plus(likenum){
                         <div class="contact-content d-flex">
 	                       	<table>
 	                        	<tr>
-	                            	<td><a href = "myArticle">내가쓴 글</a></td>
+	                            	<td width="20"><a href = "myArticle" class="button_keiro"><b>내가쓴 글</b></a></td>
 	                            </tr>
 	                            <tr>
-	                       			<td><a href = "cartList">내 카트</a></td>
+	                       			<td width="20"><a href = "cartList" class="button_keiro"><b>내 카트</b></a></td>
 								</tr>
 	                        </table>
                         </div>
@@ -245,7 +254,7 @@ function plus(likenum){
                 <div class="col-12 col-lg-4">
                     <div class="single-contact-information mb-100">
                         <div class="section-text">
-                            <h3>MY 여행경로</h3>                           
+                            <h3>MY 여행친구찾기 게시글</h3>                           
                         </div>
                         <!-- Single Contact Information -->
                         <div class="contact-content d-flex">
@@ -256,18 +265,14 @@ function plus(likenum){
                                         
                         <c:if test="${mcList != null}">
                         <table>
-<%--                         
-	                        <c:forEach var="value" items="${mcList}">
-	                        <tr>
-								<td><a href="#">${value.title}</a></td>
-								<td>${values.tripArea}</td>
-	                        </tr>      
-	                        </c:forEach>   
-	                         --%>
-	                    </table>
+							<c:forEach var="value" items="${mcList}">
+								<tr>
+									<td><b>${value.tripArea}</b></td>
+									<td><a href="#" style="color: gray;"><b>${value.title}</b></a></td>
+								</tr>	
+							</c:forEach>						
+						</table>
 						</c:if>
-						
-
                     </div>
                 </div>
 

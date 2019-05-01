@@ -79,7 +79,7 @@ public class MenuController {
 			//매칭 게시글 목록
 			ArrayList<MC_BoardVO> mcList = mcdao.getlist(id);
 			model.addAttribute("mcList", mcList);
-			 
+			logger.debug("mcList: {}", mcList);
 			 
 			//중고나라 목록
 			ArrayList<CartVO> cartList = dao.cartList(id);

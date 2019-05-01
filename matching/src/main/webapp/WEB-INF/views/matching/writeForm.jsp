@@ -22,8 +22,43 @@
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="resources/style.css" type="text/css">
 
+<style> 
+input[type=text] {
 
+
+
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+
+.button_keiro {
+width: 10em;
+  background-color: gray;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+
+
+
+</style>
 	<style>
+	
+	
+	
 	.rudfhcnrk{
 		color: blue;
 		float: right;
@@ -226,7 +261,7 @@ function test1()
 				<span class="button_bt">글 제목 </span>
 				<input type="text" size="70" name="title" id="title_write">
 				<br>
-				<p class="button_bt" id="bt1">경로선택</p>			
+				<p class="button_keiro" id="bt1"><b>경로선택</b></p>			
 				 <br>
 				 <table>
 				 	<tr>
