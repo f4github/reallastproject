@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="global.sesoc.project.user.VO.LoginVO" alias="Member" />
+		<typeAlias type="global.sesoc.project.user.VO.LoginVO" alias="Member" /> 
 		<typeAlias type="global.sesoc.project.mallVO.CategoryVO" alias="Category" />
 		<typeAlias type="global.sesoc.project.mallVO.GoodsVO" alias="Goods" />
 		<typeAlias type="global.sesoc.project.mallVO.CartVO" alias="Cart" />
