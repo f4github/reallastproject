@@ -54,12 +54,7 @@
 						<a href="joinForm" class="txt2">
 							회원 가입
 						</a>
-					</div>
-					
-						<!-- <a href="#">
-							Forgot password?
-						</a> -->
-					
+					</div>					
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
@@ -68,32 +63,6 @@
 							</button>
 						</div>
 					</div>
-
-					<!-- <div class="txt1 text-center p-t-54 p-b-20">
-						<span>
-							Or <a href = "joinForm">Sign Up</a> Using
-						</span>
-					</div> -->
-
-					<!-- <div class="flex-c-m">
-						<a href="#" class="login100-social-item bg1">
-							<i class="fa fa-facebook"></i>
-						</a>
-
-						<a href="#" class="login100-social-item bg2">
-							<i class="fa fa-twitter"></i>
-						</a>
-
-						<a href="#" class="login100-social-item bg3">
-							<i class="fa fa-google"></i>
-						</a>
-					</div> -->
-
-					<!-- <div class="flex-col-c p-t-155">
-						<span class="txt1 p-b-17">
-							Or Sign Up Using
-						</span> 
-					</div>-->
 
 				</form>
 			</div>

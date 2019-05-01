@@ -136,6 +136,7 @@ table.type09 td {
                                 <ul>
                                      <li class="active"><a href="./">Home</a></li>
                                     <li><a href="tihome">여행지 소개</a></li>
+                                    <li><a href="snsboard">SNS#</a></li>
                                     <li><a href="TA_home">Trip aKiNaTor</a></li>
                                     <li><a href="matching">여행친구찾기</a></li>
                                     <li><a href="mall">중고나라</a></li>
