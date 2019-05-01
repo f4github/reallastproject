@@ -135,15 +135,25 @@ public class GoodsController {
 	// 카트 담기
 	@ResponseBody
 	@RequestMapping(value = "addCart", method = RequestMethod.POST)
-	public int addCart(CartVO cart, HttpSession session){
+	public int addCart(CartVO cart, HttpSession session, int gdsNum){
 	 
 	 logger.debug("cart : {}",cart);
 	 String userId = (String)session.getAttribute("loginId");
 	 logger.debug(userId);
+	 logger.debug("gdsNum : {}", gdsNum);
 	 
 	 int result = 0;
 	 
+	 CartVO vo = null;
+	 cart.setUserId(userId);
+	 vo = dao.checkCart(cart);
+	 logger.debug("VO : {}", vo);
+	 
 		 if(userId != null) {
+			 if(vo!=null){
+				 result = 2;
+				 return result;
+			 }
 		  cart.setUserId(userId);
 		  dao.addCart(cart);
 		  result = 1;
@@ -212,6 +222,7 @@ public class GoodsController {
 		logger.debug("CartVO :{}", cart);
 		String userId = (String)session.getAttribute("loginId");
 		cart.setUserId(userId);
+		logger.debug("CartVO : {}",cart);
 		
 		dao.deleteCart(cart);
 	}
