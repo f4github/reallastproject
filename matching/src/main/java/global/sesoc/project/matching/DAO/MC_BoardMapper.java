@@ -27,4 +27,6 @@ public interface MC_BoardMapper {
 	public ArrayList<MC_ReplyVO> replyRead(int boardnum);
 /*	public void replyEdit(HashMap<String, Object> map);*/
 	public void replyDelete(HashMap<String, Object> map);
+	//마이페이지에 뿌려줄 리스트
+	public ArrayList<MC_BoardVO> getlist(String id);
 }

@@ -349,7 +349,7 @@ function tigu(){
 
 
 
-</script>  s
+</script>
 	
 	<br><br>
 <c:if test="${sessionScope.loginId != null}">

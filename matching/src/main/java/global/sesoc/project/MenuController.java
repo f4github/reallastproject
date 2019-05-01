@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import global.sesoc.project.mallDAO.UsedDAO;
 import global.sesoc.project.mallVO.CartVO;
 import global.sesoc.project.mallVO.GoodsVO;
+import global.sesoc.project.matching.DAO.MC_BoardDAO;
+import global.sesoc.project.matching.VO.MC_BoardVO;
 import global.sesoc.project.ti.DAO.Travel_infoDAO;
 import global.sesoc.project.ti.VO.Trip_likeVO;
 
@@ -28,6 +30,8 @@ public class MenuController {
 		UsedDAO dao;
 		@Autowired
 		Travel_infoDAO tidao;
+		@Autowired
+		MC_BoardDAO mcdao;
 
 		@RequestMapping(value = "/ttt", method = RequestMethod.GET)
 		public String Meqnu1()
@@ -69,16 +73,17 @@ public class MenuController {
 			String id = (String) session.getAttribute("loginId");
 			
 			//ti 찜 목록
-			ArrayList<Trip_likeVO> list = tidao.getList(id);
-			model.addAttribute("tiList", list);
+			ArrayList<Trip_likeVO> tiList = tidao.getList(id);
+			model.addAttribute("tiList", tiList);
 			
-			
+			//매칭 게시글 목록
+			ArrayList<MC_BoardVO> mcList = mcdao.getlist(id);
+			model.addAttribute("mcList", mcList);
 			 
 			 
-			 //중고나라 목록
-			 ArrayList<CartVO> cartList = dao.cartList(id);
-			 
-			 model.addAttribute("cartList", cartList);
+			//중고나라 목록
+			ArrayList<CartVO> cartList = dao.cartList(id);
+			model.addAttribute("cartList", cartList);
 			
 			
 			

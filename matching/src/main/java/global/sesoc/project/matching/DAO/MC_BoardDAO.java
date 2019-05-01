@@ -102,15 +102,15 @@ public class MC_BoardDAO {
 		reply = mapper.replyRead(boardnum);
 		return reply;
 	}
-	
-/*	public void replyEdit(int replynum, String id){
+/*	
+	public void replyEdit(int replynum, String id){
 		BoardMapper mapper = sqlSession.getMapper(BoardMapper.class);
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("replynum", replynum);
 		map.put("id", id);
 		mapper.replyEdit(map);
-	}*/
-	
+	}
+*/	
 	public void replyDelete(int replynum, String id){
 		MC_BoardMapper mapper = sqlSession.getMapper(MC_BoardMapper.class);
 		HashMap<String, Object> map = new HashMap<String, Object>();
@@ -118,4 +118,16 @@ public class MC_BoardDAO {
 		map.put("id", id);
 		mapper.replyDelete(map);
 	}
+
+	//마이페이지에 뿌려줄 리스트
+	public ArrayList<MC_BoardVO> getlist(String id) {
+		MC_BoardMapper mapper = sqlSession.getMapper(MC_BoardMapper.class);
+		ArrayList<MC_BoardVO> list = mapper.getlist(id);
+		return list;
+	}
+	
+
+	
+	
+	
 }

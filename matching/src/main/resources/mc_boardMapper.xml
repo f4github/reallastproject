@@ -147,11 +147,13 @@
 	<delete id="replyDelete" parameterType="HashMap">
 		delete from mcreply where replynum = #{replynum} and id = #{id}
 	</delete>
-	
+ 	
+	<!--마이페이지에 뿌려줄 리스트 -->
+	<select id="getlist" parameterType="string" resultType="mcr">
+	select * from mcboard where id like #{id}
+	</select>
 	
 
-	
-	
 	
 	
 	

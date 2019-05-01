@@ -185,7 +185,7 @@ function initTmap(lat, lon){
 //   
 	var viaPoints = new Array(); 
 	var j = 1;
-	<c:forEach var="i" begin="0" end="${list.size()-2}">
+	<c:forEach var="i" begin="0" end="${list.size()-1}">
 	viaPoints.push({viaPointId: "test0" + j, viaPointName: "name0" + j, viaX: "${list[i].mapx}", viaY: "${list[i].mapy}"});	
 	j++;
 	</c:forEach> 
@@ -304,7 +304,7 @@ function initTmap(lat, lon){
 
 <br>
 	<c:forEach var="i" begin="0" end="${list.size()-1}">
-		<c:if test="${i < list.size()-2}">
+		<c:if test="${i <= list.size()-2}">
 		${list[i].travelid} ▶
 		</c:if>
 		<c:if test="${i == list.size()-1}">

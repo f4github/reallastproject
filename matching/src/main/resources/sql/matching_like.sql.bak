@@ -1,6 +1,6 @@
 --여행지 좋아요
 create table matching_like (
-matching_like_num	number	primary key,
+trip_like_num	number	primary key,
 boardnum		number,
 id				varchar2(20),
 title			varchar2(100),

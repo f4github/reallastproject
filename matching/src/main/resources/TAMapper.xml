@@ -16,14 +16,14 @@ insert all
 <!-- 지역특정 -->
 <select id="location" parameterType="string" resultType="ta">
 select travelplace from ta
-where loginid like #{loginid} 
+where loginid like #{id} 
 group by travelplace
-having sum(vote) = (select max(sum(vote)) from ta where loginid like #{loginid} group by travelplace)
+having sum(vote) = (select max(sum(vote)) from ta where loginid like #{id} group by travelplace)
 </select>
 
 <!-- 상세지역 -->
 <select id="location2" parameterType="string" resultType="ta">
-select travelid,firstimage from ta where loginid like #{loginid} and travelplace like (select travelplace from ta 
+select travelid,firstimage from ta where loginid like #{id} and travelplace like (select travelplace from ta 
 having sum(vote) = (select max(sum(vote)) from ta group by travelplace)
 group by travelplace) group by travelid,firstimage
 </select>

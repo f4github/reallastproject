@@ -2,8 +2,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<!DOCTYPE html>
-<html>
+<!DOCTYPE jsp>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -20,8 +20,6 @@
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="resources/style.css" type="text/css">
-
-
 
 
 <style>
@@ -49,6 +47,10 @@ table {
 
 
 </style>
+
+
+
+
 </head>
 
 <body>
@@ -59,7 +61,7 @@ table {
         </div>
     </div>
 
-   <!-- ##### Header Area Start ##### -->
+    <!-- ##### Header Area Start ##### -->
     <header class="header-area">
         <!-- Navbar Area -->
         <div class="palatin-main-menu">
@@ -123,27 +125,38 @@ table {
     </header>
     <!-- ##### Header Area End ##### -->
 
-    <!-- ##### Breadcumb Area Start ##### -->
-    <section class="breadcumb-area bg-img d-flex align-items-center justify-content-center" style="background-image: url(resources/img/bg-img/bg-8.jpg);">
-        <div class="bradcumbContent">
-           
+    <!-- ##### Hero Area Start ##### -->
+    <section class="hero-area">
+        <div class="hero-slides owl-carousel">
+
+            <!-- Single Hero Slide -->
+            <div class="single-hero-slide d-flex align-items-center justify-content-center">
+                <!-- Slide Img -->
+                <div class="slide-img bg-img" style="background-image: url(resources/img/bg-img/bg-1.jpg);"></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-9">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
-    <!-- ##### Breadcumb Area End ##### -->
+    <!-- ##### Hero Area End ##### -->
 
+    
 <br>
 <br>
 <br>
 <br>
-<br> 
+<br>
+<br>
 
-
-
-
-
-
-
-    <!-- ##### Contact Area Start ##### -->
+    
+    
+     <!-- ##### Contact Area Start ##### -->
     <section class="contact-information-area">
         <div class="container">
             <div class="row">
@@ -151,9 +164,12 @@ table {
                 <!-- Single Contact Information -->
                 <div class="col-12 col-lg-4">
                     <div class="single-contact-information mb-100">
-                        <div class="section-text"><h3>MY 여행지  찜 목록</h3></div>
-                        
-                        <!-- Single Contact Information -->
+                    
+                    
+                        <div class="section-text">
+                            <h3>MY 여행지  찜 목록</h3>                           
+                        </div>                                                                    
+                        <!-- Single contact Information -->
                         <div class="contact-content d-flex">
                         
                         <c:if test="${tiList==null}">
@@ -165,16 +181,13 @@ table {
 	                        <c:forEach var="value" items="${tiList}">
 	                        <tr>
 								<td><a href="Travel_intro3?contentid=${value.contentid}&contenttypeid=${value.contenttypeid}" style="color: blue;">${value.title}</a></td>
-								<td><button onclick="plus(${value.likenum})">경유지추가</button></td>
+						<%-- 		<td><button onclick="plus(${value.likenum})">경유지추가</button></td> --%>
 								<td><button onclick="del(${value.likenum})">삭제</button></td>
 	                        </tr>      
 	                        </c:forEach>   
 	                    </table>
 						</c:if>
-                            
-                        </div>
-
-
+						   
 
                     </div>
                 </div>
@@ -199,48 +212,7 @@ function plus(likenum){
  */
 </script>
 
-
-                <!-- Single Contact Information -->
-                <div class="col-12 col-lg-4">
-                    <div class="single-contact-information mb-100">
-                        <div class="section-text"><h3>MY 중고나라 게시글</h3></div>
-                        
-                        <!-- Single Contact Information -->
-                        <div class="contact-content d-flex">
-	                       	<table>
-	                        	<tr>
-	                            	<td><a href = "myArticle">내가쓴 글</a></td>
-	                            </tr>
-	                            <tr>
-	                       			<td><a href = "cartList">내 카트</a></td>
-								</tr>
-	                        </table>
-                        </div>
-
-
-                    </div>
-                </div>
-
-
-                <!-- Single Contact Information -->
-                <div class="col-12 col-lg-4">
-                    <div class="single-contact-information mb-100">
-                        <div class="section-text"><h3>Los Angeles</h3></div>
-                        
-                        <!-- Single Contact Information -->
-                        <div class="contact-content d-flex">
-                        
-                            <p>Address</p>
-                            <p>245 Principe Lane <br>Avila Beach, Spain</p>
-                            
-                        </div>
-
-
-                    </div>
-                </div>
-
-
-
+<%-- 
                 <!-- Single Contact Information -->
                 <div class="col-12 col-lg-4">
                     <div class="single-contact-information mb-100">
@@ -256,18 +228,70 @@ function plus(likenum){
                                         
                         <c:if test="${mcList != null}">
                         <table>
-<%--                         
 	                        <c:forEach var="value" items="${mcList}">
 	                        <tr>
 								<td><a href="#">${value.title}</a></td>
-								<td>${values.tripArea}</td>
+								<td>${value.tripArea}</td>
 	                        </tr>      
 	                        </c:forEach>   
-	                         --%>
 	                    </table>
 						</c:if>
 						
 
+                    </div>
+                </div>
+              
+  --%>
+                Single Contact Information
+                <div class="col-12 col-lg-4">
+                    <div class="single-contact-information mb-100">
+                        <div class="section-text">
+                            <h3>MY 여행친구찾기</h3>
+                            <p>Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Integer tempus ligula sem.</p>
+                        </div>
+                        Single Contact Information
+                        <div class="contact-content d-flex">
+                            <p>Address</p>
+                            <p>245 Principe Lane <br>Avila Beach, Spain</p>
+                        </div>
+                        Single Contact Information
+                        <div class="contact-content d-flex">
+                            <p>Phone</p>
+                            <p>+36 345 7953 4994</p>
+                        </div>
+                        Single Contact Information
+                        <div class="contact-content d-flex">
+                            <p>E-mail</p>
+                            <p>yourmail@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Contact Information -->
+                <div class="col-12 col-lg-4">
+                    <div class="single-contact-information mb-100">
+                        <div class="section-text">
+                            <h3>MY 중고나라 게시글</h3><br>
+                            <a href = "myArticle"><h4>내가쓴 글</h4></a><br>   
+                       <a href = "cartList"><h4>내 카트</h4></a><br>
+                    	</div>
+                    </div>
+                </div>
+<!-- Single contact Information -->
+                        <div class="contact-content d-flex">
+                            <p>Address</p>
+                            <p>889 Creekside Lane <br>Avila Beach, Dubai</p>
+                        </div>
+                        <!-- Single contact Information -->
+                        <div class="contact-content d-flex">
+                            <p>Phone</p>
+                            <p>+77 345 7953 2406</p>
+                        </div>
+                        <!-- Single contact Information -->
+                        <div class="contact-content d-flex">
+                            <p>E-mail</p>
+                            <p>yourmail@gmail.com</p>
+                        </div>
                     </div>
                 </div>
 
@@ -275,15 +299,13 @@ function plus(likenum){
         </div>
     </section>
     <!-- ##### Contact Area End ##### -->
+    
 
-
-
-
-
-
-
-
-    <!-- ##### Contact Form Area Start ##### -->
+    
+    
+    
+    
+<!-- ##### contact Form Area Start ##### -->
     <section class="contact-form-area mb-100">
         <div class="container">
             <div class="row">
@@ -297,7 +319,7 @@ function plus(likenum){
 
             <div class="row">
                 <div class="col-12">
-                    <!-- Contact Form -->
+                    <!-- contact Form -->
                     <form action="#" method="post">
                         <div class="row">
                             <div class="col-lg-4">
@@ -321,9 +343,8 @@ function plus(likenum){
             </div>
         </div>
     </section>
-    <!-- ##### Contact Form Area End ##### -->
-
-
+    <!-- ##### contact Form Area End ##### -->
+    
 
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">
@@ -333,7 +354,7 @@ function plus(likenum){
                 <!-- Footer Widget Area -->
                 <div class="col-12 col-lg-5">
                     <div class="footer-widget-area mt-50">
-                        <a href="#" class="d-block mb-5"><img src="img/core-img/logo.png" alt=""></a>
+                        <a href="#" class="d-block mb-5"><img src="resources/img/core-img/logo.png" alt=""></a>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. </p>
                     </div>
                 </div>
@@ -342,7 +363,7 @@ function plus(likenum){
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="footer-widget-area mt-50">
                         <h6 class="widget-title mb-5">Find us on the map</h6>
-                        <img src="img/bg-img/footer-map.png" alt="">
+                        <img src="resources/img/bg-img/footer-map.png" alt="">
                     </div>
                 </div>
 
@@ -369,6 +390,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div>
     </footer>
     <!-- ##### Footer Area End ##### -->
+    
+    
 
     <!-- ##### All Javascript Script ##### -->
     <!-- jQuery-2.2.4 js -->
