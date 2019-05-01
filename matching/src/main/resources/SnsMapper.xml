@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="global.sesoc.project.sns.DAO.SNSMapper">
+<insert id ="insertSNS" parameterType="sns">
+insert into SNS
+(	boardnum
+	, id
+	, title
+	, content
+	, hashtag
+	, location
+	<if test="originalFile != null and savedFile !=null">
+   		  , originalFile
+   		  , savedFile
+    </if>
+	)
+values
+(
+	sns_seq.nextval
+	, #{id}
+	, #{title}
+	, #{content}
+	, #{hashtag}
+	, #{location}
+	<if test="originalFile != null and savedFile !=null">
+   		  , #{originalFile}
+   		  , #{savedFile}
+   	</if>
+)
+</insert>
+
+<update id ="updateTravel_info" parameterType="sns">
+update travel_info set hashtag = concat(hashtag,#{hashtag}) 
+where travelid like #{location} <!-- 수정해야 한다. -->
+</update>
+
+<select id ="snsList" resultType="sns">
+select boardnum
+	   , id
+	   , title
+	   , content
+	   , hashtag
+	   , to_char(inputdate, 'YYYY-MM-DD') as inputdate
+	   , location
+	   , views
+	   , liked
+	   , savedFile
+	from 
+		sns 
+	order by 
+		boardnum desc
+</select>
+</mapper>

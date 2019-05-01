@@ -4,8 +4,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-  <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="resources/style.css?after" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SnsBoard</title>
+<link rel="stylesheet" href="resources/style.css?after" type="text/css">
 <style>
 .styled {
     border: 0;
@@ -43,7 +44,6 @@ body{
   font: 24px/1.4 "RobotoDraft", sans-serif;
   color: #fff;
 }
-
 section{
   display: flex;
   flex-direction: column;
@@ -57,70 +57,8 @@ section{
   margin: 0 0 .5em 0;
 }
 
-input[type='radio']{ height: 0; width: 0; }
-
-input[type='radio'] + label{
-  position: relative;
-  display: flex;
-  margin: .6em 0;
-  align-items: center;
-  color: #9e9e9e;
-  transition: color 250ms cubic-bezier(.4,.0,.23,1);
-}
-input[type='radio'] + label > ins{
-  position: absolute;
-  display: block;
-  bottom: 0;
-  left: 2em;
-  height: 0;
-  width: 100%;
-  overflow: hidden;
-  text-decoration: none;
-  transition: height 300ms cubic-bezier(.4,.0,.23,1);
-}
-input[type='radio'] + label > ins > i{
-  position: absolute;
-  bottom: 0;
-  font-style: normal;
-  color: #4FC3F7;
-}
-input[type='radio'] + label > span{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 1em;
-  width: 1em;
-  height: 1em;
-  background: transparent;
-  border: 2px solid #9E9E9E;
-  border-radius: 2px;
-  cursor: pointer;  
-  transition: all 250ms cubic-bezier(.4,.0,.23,1);
-}
-
-input[type='radio'] + label:hover, input[type='radio']:focus + label{
-  color: #fff;
-}
-input[type='radio'] + label:hover > span, input[type='radio']:focus + label > span{
-  background: rgba(255,255,255,.1);
-}
-input[type='radio']:checked + label > ins{ height: 100%; }
-
-input[type='radio']:checked + label > span{
-  border: .5em solid #FFEB3B;
-  animation: shrink-bounce 200ms cubic-bezier(.4,.0,.23,1);
-}
-input[type='radio']:checked + label > span.sapn:before{
-  content: "";
-  position: absolute;
-  top: .6em;
-  left: .2em;
-  border-right: 3px solid transparent;
-  border-bottom: 3px solid transparent;
-  transform: rotate(45deg);
-  transform-origin: 0% 100%;
-  animation: radio-check 125ms 250ms cubic-bezier(.4,.0,.23,1) forwards;
-}
+a{ text-decoration:none;}
+.centered { width: 400px; position: absolute; left: 50%; margin-left: -200px; top:150px;}
 
 @keyframes shrink-bounce{
   0%{
@@ -156,8 +94,6 @@ fieldset{
 	border: 0;
 }
 </style>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>T.A1</title>
 </head>
 <body>
 	<!-- ##### Header Area Start ##### -->
@@ -170,7 +106,7 @@ fieldset{
                     <nav class="classy-navbar justify-content-between" id="palatinNav">
 
                         <!-- Nav brand -->
-                        <a href="./" class="nav-brand"><span style="color: white;"><b>AIO Trip</b></span></a>
+                        <a href="./" class="nav-brand"><span style="color: white;"><b>AIOTrip</b></span></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -224,37 +160,52 @@ fieldset{
     </header>
     <!-- ##### Header Area End ##### -->
 
-<fieldset>
-<h1 class="h1">Q 1. 지금 기분이 어떠세요?</h1>
-<form action ="ta2" method="post">
-<section>
-<input id='one' type="radio" name ="answer1" value="기쁨" checked>
-<label for='one'>
-	<span></span>
-	 기쁨
- 	<ins><i>기쁨</i></ins>
-</label>
-<input id='two' type="radio" name ="answer1" value="슬픔">
-<label for='two'>
-	<span></span>
-	 슬픔
- 	<ins><i>슬픔</i></ins>
-</label>
-<input id='three' type="radio" name ="answer1" value="우울">
-<label for='three'>
-	<span></span>
-	 우울
- 	<ins><i>우울</i></ins>
-</label>
-<input id='four' type="radio" name ="answer1" value="즐거움">
-<label for='four'>
-	<span></span>
-	 즐거움
- 	<ins><i>즐거움</i></ins>
-</label>
-</section>
-<input type="submit" value="다음 단계" class="styled">
-</form>
-</fieldset>
+<div class="centered">
+<h1>SnsBoard</h1>
+<h2 ><a href = "sns" class="styled">SNS#Write</a></h2>
+<c:forEach items ="${snsList}" var ="snsList">
+<table border="1" width="400">
+<tr>
+	<th width="100">
+		${snsList.id }
+	</th>
+	<th width="300">
+		${snsList.title }
+	</th>
+</tr>
+<c:if test = "${snsList.savedFile != null}">
+<tr>
+	<td colspan=2>
+	<img src = "resources/img/${snsList.savedFile}" width="400" height="310"/>
+	</td>
+</tr>
+<tr>
+	<th colspan=2>
+	${snsList.hashtag }
+	</th>
+</tr>
+<tr>
+	<th colspan=2>
+	${snsList.content }
+	</th>
+</tr>
+</c:if>
+<c:if test = "${snsList.savedFile == null}">
+<tr>
+	<th colspan=2>
+	${snsList.hashtag }
+	</th>
+</tr>
+<tr>
+	<th colspan=2 >
+	${snsList.content }
+	</th>
+</tr>
+</c:if>
+</table>
+<br><br>
+</c:forEach>
+
+</div>
 </body>
 </html>
