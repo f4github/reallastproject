@@ -192,7 +192,7 @@ public class TAController {
 		logger.debug("add:{}", add);
 		model.addAttribute("add", add);
 
-		String startPlace = add.substring(0, 5);		
+		String startPlace = add.substring(0, 2);		
 		logger.debug("startPlace:{}", startPlace);
 		RouteVO vo2 = (RouteVO)session.getAttribute("routeVO");
 		vo2.setStartPlace(startPlace);
