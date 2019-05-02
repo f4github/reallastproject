@@ -43,4 +43,6 @@ public interface UsedMapper {
 
 	public ArrayList<ReplyVO> myArticleReply(String userId);
 
+	public CartVO checkCart(CartVO cart);
+
 }

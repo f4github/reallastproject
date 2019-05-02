@@ -58,16 +58,15 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                     <li class="active"><a href="./">Home</a></li>
+                                    <li class="active"><a href="./">Home</a></li>
                                     <li><a href="tihome">여행지 소개</a></li>
-                                    <li><a href="snsboard">SNS#</a></li>
                                     <li><a href="TA_home">Trip aKiNaTor</a></li>
                                     <li><a href="matching">여행친구찾기</a></li>
                                     <li><a href="mall">중고나라</a></li>
                                     <li><a href="mypage">My Pages</a></li>
-                                    <li>${loginInfo.userName}</li>
                                 </ul>
-								<c:if test="${loginInfo==null }">
+
+                                <c:if test="${loginInfo==null }">
                                 <!-- Button -->
                                 <div class="menu-btn">
                                     <a href="login" class="btn palatin-btn">L O G I N </a>
@@ -79,11 +78,10 @@
                                 
                                 <div class="menu-btn">
                                 	${loginInfo.getUserName() }
-                                    <a href="logout" class="btn palatin-btn">L O G O U T</a>
+                                    <a href="logout" class="btn palatin-btn">logout </a>
                                 </div>
 								</c:if>
-								
-								
+
                             </div>
                             <!-- Nav End -->
                         </div>
@@ -206,14 +204,10 @@
 			    
 			    <script>
 				 $(".delete_btn").click(function(){
-				  var confirmD = confirm("정말 삭제하시겠습니까?");
 				  
-				  
-				  
-				  if(confirmD) {
+				  if(confirm("정말 삭제하시겠습니까?")) {
 				    
-					  var cartNum = $('.delete_btn').val();
-					  
+					  var cartNum = $(this).attr("value");
 				   $.ajax({
 				    url : "deleteCart",
 				    type : "post",

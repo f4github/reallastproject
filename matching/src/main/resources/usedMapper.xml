@@ -67,8 +67,12 @@ select
             inner join goods_category c
                 on g.cateCode = c.cateCode           
             where g.cateCode = #{cateCode }
-            order by g.gdsNum desc
 
+</select>
+<!-- 카트중복검사 -->
+<select id = "checkCart" parameterType = "Cart" resultType = "Cart">
+select*from tbl_cart
+where userId=#{userId} and gdsNum = #{gdsNum}
 </select>
 
 <!-- 카트 -->
@@ -164,6 +168,7 @@ values (tbl_cart_seq.nextval, #{userId}, #{gdsNum}, #{cartStock})
 		where userId = #{userId}
 	
 	</select>
+	
 	
 
 
